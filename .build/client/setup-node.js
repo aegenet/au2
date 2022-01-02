@@ -1,6 +1,6 @@
 const path = require('path');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const JSDOMEnvironment  = require(path.join(process.cwd(), 'node_modules/jest-environment-jsdom'));
+const JSDOMEnvironment  = require(path.join(__dirname, './../../node_modules/jest-environment-jsdom'));
 // const express = require('express');
 const { createServer } = require('http-server');
 

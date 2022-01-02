@@ -35,7 +35,7 @@
     "test-node": "yarn run test"
   },
   "jest": {
-    "testEnvironment": "jest-environment-jsdom",
+    "testEnvironment": "./../../node_modules/jest-environment-jsdom",
     "setupFilesAfterEnv": [
       "./../../.build/client/setup-after-env.js"
     ],
