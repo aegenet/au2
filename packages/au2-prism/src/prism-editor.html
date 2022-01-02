@@ -1,0 +1,40 @@
+<div class="prism-editor">
+  <div class="prism-editor-wrapper my-editor" language.bind="language">
+
+    <div
+      if.bind="lines"
+      aria-hidden="true"
+      class="prism-editor__line-numbers"
+      style.bind="{ minHeight: lineNumbersHeight }">
+        <div
+          class="prism-editor__line-width-calc"
+          style="height: 0px; visibility: hidden; pointer-events: none;">
+          999
+        </div>
+        <div repeat.for="i of lineNumbersCount" class="prism-editor__line-number token comment">${i+1}</div>
+    </div>
+    <div class="prism-editor__container">
+      <textarea
+      style="padding-top:4px"
+      ref="textAreaRef"
+      spellcheck="false"
+      autocapitalize="off"
+      autocomplete="off"
+      autocorrect="off"
+      data-gramm="false"
+      placeholder.bind="placeholder"
+      readonly.bind="readonly"
+      data-testid="textarea"
+      class="prism-editor__textarea ${isEmpty ? 'prism-editor__textarea--empty' : ''}"
+      value.bind="code"
+    >
+    </textarea>
+    <pre ref="preRef"
+      data-testid="preview"
+      class="prism-editor__editor"
+      style="padding-top:4px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+      innerhtml.bind="content"
+    ></pre>
+    </div>
+  </div>
+</div>

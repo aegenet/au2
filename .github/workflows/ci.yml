@@ -1,0 +1,41 @@
+name: Node.js CI
+
+on:
+  push:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Install dependencies
+      run: yarn run dependencies
+    - name: Our dependencies
+      run: yarn
+    - name: Build-n-test
+      run: yarn run build-n-test
+
+    - name: Publish dev packages
+      run: yarn run publish
+      env:
+        CI: true
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+    - name: Upload coverage
+      run: yarn run codecov
+      env:
+        CI: true
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+

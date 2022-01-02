@@ -1,0 +1,106 @@
+{
+  "name": "rql",
+  "version": "0.1.0",
+  "description": "RQL monorepo",
+  "main": "index.js",
+  "author": "Alexandre Genet",
+  "license": "UNLICENSED",
+  "nyc": {
+    "report-dir": "./coverage",
+    "temp-dir": "./.nyc_output",
+    "sourceMap": true,
+    "instrument": true
+  },
+  "commitlint": {
+    "rules": {
+      "body-leading-blank": [
+        1,
+        "always"
+      ],
+      "footer-leading-blank": [
+        1,
+        "always"
+      ],
+      "header-max-length": [
+        2,
+        "always",
+        100
+      ],
+      "scope-case": [
+        2,
+        "always",
+        "lower-case"
+      ],
+      "subject-case": [
+        2,
+        "never",
+        [
+          "sentence-case",
+          "start-case",
+          "pascal-case",
+          "upper-case"
+        ]
+      ],
+      "subject-empty": [
+        2,
+        "never"
+      ],
+      "subject-full-stop": [
+        2,
+        "never",
+        "."
+      ],
+      "type-case": [
+        2,
+        "always",
+        "lower-case"
+      ],
+      "type-empty": [
+        2,
+        "never"
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
+  },
+  "private": "true",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "clean": "node ./.build/build-flow.js clean",
+    "dependencies": "node ./.build/build-flow.js dependencies",
+    "lint": "node ./.build/build-flow.js lint",
+    "build": "node ./.build/build-flow.js build",
+    "publish": "node ./.build/build-flow.js publish",
+    "test": "node ./.build/build-flow.js test",
+    "build-n-test": "yarn run cover:clean && yarn run lint && yarn run build && yarn run test && yarn run cover",
+    "codecov": "./node_modules/.bin/codecov",
+    "cover:clean": "rimraf ./coverage/ && rimraf ./.nyc_output/",
+    "cover:merge": "node ./.build/coverage.merge.js",
+    "cover:report": "nyc report -t ./.nyc_output/ --reporter html --reporter text-summary",
+    "cover": "yarn run cover:clean && yarn run cover:merge && yarn run cover:report"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "codecov": "^3.8.3",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "http-server": "^14.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+<h2>Prism Editor</h2>
+<prism-editor view-model.ref="prismRef" code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></prism-editor>
+
+<button click.delegate="prismRef.code = 'Ok ok'">Change !</button>
+
+<h3>Value</h3>
+<pre><code innerhtml.bind="prismRef.code"></code></pre>
+
+<h2>Prism View</h2>
+<prism-view code.bind="prismRef.code" language="javascript"></prism-editor>
