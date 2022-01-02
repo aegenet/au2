@@ -27,10 +27,13 @@ jobs:
     - name: Our dependencies
       run: yarn
     - name: Build-n-test
+      run: yarn run build-n-test
+
+    - name: Publish dev packages
       env:
         CI: true
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      run: yarn run build-n-test
+      run: yarn run publish
 
     - name: Upload coverage
       run: yarn run codecov
