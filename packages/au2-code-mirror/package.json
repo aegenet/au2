@@ -29,12 +29,11 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
     "pretest": "npm run lint",
     "start": "node ./../../node_modules/webpack/bin/webpack serve",
-    "build": "rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production",
-    "analyze": "rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
+    "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production",
+    "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "test": "node ./../../node_modules/jest/bin/jest",
     "tsc": "echo nothing",
-    "test-node": "yarn run test",
-    "prepare": "npm run build"
+    "test-node": "yarn run test"
   },
   "jest": {
     "testEnvironment": "./../../.build/client/setup-node.js",
