@@ -18,19 +18,19 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 16.x
+        registry-url: 'https://npm.pkg.github.com'
+        # Defaults to the user or organization that owns the workflow file
+        scope: '@aegenet'
 
     - name: Install dependencies
       run: yarn run dependencies
     - name: Our dependencies
       run: yarn
     - name: Build-n-test
-      run: yarn run build-n-test
-
-    - name: Publish dev packages
-      run: yarn run publish
       env:
         CI: true
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      run: yarn run build-n-test
 
     - name: Upload coverage
       run: yarn run codecov
