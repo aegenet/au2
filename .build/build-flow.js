@@ -25,7 +25,14 @@ const tasks = {
   /** Publish */
   publish: project => {
     if (project.publish) {
-      return `cd ./packages/${project.name}/ && npm version "999.${new Date().getTime()}.0" && npm publish --registry=${project.registry || 'https://npm.pkg.github.com/'}`;
+      const cmds = [
+        // Remove devDependencies in npm package
+        `json -I -f ./packages/${project.name}/package.json -e "this.devDependencies={};this.scripts={};this.jest=undefined;"`,
+        `cd ./packages/${project.name}/`,
+        `npm version "999.${new Date().getTime()}.0"`,
+        `npm publish --registry=${project.registry || 'https://npm.pkg.github.com/'}`
+      ];
+      return cmds.join(' && ');
     } else {
       return '';
     }
