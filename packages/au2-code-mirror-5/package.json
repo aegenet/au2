@@ -5,6 +5,7 @@
   "files": [
     "dist"
   ],
+  "author": "Alexandre Genet",
   "version": "0.1.0",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-code-mirror-5",
   "publishConfig": {
@@ -30,40 +31,8 @@
     "start": "node ./../../node_modules/webpack/bin/webpack serve",
     "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production",
     "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
-    "test": "node ./../../node_modules/jest/bin/jest",
+    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.js",
     "tsc": "echo nothing",
     "test-node": "yarn run test"
-  },
-  "jest": {
-    "testEnvironment": "./../../.build/client/setup-node.js",
-    "setupFilesAfterEnv": [
-      "./../../.build/client/setup-after-env.js"
-    ],
-    "transform": {
-      "\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./../../node_modules/jest-transform-stub",
-      "\\.(ts|html)$": [
-        "./../../node_modules/@aurelia/ts-jest",
-        {
-          "defaultShadowOptions": {
-            "mode": "open"
-          }
-        }
-      ]
-    },
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src/**/*.ts",
-      "!src/**/*.d.ts"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "text-summary",
-      "html"
-    ],
-    "globals": {
-      "ts-jest": {
-        "isolatedModules": true
-      }
-    }
   }
 }

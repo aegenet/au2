@@ -25,7 +25,26 @@ const postcssLoader = {
   },
 };
 
-module.exports = function() {
+/**
+ * 
+ * @param {
+ *   org: string;
+ *   name: string;
+ *   directory: string;
+ *   subdir?: string;
+ *   target?: 'node' | 'web' | string;
+ *   libraryType?: string;
+ *   externals?: unknown[];
+ *   plugins?: unknown[];
+ * } options 
+ * @returns Webpack Configuration
+ * 
+ */
+module.exports = function(
+  options
+) {
+  options = options ?? {};
+  const directory = options.directory ?? process.cwd();
   return function (env, { analyze }) {
     const production = env.production || process.env.NODE_ENV === 'production';
     return {
@@ -38,13 +57,13 @@ module.exports = function() {
         entry: production ? './src/index.ts' : './dev-app/main.ts',
       },
       output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(directory, 'dist',  options.subdir ?? ''),
         filename: production ? 'index.js' : '[name].bundle.js',
         library: production ? { type: 'commonjs' } : undefined,
       },
       resolve: {
         extensions: ['.ts', '.js'],
-        modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'dev-app'), 'node_modules'],
+        modules: [path.resolve(directory, 'src'), path.resolve(directory, 'dev-app'), 'node_modules'],
       },
       devServer: {
         historyApiFallback: true,
