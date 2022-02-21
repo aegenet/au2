@@ -1,4 +1,4 @@
-import { DI, IEventAggregator } from "@aurelia/kernel";
+import { DI, IEventAggregator } from '@aurelia/kernel';
 
 /**
  * EventAggregator partagé dans un container enfant

@@ -8,6 +8,7 @@
 
 | Name | Usage |
 |--|--|
+| [@aegenet/au2-base-flow](./packages/au2-base-flow/README.md) | Task flow utils based on Aurelia 2 kernel |
 | [@aegenet/au2-prism](./packages/au2-prism/README.md) | Prism view and Prism Editor implementation - WIP |
 | [@aegenet/au2-code-mirror](./packages/au2-code-mirror/README.md) | CodeMirror 5 implementation - Draft only |
 | [@aegenet/au2-code-mirror-5](./packages/au2-code-mirror-5/README.md) | CodeMirror 6+ implementation - Draft only |
