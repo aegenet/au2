@@ -1,5 +1,9 @@
 {
 	"folders": [
+    {
+      "name": "engine/au2-base-flow",
+      "path": "./packages/au2-base-flow"
+    },
 	  {
       "name": "components/code-mirror-5",
       "path": "./packages/au2-code-mirror-5"
@@ -8,7 +12,7 @@
       "name": "components/code-mirror",
       "path": "./packages/au2-code-mirror"
     },
-	{
+	  {
       "name": "components/prism",
       "path": "./packages/au2-prism"
     },

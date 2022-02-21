@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const Dotenv = require('dotenv-webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleDeclarationsWebpackPlugin } = require('bundle-declarations-webpack-plugin');
 
 /**
  * 
@@ -21,10 +22,12 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 module.exports = function(
   options
 ) {
-  options = options ?? {};
   const indexPath = path.join(options.directory, './src/index.ts');
   const cliPath = path.join(options.directory, './src/cli.ts');
   const entry = { [options.name]: indexPath };
+  const outputDir = path.join(options.directory, 'dist/');
+  const outputDirSubDir = options.subdir ? path.join(outputDir, options.subdir) : outputDir;
+
   if (fs.existsSync(cliPath)) {
     entry[options.name + '-cli'] = cliPath;
   }
@@ -44,10 +47,12 @@ module.exports = function(
       //   outputModule: true,
       // },  
       output: {
-        path: path.join(options.directory, 'dist/', options.subdir ?? ''),
+        path: outputDirSubDir,
         filename: `[name].bundle.js`,
         library: {
-          name: options.name,
+          // Attention, si le nom est mis alors le main export sera sous le nom indiqué, donc par exemple import { rqlcore } from '@aegenet/rql-core';
+          // Donc on évite
+          // name: options.name,
           type: options.libraryType ?? 'commonjs',
         },
       },
@@ -55,6 +60,23 @@ module.exports = function(
       externals: options.externals,
       plugins: [
         ... options.plugins ?? [],
+        new BundleDeclarationsWebpackPlugin({
+            entry: {
+              filePath: indexPath,
+              libraries: {
+                inlinedLibraries: [],
+                allowedTypesLibraries: [],
+              },
+              output: {
+                exportReferencedTypes: false,
+              }
+            },
+            outFile: 'bundle.d.ts',
+            compilationOptions: {
+              // Evite que nos projets du monorepo soient fusionnés dans le d.ts
+              followSymlinks: false,
+            },
+        }),
         new Dotenv({
           path: `./.env${production ? '' : '.' + (process.env.NODE_ENV || 'development')}`,
         }),

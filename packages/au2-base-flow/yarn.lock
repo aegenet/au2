@@ -2,15 +2,7 @@
 # yarn lockfile v1
 
 
-"@aurelia/fetch-client@2.0.0-alpha.24":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/fetch-client/-/fetch-client-2.0.0-alpha.24.tgz#9424e259ad7b98e3688f94f9444eafa1460aa4f1"
-  integrity sha512-26B9C2tjuwWjlomOYC7Otb8DGti6USmh5k6EoK698JEjUUgloJYK8s48XzN7pUXFODNVD85zDTAhAwI6Ztu3tQ==
-  dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.24"
-    "@aurelia/metadata" "2.0.0-alpha.24"
-
-"@aurelia/kernel@2.0.0-alpha.24":
+"@aurelia/kernel@^2.0.0-alpha.24":
   version "2.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.24.tgz#4f5aab5b230890a6b765770e18525571bc9d993b"
   integrity sha512-44wIM4pjX5Une/eLcGKbxgI1MysZKpylStOA42yU4KXts1BxykBjhOvkbskStL/vOk6pVO1UP6az9naTvVHlQA==
@@ -23,67 +15,10 @@
   resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.24.tgz#7af108f3e3870082578406ece2da41cb487c4079"
   integrity sha512-xDq6OaGklR/cUzslPK/hjqjINS0Aa2lS9Xr4aVUQimUNut9ybvLyc+WOhKQmYhGmc8NsAZO0atRoEfGouV9sBA==
 
-"@aurelia/platform-browser@2.0.0-alpha.24":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform-browser/-/platform-browser-2.0.0-alpha.24.tgz#c8f8e5414650cf91e7ef293f5854ac6c8243bd48"
-  integrity sha512-N4iXbdnizkHNx9Yw76JpiDLL8kGibjmdO/SnGw19ZnJar+XOgtlDukXKyzzBuFsHPS13sWddkcoaZcOC02SrMQ==
-  dependencies:
-    "@aurelia/platform" "2.0.0-alpha.24"
-
 "@aurelia/platform@2.0.0-alpha.24":
   version "2.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.24.tgz#154cb9b0d9c33dfbfcb25b5439ed9c4db625c539"
   integrity sha512-hAVJkmyASDftUyB0C5vvHmDUvErGHxL+d7Bw9UgOQbgddQBWIiU91fRcdPoSHp8cOFQUyg8rVUQEAsEOLBz18w==
-
-"@aurelia/route-recognizer@2.0.0-alpha.24":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/route-recognizer/-/route-recognizer-2.0.0-alpha.24.tgz#428b92f7f3bffbc4a19114398671129aa9cab4e6"
-  integrity sha512-dtJza1umMFUV/khd+bCFmMGmnqoW1AassNmrxM4/EfmkAP1skW+tT9sDuHHTYz6zAJNLY+RLvfX7cIrq+H96Bg==
-
-"@aurelia/router@2.0.0-alpha.24":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/router/-/router-2.0.0-alpha.24.tgz#484d820f66f9180a9bae9e725ea8455c44283d5f"
-  integrity sha512-cwY0ofDg6Hytd7PwzkQAiQyZzwSpFjCB+lojNBW7v8q9iZs7RNhuGRVc+ZpXQjb/g4shVSmvUMuA5BEY6BncTg==
-  dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.24"
-    "@aurelia/metadata" "2.0.0-alpha.24"
-    "@aurelia/platform" "2.0.0-alpha.24"
-    "@aurelia/platform-browser" "2.0.0-alpha.24"
-    "@aurelia/route-recognizer" "2.0.0-alpha.24"
-    "@aurelia/runtime" "2.0.0-alpha.24"
-    "@aurelia/runtime-html" "2.0.0-alpha.24"
-
-"@aurelia/runtime-html@2.0.0-alpha.24":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/runtime-html/-/runtime-html-2.0.0-alpha.24.tgz#9ea37ca646caa5c047a52bc26ccdb41c918a4df0"
-  integrity sha512-y+SfkbaTSoy4YY31idMQ64ajVwZSXLk9uIhpiAFY9m6amA7b8QxsLg1rWhRPpWDnmPymAtJSNN5sxkmScRt3ug==
-  dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.24"
-    "@aurelia/metadata" "2.0.0-alpha.24"
-    "@aurelia/platform" "2.0.0-alpha.24"
-    "@aurelia/platform-browser" "2.0.0-alpha.24"
-    "@aurelia/runtime" "2.0.0-alpha.24"
-
-"@aurelia/runtime@2.0.0-alpha.24":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/runtime/-/runtime-2.0.0-alpha.24.tgz#44a1cab82b4c16cf4ae77b3b2984f7fed7e81d5f"
-  integrity sha512-aWVa7dzWqESTzABGew6gMnNRo9qffOwkoe3n87IIP8qwhZqtJ2INE/jdP4haqw/NEYE4gp4Rtddpl8WuvDRL3w==
-  dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.24"
-    "@aurelia/metadata" "2.0.0-alpha.24"
-    "@aurelia/platform" "2.0.0-alpha.24"
-
-"@aurelia/testing@latest":
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/@aurelia/testing/-/testing-2.0.0-alpha.24.tgz#99670ac95b0bbaea4b2dcd37c88a21161b38f6af"
-  integrity sha512-gPkqCNClC8iSOZ6q9z2XHNzyQHu0i4XzlYhtWdM843AIVC1ilFoIP5HsEsNofIi69/BAtBFSu/nPM/rNcKf1CA==
-  dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.24"
-    "@aurelia/metadata" "2.0.0-alpha.24"
-    "@aurelia/platform" "2.0.0-alpha.24"
-    "@aurelia/platform-browser" "2.0.0-alpha.24"
-    "@aurelia/runtime" "2.0.0-alpha.24"
-    "@aurelia/runtime-html" "2.0.0-alpha.24"
 
 "@types/jest@^27.0.3":
   version "27.4.0"
@@ -92,6 +27,11 @@
   dependencies:
     jest-diff "^27.0.0"
     pretty-format "^27.0.0"
+
+"@types/mocha@^9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-9.1.0.tgz#baf17ab2cca3fcce2d322ebc30454bff487efad5"
+  integrity sha512-QCWHkbMv4Y5U9oW10Uxbr45qMMSzl4OzijsozynUAgx3kEHUdXB00udx2dWDQ7f2TU2a2uuiFaRZjCe3unPpeg==
 
 "@types/node@^16.11.10":
   version "16.11.25"
@@ -114,21 +54,6 @@ ansi-styles@^5.0.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
-
-aurelia@latest:
-  version "2.0.0-alpha.24"
-  resolved "https://registry.yarnpkg.com/aurelia/-/aurelia-2.0.0-alpha.24.tgz#ea3912fa1850a7c0a8049728005d08a0a67c832a"
-  integrity sha512-rVuzrGLjxofJjg2Z59TcCizYqp58T9WNsaw8dK9Fu8ql93YmxfFp3rz1r5GjVg4HPb8etJrQAeHymAqDfZklJg==
-  dependencies:
-    "@aurelia/fetch-client" "2.0.0-alpha.24"
-    "@aurelia/kernel" "2.0.0-alpha.24"
-    "@aurelia/metadata" "2.0.0-alpha.24"
-    "@aurelia/platform" "2.0.0-alpha.24"
-    "@aurelia/platform-browser" "2.0.0-alpha.24"
-    "@aurelia/route-recognizer" "2.0.0-alpha.24"
-    "@aurelia/router" "2.0.0-alpha.24"
-    "@aurelia/runtime" "2.0.0-alpha.24"
-    "@aurelia/runtime-html" "2.0.0-alpha.24"
 
 chalk@^4.0.0:
   version "4.1.2"
@@ -184,11 +109,6 @@ pretty-format@^27.0.0, pretty-format@^27.5.1:
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
 
-prismjs@^1.25.0:
-  version "1.27.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.27.0.tgz#bb6ee3138a0b438a3653dd4d6ce0cc6510a45057"
-  integrity sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==
-
 react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
@@ -200,8 +120,3 @@ supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
-
-typescript@^4.5.2:
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
-  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==

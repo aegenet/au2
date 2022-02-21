@@ -16,10 +16,7 @@ module.exports = function(
   const tempPath = path.join(options.directory ?? path.join(__dirname, '..'), '.nyc_output');
 
   return {
-    "include": [
-      "build/**/*.js",
-      "src/**/*.ts"
-    ],
+    "include": ["src/**"],
     "exclude": [
       "build/**/*.spec.js",
       "src/**/*.spec.ts"

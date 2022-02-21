@@ -1,6 +1,6 @@
 /**
  */
-module.exports = function() {
+ module.exports = function() {
   return {
     parser: '@typescript-eslint/parser', // Specifies the ESLint parser
     extends: [

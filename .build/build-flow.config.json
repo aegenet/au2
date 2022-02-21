@@ -1,4 +1,8 @@
 [{
+  "name": "au2-base-flow",
+  "links": [],
+  "publish": true
+}, {
   "name": "au2-code-mirror-5",
   "links": [],
   "publish": true

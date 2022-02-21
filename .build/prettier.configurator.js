@@ -1,6 +1,6 @@
 /**
  */
-module.exports = function() {
+ module.exports = function() {
   return {
     semi: true,
     trailingComma: "es5",

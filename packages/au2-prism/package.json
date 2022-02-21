@@ -6,7 +6,7 @@
   "files": [
     "dist"
   ],
-  "version": "0.1.0",
+  "version": "999.0.0",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-prism",
   "license": "UNLICENSED",
   "dependencies": {

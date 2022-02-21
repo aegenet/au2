@@ -1,0 +1,43 @@
+{
+  "name": "@aegenet/au2-base-flow",
+  "description": "Task flow utils based on Aurelia 2 kernel",
+  "version": "999.0.0",
+  "main": "./dist/node/au2-base-flow.bundle.js",
+  "browser": "./dist/web/au2-base-flow.bundle.js",
+  "typings": "./dist/node/bundle.d.ts",
+  "author": "Alexandre Genet",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-flow",
+  "dependencies": {},
+  "peerDependencies": {
+    "@aurelia/kernel": "^2.0.0-alpha.24"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^16.11.10",
+    "@aurelia/kernel": "^2.0.0-alpha.24"
+  },
+  "rave": {
+    "version": "src/version.ts"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "clean": "node ./../../node_modules/rimraf/bin ./dist && node ./../../node_modules/rimraf/bin ./coverage && node ./../../node_modules/rimraf/bin ./.nyc_output && node ./../../node_modules/rimraf/bin ./node_modules",
+    "lint": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",
+    "lint:fix": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx} --fix",
+    "test-browser": "node ./../../node_modules/jest/bin/jest --config ./jest.web.config.js",
+    "test-node": "node ./../../node_modules/ts-mocha/bin/ts-mocha src/**/*.spec.ts",
+    "analyze": "node ./../../node_modules/rimraf/bin dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
+    "build": "yarn run build:webpack",
+    "build:webpack": "node ./../../node_modules/rimraf/bin dist && node ./../../node_modules/webpack/bin/webpack --env production"
+  }
+}

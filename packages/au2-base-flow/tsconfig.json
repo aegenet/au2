@@ -1,0 +1,25 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "target": "ES2017",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "newLine": "LF"
+  },
+  "exclude": [
+    "./node_modules",
+    "./samples"
+  ],
+  "include": [
+    "test",
+    "src"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
