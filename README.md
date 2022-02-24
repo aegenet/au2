@@ -1,5 +1,5 @@
 [![Build Status](https://github.com/aegenet/au2/actions/workflows/ci.yml/badge.svg)](https://github.com/aegenet/au2/actions)
-[![codecov](https://codecov.io/gh/aegenet/au2/branch/master/graph/badge.svg?token=1C2ZAPPYAV)](https://codecov.io/gh/aegenet/au2)
+[![codecov](https://codecov.io/gh/aegenet/au2/branch/master/graph/badge.svg?token=DLR66JH77R)](https://codecov.io/gh/aegenet/au2)
 <br />
 
 # Aurelia 2 - Plugins & Tools monorepo
@@ -21,9 +21,9 @@
 
 
 # Coverage
-[![codecov](https://codecov.io/gh/aegenet/au2/branch/master/graph/badge.svg?token=1C2ZAPPYAV)](https://codecov.io/gh/aegenet/au2)
+[![codecov](https://codecov.io/gh/aegenet/au2/branch/master/graph/badge.svg?token=DLR66JH77R)](https://codecov.io/gh/aegenet/au2)
 
-![Coverage sunburst](https://codecov.io/gh/aegenet/au2/branch/master/graphs/sunburst.svg?token=1C2ZAPPYAV)
+![Coverage sunburst](https://codecov.io/gh/aegenet/au2/branch/master/graphs/sunburst.svg?token=DLR66JH77R)
 
-![Coverage tree](https://codecov.io/gh/aegenet/au2/branch/master/graphs/tree.svg?token=1C2ZAPPYAV)
+![Coverage tree](https://codecov.io/gh/aegenet/au2/branch/master/graphs/tree.svg?token=DLR66JH77R)
 
