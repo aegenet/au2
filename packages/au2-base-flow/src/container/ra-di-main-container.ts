@@ -78,4 +78,4 @@ class RaDIMainContainer {
   }
 }
 
-export { RaDIMainContainer as DIMainContainer };
+export { RaDIMainContainer };

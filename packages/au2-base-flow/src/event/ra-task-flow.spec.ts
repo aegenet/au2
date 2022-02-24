@@ -1,6 +1,6 @@
 import { IContainer } from '@aurelia/kernel';
 import { DIRaTaskFlow, IRaTaskFlow } from './i-ra-task-flow';
-import { DIMainContainer } from '../container/ra-di-main-container';
+import { RaDIMainContainer } from '../container/ra-di-main-container';
 import * as assert from 'assert';
 
 /** Delay operation */
@@ -19,13 +19,13 @@ describe('ra-task-flow', () => {
   let container: IContainer;
   let eventAggregator: IRaTaskFlow;
   commonBefore(() => {
-    container = DIMainContainer.create();
+    container = RaDIMainContainer.create();
     eventAggregator = container.get(DIRaTaskFlow);
   });
 
   commonAfter(() => {
     eventAggregator = undefined;
-    DIMainContainer.remove(container);
+    RaDIMainContainer.remove(container);
   });
 
   it('Register & publish', async () => {
