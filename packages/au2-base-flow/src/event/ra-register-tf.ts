@@ -83,7 +83,7 @@ export interface IRaTask {
 export const raTFSubscribers: { key: InterfaceSymbol; order?: number }[] = [];
 
 export function raTFSubscription(key: InterfaceSymbol, order?: number) {
-  return function (target: () => void) {
+  return function (...args: unknown[]) {
     raTFSubscribers.push({
       key,
       order,
