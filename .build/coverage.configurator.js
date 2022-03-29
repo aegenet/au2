@@ -25,7 +25,7 @@ module.exports = function(
       ".ts"
     ],
     "reporter": options.reporter ?? [
-      "json", "text-summary"
+      "json", "text-summary", "html"
     ],
     "report-dir": coveragePath,
     "temp-dir": tempPath,

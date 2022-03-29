@@ -1,0 +1,29 @@
+<demo-component view-model.ref="demoComponent">
+  <span slot="one" title="French">
+    <h5>Second slide label</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </span>
+  <span slot="two" title="English">
+    <h5>Third slide label</h5>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+  </span>
+</demo-component>
+
+<button click.delegate="demoComponent.select('two')">To Two</button>
+<button click.delegate="demoComponent.select('one')">To One</button>
+
+<hr>
+
+<demo-au-slot view-model.ref="demoComponent2">
+  <span au-slot="one" title="French">
+    <h5>Second slide label</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </span>
+  <span au-slot="two" title="English">
+    <h5>Third slide label</h5>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+  </span>
+</demo-au-slot>
+
+<button click.delegate="demoComponent2.select('two')">To Two</button>
+<button click.delegate="demoComponent2.select('one')">To One</button>

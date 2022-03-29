@@ -1,0 +1,14 @@
+<nav>
+  <div class="nav nav-tabs" role="tablist">
+    <a repeat.for="slotName of slotNames"
+        class="nav-link ${slotName === tabSlot ? 'active' : ''} pointer"
+        id="${uid}-${slotName}-tab"
+        role="tab" aria-controls="${uid}-${slotName}-content" aria-selected="true" click.delegate="select(slotName)">${slots[slotName].attributes.title.value}</a>
+  </div>
+</nav>
+<div class="tab-content">
+  <div 
+    class="tab-pane fade show active" id="${uid}-${tabSlot}-content" role="tabpanel" aria-labelledby="${uid}-${tabSlot}-tab">
+    <slot name.bind="tabSlot"></slot>
+  </div>
+</div>

@@ -4,6 +4,10 @@
       "name": "engine/au2-base-flow",
       "path": "./packages/au2-base-flow"
     },
+    {
+      "name": "components/au2-base-component",
+      "path": "./packages/au2-base-component"
+    },
 	  {
       "name": "components/code-mirror-5",
       "path": "./packages/au2-code-mirror-5"

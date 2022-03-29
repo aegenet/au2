@@ -49,7 +49,7 @@ module.exports = function(
     collectCoverage: true,
     collectCoverageFrom: ["src/**/*.ts", "!src/**/*.d.ts"],
     coverageReporters: options.reporter ?? [
-      "json", "text-summary"
+      "json", "text-summary", "html"
     ],
     globals: {
       "ts-jest": {
