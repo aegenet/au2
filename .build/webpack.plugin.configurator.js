@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const Dotenv = require('dotenv-webpack');
 const nodeExternals = require('webpack-node-externals');
+const { BundleDeclarationsWebpackPlugin } = require('bundle-declarations-webpack-plugin');
 
 const cssLoader = 'css-loader';
 
@@ -45,16 +46,17 @@ module.exports = function(
 ) {
   options = options ?? {};
   const directory = options.directory ?? process.cwd();
+  const indexPath = path.join(directory, './src/index.ts');
   return function (env, { analyze }) {
     const production = env.production || process.env.NODE_ENV === 'production';
     return {
-      target: production ? 'node' : 'web',
+      target: production ? 'node16' : 'web',
       mode: production ? 'production' : 'development',
       devtool: production ? undefined : 'eval-cheap-source-map',
       entry: {
         // Build only plugin in production mode,
         // build dev-app in non-production mode
-        entry: production ? './src/index.ts' : './dev-app/main.ts',
+        entry: production ? indexPath : './dev-app/main.ts',
       },
       output: {
         path: path.resolve(directory, 'dist',  options.subdir ?? ''),
@@ -63,7 +65,11 @@ module.exports = function(
       },
       resolve: {
         extensions: ['.ts', '.js'],
-        modules: [path.resolve(directory, 'src'), path.resolve(directory, 'dev-app'), 'node_modules'],
+        alias: {
+          [options.name]: path.join(directory, 'src'),
+          [`@${options.org}/${options.name}`]: path.join(directory, 'src/'),
+        },
+        modules: [path.resolve(directory, 'src'), path.resolve(directory, 'dev-app'), path.join(directory, 'node_modules')],
       },
       devServer: {
         historyApiFallback: true,
@@ -148,6 +154,7 @@ module.exports = function(
         production && nodeExternals(),
       ].filter(p => p),
       plugins: [
+        ... options.plugins ?? [],
         !production && new HtmlWebpackPlugin({ template: 'index.html' }),
         new Dotenv({
           path: `./.env${production ? '' : '.' + (process.env.NODE_ENV || 'development')}`,

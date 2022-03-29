@@ -1,1 +1,1 @@
-export { AU2BaseComponent } from './au2-base-component';
+export { BaseComponent } from './base-component';

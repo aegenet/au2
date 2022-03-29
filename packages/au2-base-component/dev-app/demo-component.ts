@@ -1,9 +1,9 @@
 import { bindable, customElement, IContainer, inject } from 'aurelia';
-import { AU2BaseComponent } from '../src';
+import { BaseComponent } from '../src';
 
 @customElement('demo-component')
 @inject(Element, IContainer)
-export class DemoComponent extends AU2BaseComponent {
+export class DemoComponent extends BaseComponent {
   /** Tab actuel */
   @bindable()
   public tabSlot?: string;

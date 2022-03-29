@@ -1,10 +1,10 @@
-import { bindable, IContainer, ICustomElementViewModel } from 'aurelia';
-import { IAuSlotsInfo } from '@aurelia/runtime-html';
+import { bindable, IAuSlotsInfo, ICustomElementViewModel } from '@aurelia/runtime-html';
+import { IContainer } from '@aurelia/kernel';
 
 /**
  * Classe de base des composants
  */
-export class AU2BaseComponent implements ICustomElementViewModel {
+export class BaseComponent implements ICustomElementViewModel {
   private static _COUNTER: number = 1;
 
   /** AU Slot informations */
@@ -55,7 +55,7 @@ export class AU2BaseComponent implements ICustomElementViewModel {
   public changed: (...args) => void = null;
 
   constructor(protected _element: Element, protected _container: IContainer) {
-    this.uid = `au2-comp-${AU2BaseComponent._COUNTER++}`;
+    this.uid = `au2-comp-${BaseComponent._COUNTER++}`;
     this._auSlotInfo = this._container.get(IAuSlotsInfo);
     // this.alertService = SharedContainer.instance.get(IAlertService);
   }
