@@ -24,6 +24,9 @@ jobs:
         scope: '@aegenet'
 
     - name: Install dependencies
+      env:
+        CI: true
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       run: yarn run dependencies
     - name: Our dependencies
       run: yarn
