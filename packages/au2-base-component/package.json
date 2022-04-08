@@ -1,6 +1,6 @@
 {
   "name": "@aegenet/au2-base-component",
-  "description": "DRAFT - Aurelia 2 - Prism View/Editor plugin",
+  "description": "Aurelia 2 - Base Component",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "author": "Alexandre Genet",
@@ -10,18 +10,18 @@
   "version": "999.0.0",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-component",
   "license": "UNLICENSED",
-  "dependencies": {
-  },
+  "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "peerDependencies": {
-  },
+  "peerDependencies": {},
   "devDependencies": {
-    "@aurelia/testing": "latest",
+    "@aegenet/belt-anti-bounce": "^999.1649280157577.0",
+    "@aurelia/i18n": "^2.0.0-alpha.27",
+    "@aurelia/testing": "^2.0.0-alpha.27",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.10",
-    "aurelia": "latest",
+    "aurelia": "^2.0.0-alpha.27",
     "typescript": "^4.5.2"
   },
   "scripts": {

@@ -21,8 +21,13 @@ describe('demo-component', () => {
         expect(vm.slotNames.length).toBe(2);
         expect(vm.slotNames[0]).toBe('one');
         expect(vm.slotNames[1]).toBe('two');
+        expect(Object.keys(vm.slots).length).toBe(2);
+        expect(vm.slots.one).toBeTruthy();
+        expect(vm.slots.two).toBeTruthy();
+
         await vm.dispose();
         expect(vm.slotNames.length).toBe(0);
+        // expect(Object.keys(vm.slots).length).toBe(0);
       }
     );
   });
@@ -46,12 +51,17 @@ describe('demo-component', () => {
         expect(vm.slotNames[0]).toBe('one');
         expect(vm.slotNames[1]).toBe('two');
 
+        expect(Object.keys(vm.slots).length).toBe(2);
+        expect(vm.slots.one).toBeTruthy();
+        expect(vm.slots.two).toBeTruthy();
+
         expect(vm.tabSlot).toBe(vm.slotNames[0]);
         vm.select(vm.slotNames[1]);
         await result.$aurelia.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.dispose();
         expect(vm.slotNames.length).toBe(0);
+        // expect(Object.keys(vm.slots).length).toBe(0);
       }
     );
   });

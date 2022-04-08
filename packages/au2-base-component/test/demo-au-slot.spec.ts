@@ -5,15 +5,15 @@ describe('demo-au-slot', () => {
   it('Slots', async () => {
     await renderInDOM(
       `<demo-au-slot view-model.ref="demoComponent2">
-      <span au-slot="one" title="French">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </span>
-      <span au-slot="two" title="English">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </span>
-    </demo-au-slot>`,
+          <span au-slot="one" title="French">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </span>
+          <span au-slot="two" title="English">
+            <h5>Third slide label</h5>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </span>
+        </demo-au-slot>`,
       [DemoAuSlot],
       async result => {
         const vm = getViewModel<DemoAuSlot>(result);
@@ -21,8 +21,12 @@ describe('demo-au-slot', () => {
         expect(vm.auSlotNames.length).toBe(2);
         expect(vm.auSlotNames[0]).toBe('one');
         expect(vm.auSlotNames[1]).toBe('two');
+        expect(Object.keys(vm.auSlots).length).toBe(2);
+        expect(vm.auSlots.one).toBeTruthy();
+        expect(vm.auSlots.two).toBeTruthy();
         await vm.dispose();
         expect(vm.auSlotNames.length).toBe(0);
+        expect(Object.keys(vm.auSlotNames).length).toBe(0);
       }
     );
   });
@@ -45,10 +49,14 @@ describe('demo-au-slot', () => {
         expect(vm.auSlotNames.length).toBe(2);
         expect(vm.auSlotNames[0]).toBe('one');
         expect(vm.auSlotNames[1]).toBe('two');
+        expect(Object.keys(vm.auSlots).length).toBe(2);
+        expect(vm.auSlots.one).toBeTruthy();
+        expect(vm.auSlots.two).toBeTruthy();
 
         expect(vm.tabSlot).toBe(vm.auSlotNames[0]);
         await vm.dispose();
         expect(vm.auSlotNames.length).toBe(0);
+        expect(Object.keys(vm.auSlotNames).length).toBe(0);
       }
     );
   });

@@ -12,12 +12,13 @@ export class DemoComponent extends BaseComponent {
     super(element, container);
   }
 
-  protected async _initialized(): Promise<void> {
+  /** @inheritdoc */
+  protected async _init(): Promise<void> {
     // Si pas de tab par défaut, nous sélectionnons le premier
     if (!this.tabSlot) {
       this.tabSlot = this.slotNames.length ? this.slotNames[0] : undefined;
     }
-    await super._initialized();
+    await super._init();
   }
 
   /**
