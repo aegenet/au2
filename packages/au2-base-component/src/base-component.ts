@@ -10,8 +10,6 @@ import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@
 export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IAntiBounceSupport {
   private static _COUNTER: number = 1;
   /**
-   * @internal
-   *
    * Instances of anti-bounce
    * @remark Don't edit manually
    *
