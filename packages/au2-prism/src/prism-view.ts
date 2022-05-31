@@ -26,7 +26,7 @@ export class PrismView implements ICustomElementViewModel {
   public code: string;
 
   @bindable()
-  public language = 'javascript';
+  public language: string = 'javascript';
 
   @bindable()
   public lineNumbers: boolean = false;

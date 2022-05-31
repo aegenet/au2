@@ -69,7 +69,7 @@ module.exports = function(
           [options.name]: path.join(directory, 'src'),
           [`@${options.org}/${options.name}`]: path.join(directory, 'src/'),
         },
-        modules: [path.resolve(directory, 'src'), path.resolve(directory, 'dev-app'), path.join(directory, 'node_modules')],
+        modules: [path.resolve(directory, 'src'), path.resolve(directory, 'dev-app'), path.join(directory, 'node_modules'), 'node_modules'],
       },
       devServer: {
         historyApiFallback: true,

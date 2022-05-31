@@ -86,7 +86,7 @@
     "@aurelia/metadata" "2.0.0-alpha.33"
     "@aurelia/platform" "2.0.0-alpha.33"
 
-"@aurelia/testing@latest":
+"@aurelia/testing@^2.0.0-alpha.33":
   version "2.0.0-alpha.33"
   resolved "https://registry.yarnpkg.com/@aurelia/testing/-/testing-2.0.0-alpha.33.tgz#d4ee851877f8ffa638555270239fca2908d4a82f"
   integrity sha512-hywUK4LnL+v+eXIQ6YNqROcuT8r0C1+UKe8rDnmOzRUn9MdAW8UhUOKnBXrgZ+shVJorE86uF7PgkoOVALHezw==
@@ -128,7 +128,7 @@ ansi-styles@^5.0.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-aurelia@latest:
+aurelia@^2.0.0-alpha.33:
   version "2.0.0-alpha.33"
   resolved "https://registry.yarnpkg.com/aurelia/-/aurelia-2.0.0-alpha.33.tgz#045564bc175e522fe798671adcd4ae727490a775"
   integrity sha512-XVE3Zl1EibWMMNbkyV64oDWwUWT55QItUdHCt/JAO/L1Oh3mCweh+KHk//2nUIJTG1aAIqn2BgVYzaTAnZogjQ==

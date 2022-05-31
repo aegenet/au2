@@ -16,10 +16,10 @@
     "codemirror": "^5.65.0"
   },
   "devDependencies": {
-    "@aurelia/testing": "latest",
+    "@aurelia/testing": "^2.0.0-alpha.33",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.10",
-    "aurelia": "latest",
+    "aurelia": "^2.0.0-alpha.33",
     "typescript": "^4.5.2"
   },
   "scripts": {
