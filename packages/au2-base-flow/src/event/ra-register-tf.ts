@@ -1,4 +1,4 @@
-import { IDisposable, kebabCase, isNullOrUndefined, IContainer, InterfaceSymbol } from '@aurelia/kernel';
+import { IDisposable, kebabCase, IContainer, InterfaceSymbol } from '@aurelia/kernel';
 import { IRaTaskFlow } from './i-ra-task-flow';
 
 /**
@@ -152,7 +152,7 @@ export abstract class RaTaskFlowSubscription implements IDisposable {
   }
 
   private async __callMethod(f: IRaTask, args: unknown[]) {
-    if (isNullOrUndefined(args)) {
+    if (args == null) {
       await Promise.resolve((this as any)[f.methodName]());
     } else if (args instanceof Array) {
       await Promise.resolve((this as any)[f.methodName](...args));

@@ -1,6 +1,6 @@
-import { disposeAntiBounces, IAntiBounce, IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
+import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
 import { I18N } from '@aurelia/i18n';
-import { IContainer, IEventAggregator, IRouter, IRouteViewModel, Params, RouteNode } from 'aurelia';
+import { IContainer, IEventAggregator, IPlatform, IRouter, type IRouteViewModel, type TaskQueue, type Params, type RouteNode } from 'aurelia';
 
 /**
  * Base Page
@@ -29,6 +29,16 @@ export abstract class BasePage implements IRouteViewModel, IAntiBounceSupport {
    */
   public readonly i18n: I18N;
 
+  /** Router */
+  private readonly _router: IRouter;
+
+  /**
+   * Platform
+   * @service
+   * @core
+   */
+  private readonly _platform: IPlatform;
+
   /**
    * Has been init ? (attached & _init())
    * @core
@@ -40,10 +50,10 @@ export abstract class BasePage implements IRouteViewModel, IAntiBounceSupport {
    * @core
    */
   public lastError?: string;
-  private _router: IRouter;
 
   constructor(protected readonly _container: IContainer) {
     this._ea = this._container.get(IEventAggregator);
+    this._platform = this._container.get(IPlatform);
     if (this._container.has(I18N, true)) {
       this.i18n = this._container.get(I18N);
     } else {
@@ -78,5 +88,14 @@ export abstract class BasePage implements IRouteViewModel, IAntiBounceSupport {
     disposeAntiBounces(this);
     await Promise.resolve(this._deinit(next, current));
     this._isInit = false;
+  }
+
+  /**
+   * TaskQueue
+   * @remark Can be used to rugged SSR
+   * @core
+   */
+  public get taskQueue(): TaskQueue {
+    return this._platform.taskQueue;
   }
 }

@@ -17,11 +17,11 @@
   "peerDependencies": {},
   "devDependencies": {
     "@aegenet/belt-anti-bounce": "^999.1649280157577.0",
-    "@aurelia/i18n": "^2.0.0-alpha.27",
-    "@aurelia/testing": "^2.0.0-alpha.27",
+    "@aurelia/i18n": "^2.0.0-alpha.33",
+    "@aurelia/testing": "^2.0.0-alpha.33",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.10",
-    "aurelia": "^2.0.0-alpha.27",
+    "aurelia": "^2.0.0-alpha.33",
     "typescript": "^4.5.2"
   },
   "scripts": {

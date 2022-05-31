@@ -1,4 +1,4 @@
-import { Platform } from '@aurelia/kernel';
+import { Platform } from '@aurelia/platform';
 
 export function raPlatform() {
   return Platform.getOrCreate<

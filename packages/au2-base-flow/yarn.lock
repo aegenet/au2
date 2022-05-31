@@ -2,41 +2,41 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-alpha.24":
-  version "2.0.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.27.tgz#a781dcbde4eaa915196717bc8164497172e6e880"
-  integrity sha512-Cd5GIUtPzWoWtvEPNNsBv6fl8N1Pz0LOKlXiUGvnIVEtUYSTYcM3JdLehpayLWGzvVubU95xo0jhunwVompyKw==
+"@aurelia/kernel@^2.0.0-alpha.33":
+  version "2.0.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.33.tgz#e7bc567dfe3549019339d11e4e8921e5a63259b1"
+  integrity sha512-cfKvl8yS3DDbtvUQZs7YaZZh48o8SPMBd+21Z6lGWV3cSTVAG4l0wyQUrSO+TTZ/lrUZj4IiqvXx33iGv1/VTw==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.27"
-    "@aurelia/platform" "2.0.0-alpha.27"
+    "@aurelia/metadata" "2.0.0-alpha.33"
+    "@aurelia/platform" "2.0.0-alpha.33"
 
-"@aurelia/metadata@2.0.0-alpha.27":
-  version "2.0.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.27.tgz#a5f84e49d69108bbdfc0049d070fc3ba84337058"
-  integrity sha512-PIWhbNtZvQCC0POo9C7MPKpmnVnMRf77GRoDdnY1Q5VK3c0jN3ZJ3z85sxb2cCs7SdMIdujEJ0helG3d2sZjLg==
+"@aurelia/metadata@2.0.0-alpha.33":
+  version "2.0.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.33.tgz#90df764100d50759b73f92772c0f03fa58b551df"
+  integrity sha512-Vyn0dfZrABPRCuTCybyM6N2VToYWqqJ/8kxBWZWEPf6VO6hxphYnr+i8GSipK2ZvXO+PrPSIfh7ytPzdBfgMKg==
 
-"@aurelia/platform@2.0.0-alpha.27":
-  version "2.0.0-alpha.27"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.27.tgz#1180592deb88b54945dbfb6a741c8208b3e5e777"
-  integrity sha512-UrgcSTO+71O6swsfl4fTONJ6JHRJwXIKUPHwRRGpGdirRU9r3ii9YW4bt2wKrD4CeYBbnSx2RvgAfNieqkONkA==
+"@aurelia/platform@2.0.0-alpha.33":
+  version "2.0.0-alpha.33"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.33.tgz#d3a3e4b6466a9c2c22cd2bca6c2ede9f774d8abc"
+  integrity sha512-Rn21GvVDDJXzKI+SY3CCDy76r5s1BAZFjn+P2Qq5nj/5Tv8Zw71O/qs+pVQ+OMLU0mR1Iby75RdLucFADP5n8Q==
 
 "@types/jest@^27.0.3":
-  version "27.4.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.4.1.tgz#185cbe2926eaaf9662d340cc02e548ce9e11ab6d"
-  integrity sha512-23iPJADSmicDVrWk+HT58LMJtzLAnB2AgIzplQuq/bSrGaxCrlvRFjGbXmamnnk/mAmCdLStiGqggu28ocUyiw==
+  version "27.5.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.5.1.tgz#2c8b6dc6ff85c33bcd07d0b62cb3d19ddfdb3ab9"
+  integrity sha512-fUy7YRpT+rHXto1YlL+J9rs0uLGyiqVt3ZOTQR+4ROc47yNl8WLdVLgUloBRhOxP1PZvguHl44T3H0wAWxahYQ==
   dependencies:
     jest-matcher-utils "^27.0.0"
     pretty-format "^27.0.0"
 
 "@types/mocha@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-9.1.0.tgz#baf17ab2cca3fcce2d322ebc30454bff487efad5"
-  integrity sha512-QCWHkbMv4Y5U9oW10Uxbr45qMMSzl4OzijsozynUAgx3kEHUdXB00udx2dWDQ7f2TU2a2uuiFaRZjCe3unPpeg==
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-9.1.1.tgz#e7c4f1001eefa4b8afbd1eee27a237fee3bf29c4"
+  integrity sha512-Z61JK7DKDtdKTWwLeElSEBcWGRLY8g95ic5FoQqI9CMx0ns/Ghep3B4DfcEimiKMvtamNVULVNKEsiwV3aQmXw==
 
 "@types/node@^16.11.10":
-  version "16.11.26"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.26.tgz#63d204d136c9916fb4dcd1b50f9740fe86884e47"
-  integrity sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==
+  version "16.11.37"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.37.tgz#770ff10c8c6d84404c0d3816f1d321befb85b0a0"
+  integrity sha512-U8+EA3a23YkBLKQFE9rxFw4A2YWFttRyQ15mz+dMsXiAo9zbdizFndBMz1aLpV2k7M+syncZy/cady/9pC3sPg==
 
 ansi-regex@^5.0.1:
   version "5.0.1"

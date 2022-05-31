@@ -1,6 +1,6 @@
 import { bindable, IAuSlotsInfo, type ICustomElementViewModel } from '@aurelia/runtime-html';
 import { IContainer } from '@aurelia/kernel';
-import { IEventAggregator } from 'aurelia';
+import { IEventAggregator, IPlatform, type TaskQueue } from 'aurelia';
 import { I18N } from '@aurelia/i18n';
 import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
 
@@ -30,6 +30,13 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
    * @core
    */
   protected readonly _ea: IEventAggregator;
+
+  /**
+   * Platform
+   * @service
+   * @core
+   */
+  private readonly _platform: IPlatform;
 
   /**
    * i18n
@@ -112,6 +119,7 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
     this.uid = `au2-comp-${BaseComponent._COUNTER++}`;
     this._auSlotInfo = this._container.get(IAuSlotsInfo);
     this._ea = this._container.get(IEventAggregator);
+    this._platform = this._container.get(IPlatform);
     if (this._container.has(I18N, true)) {
       this.i18n = this._container.get(I18N);
     } else {
@@ -185,5 +193,14 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
     disposeAntiBounces(this);
     await Promise.resolve(this._deinit());
     this._isInit = false;
+  }
+
+  /**
+   * TaskQueue
+   * @remark Can be used to rugged SSR
+   * @core
+   */
+  public get taskQueue(): TaskQueue {
+    return this._platform.taskQueue;
   }
 }
