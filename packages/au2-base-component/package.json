@@ -34,7 +34,7 @@
     "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production && yarn run build:dts",
     "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.js",
-    "build:dts": "tsc src/index.ts --stripInternal --skipLibCheck --emitDecoratorMetadata --experimentalDecorators --moduleResolution node --declaration --emitDeclarationOnly --outDir ./dist",
+    "build:dts": "tsc src/index.ts --target ES2017 --stripInternal --skipLibCheck --emitDecoratorMetadata --experimentalDecorators --moduleResolution node --declaration --emitDeclarationOnly --outDir ./dist",
     "tsc": "echo nothing",
     "test-node": "yarn run test"
   }
