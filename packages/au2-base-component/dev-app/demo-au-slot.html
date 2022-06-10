@@ -3,7 +3,8 @@
     <a repeat.for="slotName of auSlotNames"
         class="nav-link ${slotName === tabSlot ? 'active' : ''} pointer"
         id="${uid}-${slotName}-tab"
-        role="tab" aria-controls="${uid}-${slotName}-content" aria-selected="true" click.delegate="select(slotName)">${slotName}</a>
+        role="tab" aria-controls="${uid}-${slotName}-content"
+        aria-selected="true" click.delegate="select(slotName)">${slotName}</a>
   </div>
 </nav>
 

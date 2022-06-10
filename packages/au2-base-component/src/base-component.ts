@@ -1,5 +1,4 @@
-import { IContainer } from '@aurelia/kernel';
-import { type ICustomElementViewModel, IEventAggregator, IPlatform, type TaskQueue, IAuSlotsInfo, bindable } from 'aurelia';
+import { type ICustomElementViewModel, IEventAggregator, IPlatform, type TaskQueue, IAuSlotsInfo, bindable, type IContainer } from 'aurelia';
 import { I18N } from '@aurelia/i18n';
 import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
 

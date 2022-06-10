@@ -10,87 +10,87 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@aurelia/kernel@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.33.tgz#e7bc567dfe3549019339d11e4e8921e5a63259b1"
-  integrity sha512-cfKvl8yS3DDbtvUQZs7YaZZh48o8SPMBd+21Z6lGWV3cSTVAG4l0wyQUrSO+TTZ/lrUZj4IiqvXx33iGv1/VTw==
+"@aurelia/kernel@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.35.tgz#4a2e6453b3936b802949bb34f049e4cbb01f75aa"
+  integrity sha512-MrrCRW42Kfbve/f1lU7rJFGTbQkmGbjALC89q9Pn4QDqK6eVNRikEmPtcxL27/ra077HHA0zmjSLcvfGDeYxjw==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.33"
-    "@aurelia/platform" "2.0.0-alpha.33"
+    "@aurelia/metadata" "2.0.0-alpha.35"
+    "@aurelia/platform" "2.0.0-alpha.35"
 
-"@aurelia/metadata@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.33.tgz#90df764100d50759b73f92772c0f03fa58b551df"
-  integrity sha512-Vyn0dfZrABPRCuTCybyM6N2VToYWqqJ/8kxBWZWEPf6VO6hxphYnr+i8GSipK2ZvXO+PrPSIfh7ytPzdBfgMKg==
+"@aurelia/metadata@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.35.tgz#a74bfdd39ceb5ef6e93bc92fdb24e90d04275819"
+  integrity sha512-EPCyMLSxM4+ZD0VEqUGtcJiTbEWi4xox6pSkPDy+Jc1JSxNb7X//NNMTUZuyQoVoVP1KU/rHDUaZNTemmaXgLA==
 
-"@aurelia/platform-browser@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform-browser/-/platform-browser-2.0.0-alpha.33.tgz#c9c4058d5975ab052d5fa093056748845707ed7a"
-  integrity sha512-Lmx74yG6ifA7L29EmNTHvhuFnJ7L84xBtX6WMyyAlHavr1UL6PnB63ZGjesDj6w0xaRlpoBSRHKzA4ZrUqexkw==
+"@aurelia/platform-browser@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform-browser/-/platform-browser-2.0.0-alpha.35.tgz#1ac358a98b904b7d44fcb6e1e7ac0152328dc749"
+  integrity sha512-kpYWfcAAjKB8g4GS3GxapwuTpgkJa0s4mA3LLo7Lz0mBeMXN9BaxaihiS3488aOVl0MfgLt/Los9ewpm3cLEHw==
   dependencies:
-    "@aurelia/platform" "2.0.0-alpha.33"
+    "@aurelia/platform" "2.0.0-alpha.35"
 
-"@aurelia/platform@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.33.tgz#d3a3e4b6466a9c2c22cd2bca6c2ede9f774d8abc"
-  integrity sha512-Rn21GvVDDJXzKI+SY3CCDy76r5s1BAZFjn+P2Qq5nj/5Tv8Zw71O/qs+pVQ+OMLU0mR1Iby75RdLucFADP5n8Q==
+"@aurelia/platform@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.35.tgz#789d7402d45395b51ee21ea5086fc8ed44c56f5a"
+  integrity sha512-KDycYWBLawvLfLl1nmnYlOCDp73JzxZQs08ZrqWU5xWfEBF1ZMrjtYPDORkF4uBI0ERoa46FSB/q8qry7aAfqA==
 
-"@aurelia/plugin-conventions@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/plugin-conventions/-/plugin-conventions-2.0.0-alpha.33.tgz#7280196f712a3788f450f874f8f6019ff73ac038"
-  integrity sha512-H+B/z98JIVp32Q4E+krSgxgyiiGq5DKpztu94IIDD9ucth9kasW1NeWWgxXA0qWQJKgRBrFDMjlzQMpXqrxjbg==
+"@aurelia/plugin-conventions@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/plugin-conventions/-/plugin-conventions-2.0.0-alpha.35.tgz#4ff866b81a06b13738c166602ebb58b8f82c9efa"
+  integrity sha512-ERcb/6ucBvLM+eks7A2H8UL793b1hwRgtIsJyTyWwJFnqGCiG583S5PhwirgxXDpEA31oqSnYw+mkct3gg2S8Q==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.33"
-    "@aurelia/metadata" "2.0.0-alpha.33"
-    "@aurelia/platform" "2.0.0-alpha.33"
-    "@aurelia/runtime" "2.0.0-alpha.33"
-    "@aurelia/runtime-html" "2.0.0-alpha.33"
+    "@aurelia/kernel" "2.0.0-alpha.35"
+    "@aurelia/metadata" "2.0.0-alpha.35"
+    "@aurelia/platform" "2.0.0-alpha.35"
+    "@aurelia/runtime" "2.0.0-alpha.35"
+    "@aurelia/runtime-html" "2.0.0-alpha.35"
     modify-code "^2.0.0"
     parse5 "^5.1.1"
-    typescript "4.7.2"
+    typescript "4.7.3"
 
-"@aurelia/runtime-html@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/runtime-html/-/runtime-html-2.0.0-alpha.33.tgz#6ac882cd7e43a5154ebc249450931d9b6095b79b"
-  integrity sha512-HlXCnHrq/RcMI2p/0SPbGAbLRhM7+jtm4Xw1AVT65hGCuYHQ3JaZpqZFuUBnMWig+DGqKmhJD0vlJMzP+fCG5g==
+"@aurelia/runtime-html@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/runtime-html/-/runtime-html-2.0.0-alpha.35.tgz#aff70363aaacb150f41a8cf56913a60e841a7446"
+  integrity sha512-K2fKfom1NfUVgZNOhBWfl+MntwoW2SGuB8BtQcy6ZyS+cHoCK6oeJgG9qOdTSzmPqZyY5R0VHN03r4lY0+35RQ==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.33"
-    "@aurelia/metadata" "2.0.0-alpha.33"
-    "@aurelia/platform" "2.0.0-alpha.33"
-    "@aurelia/platform-browser" "2.0.0-alpha.33"
-    "@aurelia/runtime" "2.0.0-alpha.33"
+    "@aurelia/kernel" "2.0.0-alpha.35"
+    "@aurelia/metadata" "2.0.0-alpha.35"
+    "@aurelia/platform" "2.0.0-alpha.35"
+    "@aurelia/platform-browser" "2.0.0-alpha.35"
+    "@aurelia/runtime" "2.0.0-alpha.35"
 
-"@aurelia/runtime@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/runtime/-/runtime-2.0.0-alpha.33.tgz#cf5c61f76a2259330d03bdc59399de0c3d1a6c9c"
-  integrity sha512-XDkmEIc+MO0W7jAlKzRxsxnnm7YNa50D70phhRsApe61BUrel/IdIJer8A1tl9voNj/NRMn4DSRU1XPdIAG0nw==
+"@aurelia/runtime@2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/runtime/-/runtime-2.0.0-alpha.35.tgz#707d51fee0e86dcac2a5e29f59706819d85ad15f"
+  integrity sha512-RFhFZRFQRdrYPxYkj7Rm3JLyPRc8qrib47N0nMzLccwMk8o1Hh3Ef41FIM8Izh0AeMl8XOe7C0GalZHVeikokA==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.33"
-    "@aurelia/metadata" "2.0.0-alpha.33"
-    "@aurelia/platform" "2.0.0-alpha.33"
+    "@aurelia/kernel" "2.0.0-alpha.35"
+    "@aurelia/metadata" "2.0.0-alpha.35"
+    "@aurelia/platform" "2.0.0-alpha.35"
 
-"@aurelia/ts-jest@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/ts-jest/-/ts-jest-2.0.0-alpha.33.tgz#825cfaa57dd3979e53dfaac0aebaa2642daca5f1"
-  integrity sha512-8KSt0BqWhhlD+czj/iRjHWwU4Xm1flNhNB9imJkgtq1D7EWaf38nlkRH5luB3yJ1wuMSvVug92rxjyspEaaUmQ==
+"@aurelia/ts-jest@^2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/ts-jest/-/ts-jest-2.0.0-alpha.35.tgz#88aae0047164104e0c9594b0a74e2ca8e49d0d11"
+  integrity sha512-wuBXR0Q10LVO1b80vavQHDk+uLx0IHfI/xw8DHjRsObgt21hW2sNXRA6dNrmvJOTFEMGi9vdscLMv399AdpwOA==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.33"
-    "@aurelia/metadata" "2.0.0-alpha.33"
-    "@aurelia/platform" "2.0.0-alpha.33"
-    "@aurelia/plugin-conventions" "2.0.0-alpha.33"
-    "@aurelia/runtime" "2.0.0-alpha.33"
-    ts-jest "^27.1.4"
+    "@aurelia/kernel" "2.0.0-alpha.35"
+    "@aurelia/metadata" "2.0.0-alpha.35"
+    "@aurelia/platform" "2.0.0-alpha.35"
+    "@aurelia/plugin-conventions" "2.0.0-alpha.35"
+    "@aurelia/runtime" "2.0.0-alpha.35"
+    ts-jest "^28.0.4"
 
-"@aurelia/webpack-loader@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@aurelia/webpack-loader/-/webpack-loader-2.0.0-alpha.33.tgz#a2128117e454345a37ef29be4c06c0629e1b73c9"
-  integrity sha512-8BbP7nj5qYKqD3uBfAnKlAQcKnp7nxaOpiigSodZowAy5bkIerGcxs7RFeKfLbemp+C1KVEwSeJD5PeyS/98Jg==
+"@aurelia/webpack-loader@^2.0.0-alpha.35":
+  version "2.0.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@aurelia/webpack-loader/-/webpack-loader-2.0.0-alpha.35.tgz#82da08347d969216d2ed510699055b1e085ef792"
+  integrity sha512-UBMUT6oEn5euNqryAEhrfFNrnf2Dy8HTco1ICMY/j48jCoa7xhNvETLCo4gsWcoC2/ROnq/doUiK05rVZXeJGA==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.33"
-    "@aurelia/metadata" "2.0.0-alpha.33"
-    "@aurelia/platform" "2.0.0-alpha.33"
-    "@aurelia/plugin-conventions" "2.0.0-alpha.33"
-    "@aurelia/runtime" "2.0.0-alpha.33"
+    "@aurelia/kernel" "2.0.0-alpha.35"
+    "@aurelia/metadata" "2.0.0-alpha.35"
+    "@aurelia/platform" "2.0.0-alpha.35"
+    "@aurelia/plugin-conventions" "2.0.0-alpha.35"
+    "@aurelia/runtime" "2.0.0-alpha.35"
     loader-utils "^2.0.0"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.7":
@@ -668,6 +668,13 @@
     terminal-link "^2.0.0"
     v8-to-istanbul "^8.1.0"
 
+"@jest/schemas@^28.0.2":
+  version "28.0.2"
+  resolved "https://registry.yarnpkg.com/@jest/schemas/-/schemas-28.0.2.tgz#08c30df6a8d07eafea0aef9fb222c5e26d72e613"
+  integrity sha512-YVDJZjd4izeTDkij00vHHAymNXQ6WWsdChFRK86qck6Jpr3DCL5W3Is3vslviRlP+bLuMYRLbdp98amMvqudhA==
+  dependencies:
+    "@sinclair/typebox" "^0.23.3"
+
 "@jest/source-map@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/source-map/-/source-map-27.5.1.tgz#6608391e465add4205eae073b55e7f279e04e8cf"
@@ -727,6 +734,18 @@
     "@types/istanbul-reports" "^3.0.0"
     "@types/node" "*"
     "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+
+"@jest/types@^28.1.1":
+  version "28.1.1"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-28.1.1.tgz#d059bbc80e6da6eda9f081f293299348bd78ee0b"
+  integrity sha512-vRXVqSg1VhDnB8bWcmvLzmg0Bt9CRKVgHPXqYwvWMX3TvAjeO+nRuK6+VdTKCtWOvYlmkF/HqNAL/z+N3B53Kw==
+  dependencies:
+    "@jest/schemas" "^28.0.2"
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
 "@jridgewell/gen-mapping@^0.1.0":
@@ -807,6 +826,11 @@
   version "1.0.0-next.21"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
+
+"@sinclair/typebox@^0.23.3":
+  version "0.23.5"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.23.5.tgz#93f7b9f4e3285a7a9ade7557d9a8d36809cbc47d"
+  integrity sha512-AFBVi/iT4g20DHoujvMH1aEDn8fGJh4xsRGCP6d8RpLPMqsNPvW01Jcn0QysXTsg++/xj25NmJsGyH9xug/wKg==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
@@ -1066,6 +1090,13 @@
   version "16.0.4"
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-16.0.4.tgz#26aad98dd2c2a38e421086ea9ad42b9e51642977"
   integrity sha512-T8Yc9wt/5LbJyCaLiHPReJa0kApcIgJ7Bn735GjItUfh08Z1pJvu8QZqb9s+mMvKV6WUQRV7K2R46YbjMXTTJw==
+  dependencies:
+    "@types/yargs-parser" "*"
+
+"@types/yargs@^17.0.8":
+  version "17.0.10"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.10.tgz#591522fce85d8739bca7b8bb90d048e4478d186a"
+  integrity sha512-gmEaFwpj/7f/ROdtIlci1R1VYU1J4j95m8T+Tj3iBgiBFKg1foE/PSl93bBd5T9LDXNPo8UlNN6W0qwD8O5OaA==
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -4412,12 +4443,24 @@ jest-transform-stub@^2.0.0:
   resolved "https://registry.yarnpkg.com/jest-transform-stub/-/jest-transform-stub-2.0.0.tgz#19018b0851f7568972147a5d60074b55f0225a7d"
   integrity sha512-lspHaCRx/mBbnm3h4uMMS3R5aZzMwyNpNIJLXj4cEsV0mIUtS4IjYJLSoyjRCtnxb6RIGJ4NL2quZzfIeNhbkg==
 
-jest-util@^27.0.0, jest-util@^27.5.1:
+jest-util@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-27.5.1.tgz#3ba9771e8e31a0b85da48fe0b0891fb86c01c2f9"
   integrity sha512-Kv2o/8jNvX1MQ0KGtw480E/w4fBCDOnH6+6DmeKi6LZUIlKA5kwY0YNdlzaWTiVgxqAqik11QyxDOKk543aKXw==
   dependencies:
     "@jest/types" "^27.5.1"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    ci-info "^3.2.0"
+    graceful-fs "^4.2.9"
+    picomatch "^2.2.3"
+
+jest-util@^28.0.0:
+  version "28.1.1"
+  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-28.1.1.tgz#ff39e436a1aca397c0ab998db5a51ae2b7080d05"
+  integrity sha512-FktOu7ca1DZSyhPAxgxB6hfh2+9zMoJ7aEQA759Z6p45NuO8mWcqujH+UdHlCm/V6JTWwDztM2ITCzU1ijJAfw==
+  dependencies:
+    "@jest/types" "^28.1.1"
     "@types/node" "*"
     chalk "^4.0.0"
     ci-info "^3.2.0"
@@ -4552,17 +4595,17 @@ json-stable-stringify@^1.0.0, json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json5@2.x, json5@^2.1.2, json5@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
-  integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
-
 json5@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
   integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
   dependencies:
     minimist "^1.2.0"
+
+json5@^2.1.2, json5@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
+  integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
 
 json@^11.0.0:
   version "11.0.0"
@@ -6527,19 +6570,19 @@ trim-newlines@^3.0.0:
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
   integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
 
-ts-jest@^27.1.4:
-  version "27.1.5"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-27.1.5.tgz#0ddf1b163fbaae3d5b7504a1e65c914a95cff297"
-  integrity sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==
+ts-jest@^28.0.4:
+  version "28.0.4"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-28.0.4.tgz#0ab705a60fc4b9f3506f35e26edfa9e9c915c31b"
+  integrity sha512-S6uRDDdCJBvnZqyGjB4VCnwbQrbgdL8WPeP4jevVSpYsBaeGRQAIS08o3Svav2Ex+oXwLgJ/m7F24TNq62kA1A==
   dependencies:
     bs-logger "0.x"
     fast-json-stable-stringify "2.x"
-    jest-util "^27.0.0"
-    json5 "2.x"
+    jest-util "^28.0.0"
+    json5 "^2.2.1"
     lodash.memoize "4.x"
     make-error "1.x"
     semver "7.x"
-    yargs-parser "20.x"
+    yargs-parser "^20.x"
 
 ts-loader@^9.2.6:
   version "9.3.0"
@@ -6687,7 +6730,12 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.7.2, typescript@>=3.0.1, typescript@^4.4.3:
+typescript@4.7.3:
+  version "4.7.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.3.tgz#8364b502d5257b540f9de4c40be84c98e23a129d"
+  integrity sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==
+
+typescript@>=3.0.1, typescript@^4.4.3:
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
   integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
@@ -7162,11 +7210,6 @@ yargs-parser@20.2.4:
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.4.tgz#b42890f14566796f85ae8e3a25290d205f154a54"
   integrity sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
 
-yargs-parser@20.x, yargs-parser@^20.2.2, yargs-parser@^20.2.3:
-  version "20.2.9"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.9.tgz#2eb7dc3b0289718fc295f362753845c41a0c94ee"
-  integrity sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==
-
 yargs-parser@^18.1.2:
   version "18.1.3"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-18.1.3.tgz#be68c4975c6b2abf469236b0c870362fab09a7b0"
@@ -7174,6 +7217,11 @@ yargs-parser@^18.1.2:
   dependencies:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
+
+yargs-parser@^20.2.2, yargs-parser@^20.2.3, yargs-parser@^20.x:
+  version "20.2.9"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-20.2.9.tgz#2eb7dc3b0289718fc295f362753845c41a0c94ee"
+  integrity sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==
 
 yargs-parser@^21.0.0:
   version "21.0.1"

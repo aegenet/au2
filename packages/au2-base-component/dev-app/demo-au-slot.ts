@@ -1,7 +1,11 @@
 import { bindable, customElement, IContainer, inject } from 'aurelia';
 import { BaseComponent } from '../src';
 
-@customElement('demo-au-slot')
+import template from './demo-au-slot.html';
+@customElement({
+  name: 'demo-au-slot',
+  template,
+})
 @inject(Element, IContainer)
 export class DemoAuSlot extends BaseComponent {
   /** Tab actuel */
@@ -18,5 +22,13 @@ export class DemoAuSlot extends BaseComponent {
       this.tabSlot = this.auSlotNames.length ? this.auSlotNames[0] : undefined;
     }
     await super._init();
+  }
+
+  /**
+   * Sélectionne un tab
+   * @param tabSlot
+   */
+  public select(tabSlot: string): void {
+    this.tabSlot = tabSlot;
   }
 }

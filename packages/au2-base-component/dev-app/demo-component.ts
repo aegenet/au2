@@ -1,7 +1,14 @@
-import { bindable, customElement, IContainer, inject } from 'aurelia';
+import { bindable, customElement, IContainer, inject, useShadowDOM } from 'aurelia';
 import { BaseComponent } from '../src';
 
-@customElement('demo-component')
+import template from './demo-component.html';
+@customElement({
+  name: 'demo-component',
+  template,
+})
+@useShadowDOM({
+  mode: 'open',
+})
 @inject(Element, IContainer)
 export class DemoComponent extends BaseComponent {
   /** Tab actuel */
