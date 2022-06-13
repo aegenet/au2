@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const Dotenv = require('dotenv-webpack');
 const nodeExternals = require('webpack-node-externals');
-const { BundleDeclarationsWebpackPlugin } = require('bundle-declarations-webpack-plugin');
+// const { BundleDeclarationsWebpackPlugin } = require('bundle-declarations-webpack-plugin');
 
 const cssLoader = 'css-loader';
 
@@ -50,7 +50,7 @@ module.exports = function(
   return function (env, { analyze }) {
     const production = env.production || process.env.NODE_ENV === 'production';
     return {
-      target: options.target ? options.target : 'web', // production ? 'node' : 'web',
+      target: options.target ? options.target : 'es2017', // production ? 'node' : 'web',
       mode: production ? 'production' : 'development',
       devtool: production ? undefined : 'eval-cheap-source-map',
       entry: {
@@ -65,6 +65,7 @@ module.exports = function(
         path: path.resolve(directory, 'dist',  options.subdir ?? ''),
         filename: production ? 'index.mjs' : '[name].bundle.mjs',
         library: production ? { type: 'module' } : undefined,
+        chunkFormat: 'module'
       },
       resolve: {
         extensions: ['.ts', '.js'],
@@ -88,7 +89,7 @@ module.exports = function(
             exclude: [/(?<![/\\]src[/\\]code-mirror)\.scss$/, /node_modules/],
             // For style loaded in src/main.js, it's not loaded by style-loader.
             // It's for shared styles for shadow-dom only.
-            issuer: /[/\\]src[/\\]main\.(js|ts)$/,
+            issuer: /[/\\]src[/\\]main\.(mjs|js|ts)$/,
             use: [cssLoader, postcssLoader],
           },
           // {
@@ -109,7 +110,7 @@ module.exports = function(
             exclude: [/(?<![/\\]src[/\\]code-mirror)\.scss$/, /node_modules/],
             // For style loaded in other js/ts files, it's loaded by style-loader.
             // They are directly injected to HTML head.
-            issuer: /(?<![/\\]src[/\\]main)\.(js|ts)$/,
+            issuer: /(?<![/\\]src[/\\]main)\.(mjs|js|ts)$/,
             use: ['style-loader', cssLoader, postcssLoader],
           },
           // {

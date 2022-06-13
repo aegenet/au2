@@ -5,6 +5,6 @@ module.exports = configurator({
   org: 'aegenet',
   name: 'au2-prism',
   directory: __dirname,
-  target: 'web',
+  target: 'es2017',
   libraryType: 'module',
 });

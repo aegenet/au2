@@ -6,7 +6,7 @@ module.exports = [
     org: 'aegenet',
     name: 'au2-base-component',
     directory: __dirname,
-    target: 'web',
+    target: 'es2017',
     libraryType: 'module',
   }),
 ];

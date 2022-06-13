@@ -55,6 +55,7 @@ module.exports = function(
           // name: options.name,
           type: options.libraryType ?? 'module',
         },
+        chunkFormat: 'module'
       },
       externalsPresets: { node: true },
       externals: options.externals,

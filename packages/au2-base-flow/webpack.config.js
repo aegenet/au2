@@ -16,7 +16,7 @@ module.exports = [
     org: 'aegenet',
     name: 'au2-base-flow',
     directory: __dirname,
-    target: 'web',
+    target: 'es2017',
     subdir: 'web',
     libraryType: 'module',
     externals: [nodeExternals({})],
