@@ -1,9 +1,13 @@
 {
   "name": "@aegenet/au2-code-mirror",
   "description": "DRAFT - Aurelia 2 - CodeMirror (6) plugin",
-  "main": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "typings": "dist/bundle.d.ts",
-  "type": "module",
   "author": "Alexandre Genet",
   "files": [
     "dist"

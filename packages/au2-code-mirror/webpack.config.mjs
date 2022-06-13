@@ -6,10 +6,19 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export default configurator({
-  org: 'aegenet',
-  name: 'au2-code-mirror',
-  directory: __dirname,
-  target: 'es2017',
-  libraryType: 'module',
-});
+export default [
+  configurator({
+    org: 'aegenet',
+    name: 'au2-code-mirror',
+    directory: __dirname,
+    target: 'es2017',
+    libraryType: 'module',
+  }),
+  configurator({
+    org: 'aegenet',
+    name: 'au2-code-mirror',
+    directory: __dirname,
+    target: 'es2017',
+    libraryType: 'commonjs',
+  }),
+];

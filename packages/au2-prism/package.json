@@ -1,8 +1,12 @@
 {
   "name": "@aegenet/au2-prism",
   "description": "DRAFT - Aurelia 2 - Prism View/Editor plugin",
-  "main": "dist/index.mjs",
-  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "typings": "dist/bundle.d.ts",
   "author": "Alexandre Genet",
   "files": [

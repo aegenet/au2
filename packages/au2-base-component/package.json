@@ -1,8 +1,12 @@
 {
   "name": "@aegenet/au2-base-component",
   "description": "Aurelia 2 - Base Component",
-  "main": "dist/index.mjs",
-  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "typings": "dist/index.d.ts",
   "author": "Alexandre Genet",
   "files": [

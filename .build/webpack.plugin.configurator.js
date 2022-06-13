@@ -49,6 +49,7 @@ module.exports = function(
   const indexPath = path.join(directory, './src/index.ts');
   return function (env, { analyze }) {
     const production = env.production || process.env.NODE_ENV === 'production';
+    options.libraryType = options.libraryType ?? 'commonjs';
     return {
       target: options.target ? options.target : 'es2017', // production ? 'node' : 'web',
       mode: production ? 'production' : 'development',
@@ -63,9 +64,9 @@ module.exports = function(
       },
       output: {
         path: path.resolve(directory, 'dist',  options.subdir ?? ''),
-        filename: production ? 'index.mjs' : '[name].bundle.mjs',
-        library: production ? { type: 'module' } : undefined,
-        chunkFormat: 'module',
+        filename: production ? (options.libraryType === 'module' ? 'index.mjs' : 'index.cjs') : options.libraryType === 'module' ? '[name].bundle.mjs' : '[name].bundle.cjs',
+        library: production ? { type: options.libraryType ?? 'module' } : undefined,
+        chunkFormat: options.libraryType === 'module' ? 'module' : 'commonjs',
         // chunkLoading: 'import',
         // importFunctionName: 'import',
         // environment: {
@@ -193,7 +194,7 @@ module.exports = function(
       externals: [
         // Skip npm dependencies in plugin build.
         production && nodeExternals({
-          importType: 'module'
+          importType: options.libraryType === 'module' ? 'module' : 'commonjs'
         }),
       ].filter(p => p),
       plugins: [

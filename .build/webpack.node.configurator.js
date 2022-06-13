@@ -34,6 +34,7 @@ module.exports = function(
 
   return function (env, { analyze }) {
     const production = env.production || process.env.NODE_ENV === 'production';
+    options.libraryType = options.libraryType ?? 'commonjs';
     return {
       target: options.target ?? 'node16',
       mode: production ? 'production' : 'development',
@@ -48,14 +49,14 @@ module.exports = function(
       },
       output: {
         path: outputDirSubDir,
-        filename: `[name].bundle.mjs`,
+        filename: options.libraryType === 'module' ? '[name].bundle.mjs' : '[name].bundle.cjs',
         library: {
           // Attention, si le nom est mis alors le main export sera sous le nom indiqué, donc par exemple import { rqlcore } from '@aegenet/rql-core';
           // Donc on évite
           // name: options.name,
           type: options.libraryType ?? 'module',
         },
-        chunkFormat: 'module'
+        chunkFormat: options.libraryType === 'module' ? 'module' : 'commonjs'
       },
       externalsPresets: { node: true },
       externals: options.externals,

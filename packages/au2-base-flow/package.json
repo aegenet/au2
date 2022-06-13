@@ -2,8 +2,12 @@
   "name": "@aegenet/au2-base-flow",
   "description": "Task flow utils based on Aurelia 2 kernel",
   "version": "999.0.0",
-  "main": "./dist/node/au2-base-flow.bundle.mjs",
-  "browser": "./dist/web/au2-base-flow.bundle.mjs",
+  "main": "dist/web/au2-base-flow.bundle.cjs",
+  "module": "dist/web/au2-base-flow.bundle.mjs",
+  "exports": {
+    "require": "./dist/web/au2-base-flow.bundle.cjs",
+    "import": "./dist/web/au2-base-flow.bundle.mjs"
+  },
   "typings": "./dist/node/bundle.d.ts",
   "author": "Alexandre Genet",
   "license": "UNLICENSED",
@@ -23,9 +27,6 @@
     "@types/mocha": "^9.1.0",
     "@types/node": "^16.11.10",
     "@aurelia/kernel": "^2.0.0-alpha.35"
-  },
-  "rave": {
-    "version": "src/version.ts"
   },
   "pre-commit": [
     "lint"
