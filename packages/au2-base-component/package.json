@@ -2,6 +2,7 @@
   "name": "@aegenet/au2-base-component",
   "description": "Aurelia 2 - Base Component",
   "main": "dist/index.js",
+  "type": "module",
   "typings": "dist/index.d.ts",
   "author": "Alexandre Genet",
   "files": [
@@ -33,7 +34,7 @@
     "start": "node ./../../node_modules/webpack/bin/webpack serve",
     "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production && yarn run build:dts",
     "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
-    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.js",
+    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
     "build:dts": "tsc src/index.ts --target ES2017 --stripInternal --skipLibCheck --emitDecoratorMetadata --experimentalDecorators --moduleResolution node --declaration --emitDeclarationOnly --outDir ./dist",
     "tsc": "echo nothing",
     "test-node": "yarn run test"

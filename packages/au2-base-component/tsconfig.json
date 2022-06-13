@@ -2,13 +2,15 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "target": "ES2017",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "importHelpers": true,
     "sourceMap": true,
-    "stripInternal": true,
+    "newLine": "LF"
   },
   "include": [
     "test",

@@ -1,4 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const configurator = require('./../../.build/webpack.plugin.configurator');
+const configurator = require('../../.build/eslint.configurator');
 
 module.exports = configurator();

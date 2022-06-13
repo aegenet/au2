@@ -50,7 +50,7 @@ module.exports = function(
   return function (env, { analyze }) {
     const production = env.production || process.env.NODE_ENV === 'production';
     return {
-      target: production ? 'web' : 'web',
+      target: options.target ? options.target : 'web', // production ? 'node' : 'web',
       mode: production ? 'production' : 'development',
       devtool: production ? undefined : 'eval-cheap-source-map',
       entry: {

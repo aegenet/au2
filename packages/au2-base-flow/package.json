@@ -34,8 +34,8 @@
     "clean": "node ./../../node_modules/rimraf/bin ./dist && node ./../../node_modules/rimraf/bin ./coverage && node ./../../node_modules/rimraf/bin ./.nyc_output && node ./../../node_modules/rimraf/bin ./node_modules",
     "lint": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",
     "lint:fix": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx} --fix",
-    "test-browser": "node ./../../node_modules/jest/bin/jest --config ./jest.web.config.js",
-    "test-node": "node ./../../node_modules/ts-mocha/bin/ts-mocha src/**/*.spec.ts",
+    "test-browser": "node ./../../node_modules/jest/bin/jest --config ./jest.web.config.cjs",
+    "test-node": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
     "analyze": "node ./../../node_modules/rimraf/bin dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "build": "yarn run build:webpack",
     "build:webpack": "node ./../../node_modules/rimraf/bin dist && node ./../../node_modules/webpack/bin/webpack --env production"

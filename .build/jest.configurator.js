@@ -18,22 +18,10 @@ module.exports = function(
   const coveragePath = path.join(projectDir, 'coverage');
   return {
     testRegex: "(/__tests__/.*|\\.spec)\\.(ts|js)$",
-    testEnvironment: './../../.build/client/setup-node.js',
-    setupFilesAfterEnv: [
-      "./../../.build/client/setup-after-env.js"
-    ],
     transform: {
       "\\.(css|less|sass|scss|styl|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
         "./../../node_modules/jest-transform-stub",
-      "\\.(ts|html)$": [
-        "./../../node_modules/@aurelia/ts-jest",
-        {
-          // useCSSModule: true,
-          defaultShadowOptions: {
-            mode: "open",
-          },
-        },
-      ],
+      "\\.(ts)$": "ts-jest",
     },
     bail: true,
     testTimeout: 30000,

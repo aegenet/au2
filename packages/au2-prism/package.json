@@ -2,6 +2,8 @@
   "name": "@aegenet/au2-prism",
   "description": "DRAFT - Aurelia 2 - Prism View/Editor plugin",
   "main": "dist/index.js",
+  "type": "module",
+  "typings": "dist/bundle.d.ts",
   "author": "Alexandre Genet",
   "files": [
     "dist"
@@ -29,9 +31,10 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
     "pretest": "npm run lint",
     "start": "node ./../../node_modules/webpack/bin/webpack serve",
-    "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production",
+    "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production && npm run build:dts",
+    "build:dts": "tsc --project ./tsconfig.bundle.json && node ./../../.build/build-typings.js",
     "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
-    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.js",
+    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
     "tsc": "echo nothing",
     "test-node": "yarn run test"
   }
