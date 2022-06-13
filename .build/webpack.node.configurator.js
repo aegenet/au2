@@ -43,17 +43,17 @@ module.exports = function(
         __dirname: false,
         __filename: false,
       },
-      // experiments: {
-      //   outputModule: true,
-      // },  
+      experiments: {
+        outputModule: true,
+      },
       output: {
         path: outputDirSubDir,
-        filename: `[name].bundle.js`,
+        filename: `[name].bundle.mjs`,
         library: {
           // Attention, si le nom est mis alors le main export sera sous le nom indiqué, donc par exemple import { rqlcore } from '@aegenet/rql-core';
           // Donc on évite
           // name: options.name,
-          type: options.libraryType ?? 'commonjs',
+          type: options.libraryType ?? 'module',
         },
       },
       externalsPresets: { node: true },

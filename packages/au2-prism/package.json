@@ -1,7 +1,7 @@
 {
   "name": "@aegenet/au2-prism",
   "description": "DRAFT - Aurelia 2 - Prism View/Editor plugin",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "type": "module",
   "typings": "dist/bundle.d.ts",
   "author": "Alexandre Genet",

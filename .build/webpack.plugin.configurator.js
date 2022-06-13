@@ -58,10 +58,13 @@ module.exports = function(
         // build dev-app in non-production mode
         entry: production ? indexPath : './dev-app/main.ts',
       },
+      experiments: {
+        outputModule: true,
+      },
       output: {
         path: path.resolve(directory, 'dist',  options.subdir ?? ''),
-        filename: production ? 'index.js' : '[name].bundle.js',
-        library: production ? { type: 'commonjs' } : undefined,
+        filename: production ? 'index.mjs' : '[name].bundle.mjs',
+        library: production ? { type: 'module' } : undefined,
       },
       resolve: {
         extensions: ['.ts', '.js'],

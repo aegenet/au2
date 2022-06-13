@@ -7,9 +7,9 @@ module.exports = [
     org: 'aegenet',
     name: 'au2-base-flow',
     directory: __dirname,
-    target: 'node',
+    target: 'node16',
     subdir: 'node',
-    libraryType: 'commonjs',
+    libraryType: 'module',
     externals: [nodeExternals({})],
   }),
   configuratorNode({
@@ -18,7 +18,7 @@ module.exports = [
     directory: __dirname,
     target: 'web',
     subdir: 'web',
-    libraryType: 'commonjs',
+    libraryType: 'module',
     externals: [nodeExternals({})],
   }),
 ];

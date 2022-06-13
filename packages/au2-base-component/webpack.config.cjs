@@ -7,6 +7,6 @@ module.exports = [
     name: 'au2-base-component',
     directory: __dirname,
     target: 'web',
-    libraryType: 'commonjs',
+    libraryType: 'module',
   }),
 ];

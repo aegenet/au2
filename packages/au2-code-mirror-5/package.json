@@ -1,7 +1,7 @@
 {
   "name": "@aegenet/au2-code-mirror-5",
   "description": "Aurelia 2 - CodeMirror 5 plugin",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "type": "module",
   "typings": "dist/bundle.d.ts",
   "files": [

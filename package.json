@@ -2,7 +2,7 @@
   "name": "au2",
   "version": "0.1.0",
   "description": "Aurelia 2 Plugins / Tools monorepo",
-  "main": "index.js",
+  "main": "index.mjs",
   "author": "Alexandre Genet",
   "license": "UNLICENSED",
   "nyc": {

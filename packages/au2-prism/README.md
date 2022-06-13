@@ -19,7 +19,7 @@ Note this plugin project comes with a dev-app. The above command starts the dev 
 
     npm run build
 
-It builds plugin into `dist/index.js` file.
+It builds plugin into `dist/index.mjs` file.
 
 Note when you do `npm publish` or `npm pack` to prepare the plugin package, it automatically run the above build command by the `prepare` script defined in your package.json `"scripts"` section.
 

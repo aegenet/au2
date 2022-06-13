@@ -6,5 +6,5 @@ module.exports = configurator({
   name: 'au2-prism',
   directory: __dirname,
   target: 'web',
-  libraryType: 'commonjs',
+  libraryType: 'module',
 });
