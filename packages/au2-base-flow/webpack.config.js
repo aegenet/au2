@@ -10,7 +10,11 @@ module.exports = [
     target: 'node16',
     subdir: 'node',
     libraryType: 'module',
-    externals: [nodeExternals({})],
+    externals: [
+      nodeExternals({
+        importType: 'module',
+      }),
+    ],
   }),
   configuratorNode({
     org: 'aegenet',
@@ -19,6 +23,10 @@ module.exports = [
     target: 'es2017',
     subdir: 'web',
     libraryType: 'module',
-    externals: [nodeExternals({})],
+    externals: [
+      nodeExternals({
+        importType: 'module',
+      }),
+    ],
   }),
 ];

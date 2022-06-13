@@ -65,13 +65,47 @@ module.exports = function(
         path: path.resolve(directory, 'dist',  options.subdir ?? ''),
         filename: production ? 'index.mjs' : '[name].bundle.mjs',
         library: production ? { type: 'module' } : undefined,
-        chunkFormat: 'module'
+        chunkFormat: 'module',
+        // chunkLoading: 'import',
+        // importFunctionName: 'import',
+        // environment: {
+        //   // The environment supports arrow functions ('() => { ... }').
+        //   arrowFunction: true,
+        //   // The environment supports BigInt as literal (123n).
+        //   bigIntLiteral: true,
+        //   // The environment supports const and let for variable declarations.
+        //   const: true,
+        //   // The environment supports destructuring ('{ a, b } = obj').
+        //   destructuring: true,
+        //   // The environment supports an async import() function to import EcmaScript modules.
+        //   dynamicImport: true,
+        //   // The environment supports 'for of' iteration ('for (const x of array) { ... }').
+        //   forOf: true,
+        //   // The environment supports ECMAScript Module syntax to import ECMAScript modules (import ... from '...').
+        //   module: true,
+        //   // The environment supports optional chaining ('obj?.a' or 'obj?.()').
+        //   optionalChaining: true,
+        //   // The environment supports template literals.
+        //   templateLiteral: true,
+        // },
       },
+      externalsType: 'module',
       resolve: {
         extensions: ['.ts', '.js'],
         alias: {
           [options.name]: path.join(directory, 'src'),
           [`@${options.org}/${options.name}`]: path.join(directory, 'src/'),
+          ...['fetch-client', 'kernel', 'metadata', 'platform', 'platform-browser', 'plugin-conventions', 'route-recognizer', 'router', 'router-lite', 'runtime', 'runtime-html', 'testing', 'webpack-loader'].reduce(
+            (map, pkg) => {
+              const name = `@aurelia/${pkg}`;
+              map[name] = path.resolve(__dirname, 'node_modules', name, production ? 'dist/esm/index.mjs' : 'dist/esm/index.dev.mjs');
+              return map;
+            },
+            {
+              aurelia: path.resolve(__dirname, production ? 'node_modules/aurelia/dist/esm/index.mjs' : 'node_modules/aurelia/dist/esm/index.dev.mjs'),
+              // add your development aliasing here
+            }
+          ),
         },
         modules: [path.resolve(directory, 'src'), path.resolve(directory, 'dev-app'), path.join(directory, 'node_modules'), 'node_modules'],
       },
@@ -152,10 +186,15 @@ module.exports = function(
           },
         ],
       },
+      resolve: {
+        extensions: ['.js', '.ts', '.tsx', '.json']
+      },
       externalsPresets: { node: production },
       externals: [
         // Skip npm dependencies in plugin build.
-        production && nodeExternals(),
+        production && nodeExternals({
+          importType: 'module'
+        }),
       ].filter(p => p),
       plugins: [
         ... options.plugins ?? [],
