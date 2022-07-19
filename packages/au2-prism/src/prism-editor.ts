@@ -2,10 +2,10 @@ import { IHydratedController } from '@aurelia/runtime-html';
 import { bindable, customElement, LifecycleFlags, type ICustomElementViewModel } from 'aurelia';
 
 import Prism from 'prismjs';
-import 'prismjs/components/prism-cmake';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-json';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/components/prism-cmake.js';
+import 'prismjs/components/prism-javascript.js';
+import 'prismjs/components/prism-json.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 
 const isWindows = typeof window !== 'undefined' && navigator && /Win/i.test(navigator.platform);
 const isMacLike = typeof window !== 'undefined' && navigator && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
