@@ -3,7 +3,8 @@ import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
 import styles from './code-mirror.scss';
 import template from './code-mirror.html';
 
-import { EditorState, EditorView, basicSetup } from '@codemirror/basic-setup';
+import { EditorState } from '@codemirror/state';
+import { EditorView, basicSetup } from 'codemirror';
 import { json } from '@codemirror/lang-json';
 
 /**

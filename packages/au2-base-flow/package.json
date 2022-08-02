@@ -20,13 +20,13 @@
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-flow",
   "dependencies": {},
   "peerDependencies": {
-    "@aurelia/kernel": "^2.0.0-alpha.35"
+    "@aurelia/kernel": "^2.0.0-alpha.36"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/mocha": "^9.1.0",
     "@types/node": "^16.11.10",
-    "@aurelia/kernel": "^2.0.0-alpha.35"
+    "@aurelia/kernel": "^2.0.0-alpha.36"
   },
   "pre-commit": [
     "lint"
