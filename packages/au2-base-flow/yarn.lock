@@ -2,23 +2,23 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-alpha.36":
-  version "2.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.36.tgz#6febdbb35cc850d6972b3322e70f7bb0f5f85097"
-  integrity sha512-R/ujW3RaG3ELz6O/J7qvALUwP3h1taG763Cg3iHPTa6xLoPWdBOmkuHsuSnXm8H+2LnbYZw/8OjGqVlfbKxvRA==
+"@aurelia/kernel@^2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.37.tgz#7f3ee8ebadde52b5b7d2c43b9cad169cce4cd211"
+  integrity sha512-l3ev5QrB8kbvizRxzRdT7y+2YP1b6Jy4gtPQfwbiE4hf0dxFj2BUicm0oASk226QUvBfc0uS2HoHrh5Q8PlYbQ==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.36"
-    "@aurelia/platform" "2.0.0-alpha.36"
+    "@aurelia/metadata" "2.0.0-alpha.37"
+    "@aurelia/platform" "2.0.0-alpha.37"
 
-"@aurelia/metadata@2.0.0-alpha.36":
-  version "2.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.36.tgz#b37bcdfe55f0e0e743daefcd9ed5112edc9abe81"
-  integrity sha512-mSRQ5bbY5pzuDb8fs2/Qxsp2hHR2FS0CIUUWsS/pb/7kcwDkHQC2RjuvoXE2+JtEwlafpux1IQYbBPa9ZwRnfA==
+"@aurelia/metadata@2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.37.tgz#65345edbf0f1303dce896e3bfe0338ff906e8ecc"
+  integrity sha512-0cvg1WE3dk97FAA9bALRftVuqSZ0yqBFpbp+aZWSKXL1SktA9N/oY6bIiBB0FlabpMm6Ajk/m6H/EqpmpwstzQ==
 
-"@aurelia/platform@2.0.0-alpha.36":
-  version "2.0.0-alpha.36"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.36.tgz#2adf312b924c5de2b739f53ef2349ea2d2b7cffc"
-  integrity sha512-pG8Ooih5ahtAevOh/jU3BYeJe+uHp57KJlCliBVq3VWJiYDnpE/0thhk+honifMrBdXU9lNFb+3ClAQKixUfyQ==
+"@aurelia/platform@2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.37.tgz#9d3ea5c0d249f4b439da99bd281131cf8a27ce98"
+  integrity sha512-N9ePehJOsfalF4G2B9KUjeYYi1HogW0mOGdu8hl2tilN3VerSW3vC4PUZ3pKKsAdydgm3cemHY7RPiH+GL+zMg==
 
 "@types/jest@^27.0.3":
   version "27.5.2"
