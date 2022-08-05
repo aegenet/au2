@@ -162,9 +162,9 @@
   integrity sha512-2s+aXsxmAwnR3Rd+JDHPG/1lw0YsA9PEwl7Re88gHJHGfxyfEzKBmsN4rr53RyPIR4lzbbhJX0DCq0WlqlBIRw==
 
 "@codemirror/view@^6.0.0":
-  version "6.1.3"
-  resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.1.3.tgz#5b476dc64066e4cbc22148e5bc0a4d948e41ff01"
-  integrity sha512-Ba8TdKX8cphIsgJ3NGT15Ac8c2mIObwo6MsDryffYKqB7Nw6l1c9cnjrahPF8DoN3HVfryW395O77vkuCNhW0A==
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.1.4.tgz#c4b7ca6ea6920e206f6b3de89b17da1b66675fd7"
+  integrity sha512-pekgUX+0hL4ri2JV7/bu7jhhwOgOhU1eRc1/ZyAQYCWcCI4TPB1qLrPE3cD/qW9yjBcYiN9MN0XI1tjK7Yw05Q==
   dependencies:
     "@codemirror/state" "^6.0.0"
     style-mod "^4.0.0"
@@ -348,6 +348,6 @@ typescript@^4.7.3:
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
 
 w3c-keyname@^2.2.4:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/w3c-keyname/-/w3c-keyname-2.2.5.tgz#f115ad3976f42f0f90e0cff18b9dc7657c7835fd"
-  integrity sha512-WJrK7i6w+ULuZsGscCezbCH4Aev5U3xY87vnSimzzEgPQhb0Sa0a1rE3c2jtEwrFtSfi61Jefw3jI5/DD/3jbQ==
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/w3c-keyname/-/w3c-keyname-2.2.6.tgz#8412046116bc16c5d73d4e612053ea10a189c85f"
+  integrity sha512-f+fciywl1SJEniZHD6H+kUO8gOnwIr7f4ijKA6+ZvJFjeGi1r4PDLl53Ayud9O/rk64RqgoQine0feoeOU0kXg==

@@ -1,11 +1,12 @@
 import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
 import { I18N } from '@aurelia/i18n';
-import { IContainer, IEventAggregator, IPlatform, IRouter, type IRouteViewModel, type TaskQueue, type Params, type RouteNode } from 'aurelia';
+import { IContainer, IEventAggregator, IPlatform, type TaskQueue } from 'aurelia';
+import { IRouter, type IRouteableComponent, type RoutingInstruction, type Navigation, type Parameters } from '@aurelia/router';
 
 /**
  * Base Page
  */
-export abstract class BasePage implements IRouteViewModel, IAntiBounceSupport {
+export abstract class BasePage implements IRouteableComponent, IAntiBounceSupport {
   /**
    * Instances of anti-bounce
    * @remark Don't edit manually
@@ -30,14 +31,14 @@ export abstract class BasePage implements IRouteViewModel, IAntiBounceSupport {
   public readonly i18n: I18N;
 
   /** Router */
-  private readonly _router: IRouter;
+  protected readonly _router: IRouter;
 
   /**
    * Platform
    * @service
    * @core
    */
-  private readonly _platform: IPlatform;
+  protected readonly _platform: IPlatform;
 
   /**
    * Has been init ? (attached & _init())
@@ -66,27 +67,27 @@ export abstract class BasePage implements IRouteViewModel, IAntiBounceSupport {
     }
   }
 
-  public async load(params: Params, next: RouteNode, current: RouteNode | null): Promise<void> {
-    await Promise.resolve(this._init(params, next, current));
+  public async load?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void> {
+    await Promise.resolve(this._init(parameters, instruction, navigation));
     this._isInit = true;
   }
 
   /**
    * Custom logic (on load)
    */
-  protected _init(params: Params, next: RouteNode, current: RouteNode | null): void | Promise<void> {
+  protected _init(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): void | Promise<void> {
     //
   }
 
   /** Custom logic (on unload) */
-  protected _deinit(next: RouteNode | null, current: RouteNode): void | Promise<void> {
+  protected _deinit(instruction: RoutingInstruction, navigation: Navigation | null): void | Promise<void> {
     //
   }
 
   /** Unload the page */
-  public async unload(next: RouteNode | null, current: RouteNode): Promise<void> {
+  public async unload(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void> {
     disposeAntiBounces(this);
-    await Promise.resolve(this._deinit(next, current));
+    await Promise.resolve(this._deinit(instruction, navigation));
     this._isInit = false;
   }
 

@@ -70,7 +70,7 @@
     "@aurelia/runtime" "2.0.0-alpha.37"
     "@aurelia/runtime-html" "2.0.0-alpha.37"
 
-"@aurelia/router@2.0.0-alpha.37":
+"@aurelia/router@2.0.0-alpha.37", "@aurelia/router@^2.0.0-alpha.37":
   version "2.0.0-alpha.37"
   resolved "https://registry.yarnpkg.com/@aurelia/router/-/router-2.0.0-alpha.37.tgz#fb18a7cb9bbb5df9dfd874121967fa5313db5e6a"
   integrity sha512-k3vRV7PmmN45WGEQmJxXjmVhHbe1/D2dUzUQL84/BEFnURY6xdOpsQZzHvvTMfYI8myB8m4hdnPq52p11sCodQ==
