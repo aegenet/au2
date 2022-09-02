@@ -2,23 +2,23 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.38.tgz#3bce3a74271c34a9373cddfc68245785a749c5a0"
-  integrity sha512-PUBN0hYyvjM8VZUiB8K0AUj0H4Tjx43jXqMlym0zrZywy49qu/9mPuPTsCX/7ykBxENdg7SEi1pv3CHAvxitEw==
+"@aurelia/kernel@^2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.39.tgz#47963b2317917928fe2e8690a298cc69ed6cd97d"
+  integrity sha512-0i2iUEtp8K9QySfU2KjILPZz/hi5WU0KqT4F4fALYrtlvtZKyqUNy6ZXHp9YaUFzIW0FHXOc994nW/3LRdnYOw==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
 
-"@aurelia/metadata@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.38.tgz#2473115f9fb5d6843948f527102ad07463ad9d33"
-  integrity sha512-w+2lS38D7ZBxiD4fgCdenmT0HKVDaZ4w8HZUcF4XbqWMd6kNREy7gPjpnssXK0KUIkcIHkjEivyBlpRn+Nywfw==
+"@aurelia/metadata@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.39.tgz#a817e3d39f4c56d408fa0a14d58404b92819a563"
+  integrity sha512-wIUJXfU6hmdfVgucVORxGDFLxZM6kQ5FyvQn33ydo3wH5lYRwLlqIEaTV1E/XKZfK8EGM/WmfoVTDLmmvgeXyA==
 
-"@aurelia/platform@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.38.tgz#1d618b14df07bc2ae6e7005cd04949614f277773"
-  integrity sha512-zK+BNbRhlDO7J0n+Mnsgh40jV4zzzy3AGrO/s7zexlj1EHTmTlcdoeKvJ3BTxZuGdHkUBX8sXO0k4mFO6qm7DQ==
+"@aurelia/platform@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.39.tgz#6ba39856e89625274358985bb1d86e395f537cb8"
+  integrity sha512-sCemzOmVhOz8oQC7G9xdqak1ndkGV0zquaJctRq4eyvWyo1iPNDxIVn1jpdJ5FuS1XGUh9p5wM7TAQmHC2/pWQ==
 
 "@types/jest@^27.0.3":
   version "27.5.2"

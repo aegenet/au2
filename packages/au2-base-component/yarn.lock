@@ -7,113 +7,113 @@
   resolved "https://npm.pkg.github.com/download/@aegenet/belt-anti-bounce/999.1659090199446.0/7f7fd3bcced2bc3d9aab71291e327deabc4c59e6#7f7fd3bcced2bc3d9aab71291e327deabc4c59e6"
   integrity sha512-1zQWPZ3U77csEQH2wBc1i/7Os6XGUiSowHqtl1f6KHHUd6Ckg7MtJN7g3mFxRvjNhGeS+aj4tAZMfZELNzUcGQ==
 
-"@aurelia/fetch-client@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/fetch-client/-/fetch-client-2.0.0-alpha.38.tgz#3ae89de997fc9dcf1420dda757c62f853be9eb04"
-  integrity sha512-TrsAhddv53yKCxLaOWnD0g1y9TC0QoSXiYPRl9FWOshZI74e66OCMU0YYQ/AeCGdbAbFMsFPQAZAkW1teiEPug==
+"@aurelia/fetch-client@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/fetch-client/-/fetch-client-2.0.0-alpha.39.tgz#f1949b1690d4072e03de433f0310e640792a2d5f"
+  integrity sha512-Ua5FeJtJkGHzCjhmVvrP/9ODueh8MpuRDUFBDi/mxXmfy1mQ4qFVWC7ubUVAR5eEydDTkE8+gmK++9b/YJmaLQ==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
 
-"@aurelia/i18n@^2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/i18n/-/i18n-2.0.0-alpha.38.tgz#c9bf29223778feef6d2c5519157ec72cedf019b1"
-  integrity sha512-80dAW7ZbPkE5uyItuf4ErcwJxJmypBECtnNqzHJtE1yZxR1TmmZ14q4oMM+B99nOwiFnCZdqTiARMtuSg1KEZA==
+"@aurelia/i18n@^2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/i18n/-/i18n-2.0.0-alpha.39.tgz#a5ead41d8cbfb1d1c87b4c160e35a54098616af1"
+  integrity sha512-XJs7DQeB+MhKwjrooo//pFUIVUqTt7HxyoPSv0hzlns1qUi4AronJi71xVhlvYGySf+lcIcwdJ7kk/5HRENijA==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
-    "@aurelia/runtime" "2.0.0-alpha.38"
-    "@aurelia/runtime-html" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/runtime" "2.0.0-alpha.39"
+    "@aurelia/runtime-html" "2.0.0-alpha.39"
     i18next "^17.0.0"
 
-"@aurelia/kernel@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.38.tgz#3bce3a74271c34a9373cddfc68245785a749c5a0"
-  integrity sha512-PUBN0hYyvjM8VZUiB8K0AUj0H4Tjx43jXqMlym0zrZywy49qu/9mPuPTsCX/7ykBxENdg7SEi1pv3CHAvxitEw==
+"@aurelia/kernel@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.39.tgz#47963b2317917928fe2e8690a298cc69ed6cd97d"
+  integrity sha512-0i2iUEtp8K9QySfU2KjILPZz/hi5WU0KqT4F4fALYrtlvtZKyqUNy6ZXHp9YaUFzIW0FHXOc994nW/3LRdnYOw==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
 
-"@aurelia/metadata@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.38.tgz#2473115f9fb5d6843948f527102ad07463ad9d33"
-  integrity sha512-w+2lS38D7ZBxiD4fgCdenmT0HKVDaZ4w8HZUcF4XbqWMd6kNREy7gPjpnssXK0KUIkcIHkjEivyBlpRn+Nywfw==
+"@aurelia/metadata@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.39.tgz#a817e3d39f4c56d408fa0a14d58404b92819a563"
+  integrity sha512-wIUJXfU6hmdfVgucVORxGDFLxZM6kQ5FyvQn33ydo3wH5lYRwLlqIEaTV1E/XKZfK8EGM/WmfoVTDLmmvgeXyA==
 
-"@aurelia/platform-browser@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform-browser/-/platform-browser-2.0.0-alpha.38.tgz#cf8a7f07f2daf512625498120cf6969bdf5c1112"
-  integrity sha512-BwphQXt00d9LBsYLKwSuBUOZvbd0AmA6YUC8o4LnPGxeFHrtOT6mRGuDVdEgAypOOVIUThQNp5+hUHKGtHRmmw==
+"@aurelia/platform-browser@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform-browser/-/platform-browser-2.0.0-alpha.39.tgz#25b97ea6c0fcf0c1474705aa02804c1e3dd6d8fd"
+  integrity sha512-AZBc7Pvb8YW6sCXcmPm3Z3zpknFNWCMvfyxpD2L+tUwSaHiNa4vqEC0jqIxz8XL+KRy8+sFKuxgXbjlhvLBVLw==
   dependencies:
-    "@aurelia/platform" "2.0.0-alpha.38"
+    "@aurelia/platform" "2.0.0-alpha.39"
 
-"@aurelia/platform@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.38.tgz#1d618b14df07bc2ae6e7005cd04949614f277773"
-  integrity sha512-zK+BNbRhlDO7J0n+Mnsgh40jV4zzzy3AGrO/s7zexlj1EHTmTlcdoeKvJ3BTxZuGdHkUBX8sXO0k4mFO6qm7DQ==
+"@aurelia/platform@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.39.tgz#6ba39856e89625274358985bb1d86e395f537cb8"
+  integrity sha512-sCemzOmVhOz8oQC7G9xdqak1ndkGV0zquaJctRq4eyvWyo1iPNDxIVn1jpdJ5FuS1XGUh9p5wM7TAQmHC2/pWQ==
 
-"@aurelia/route-recognizer@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/route-recognizer/-/route-recognizer-2.0.0-alpha.38.tgz#517189aaf84ed3f88a1e903e8cfa3dc80506fbc6"
-  integrity sha512-frYjE4mnSxaZwHi8xf7eAZqkuCED19y0Sd4xw8JDh0vf2LnR2s7MP3u0MMNqUM9zpkjYdddyx8yBLRZfIFUTdA==
+"@aurelia/route-recognizer@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/route-recognizer/-/route-recognizer-2.0.0-alpha.39.tgz#4636db29ae82449328ac0b1b0b4d6dd529435051"
+  integrity sha512-ZxF3hUTJXY6Ri0XP2NkQPJQCHjglgKTYQm6tfGUax/iRlyWajEiAVqFgqhdNm4C010VX4IiX1ZP31aCtM19V/w==
 
-"@aurelia/router-lite@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/router-lite/-/router-lite-2.0.0-alpha.38.tgz#89c7fdeae7ea5174f5eba3de16b57293410ea387"
-  integrity sha512-BRTHi15foYabteJwnKhp+nIn8B/bjKrdKYBmjhqbYCXEMB5r4dNI6HfRIxDQynVunCKVIXtYsfzA+fwJGzrfEg==
+"@aurelia/router-lite@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/router-lite/-/router-lite-2.0.0-alpha.39.tgz#e82a0492d4ea83220c3c6f2376324c1e1e5828df"
+  integrity sha512-7pIAV8XarfvuVB7s6FJ5Ku15jWG9bK8QMaE2UoL2RORBOpv/7sjBD8DzWDZmLO8R4X3ko0pgpz9KHN7KXnP/nQ==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
-    "@aurelia/platform-browser" "2.0.0-alpha.38"
-    "@aurelia/route-recognizer" "2.0.0-alpha.38"
-    "@aurelia/runtime" "2.0.0-alpha.38"
-    "@aurelia/runtime-html" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/platform-browser" "2.0.0-alpha.39"
+    "@aurelia/route-recognizer" "2.0.0-alpha.39"
+    "@aurelia/runtime" "2.0.0-alpha.39"
+    "@aurelia/runtime-html" "2.0.0-alpha.39"
 
-"@aurelia/router@2.0.0-alpha.38", "@aurelia/router@^2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/router/-/router-2.0.0-alpha.38.tgz#cdfd8bc24195f3bd0f12c15fe278a67331dde7b5"
-  integrity sha512-jc3jcwzRpRzgYhlDBXrKyKIxq+vLivCd1RXC5OQhWREPx4GWC0QNIF9mnDfg6KuSkwdSjOLHpxnuUl1jRAP0sA==
+"@aurelia/router@2.0.0-alpha.39", "@aurelia/router@^2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/router/-/router-2.0.0-alpha.39.tgz#1a03be5f12d6d600b53aa4d4465637df47fe8df8"
+  integrity sha512-ZzoZJsY5Ynl07eGKHAW8lNCdVE0T8hTpC57iMzykNB5lwTes95SLA0SYB0b5l90BDS2ALo3CKhSgT5NgK5+2Sg==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
-    "@aurelia/platform-browser" "2.0.0-alpha.38"
-    "@aurelia/route-recognizer" "2.0.0-alpha.38"
-    "@aurelia/runtime" "2.0.0-alpha.38"
-    "@aurelia/runtime-html" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/platform-browser" "2.0.0-alpha.39"
+    "@aurelia/route-recognizer" "2.0.0-alpha.39"
+    "@aurelia/runtime" "2.0.0-alpha.39"
+    "@aurelia/runtime-html" "2.0.0-alpha.39"
 
-"@aurelia/runtime-html@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/runtime-html/-/runtime-html-2.0.0-alpha.38.tgz#9235a6335d956bedaaaf59242c8e072b768c35a0"
-  integrity sha512-ffoim/4KiJpT6sdPi6RuvQWCqGGOOT4yyv68pG71/pyTD1GrqfJLocqhNrgwhjanWcQdJCfuCuGYaUZYxicR6w==
+"@aurelia/runtime-html@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/runtime-html/-/runtime-html-2.0.0-alpha.39.tgz#44ba25145ab180d8c7e6816b1159c2c351d4ca24"
+  integrity sha512-w0SpHHXIme5khW0zT6kEta4RMfKsUejiyjuyDaiivWCSUVPE0TmMzovz1K4iIGf7UZx0hqXFRD2xI7Zo7xiOKg==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
-    "@aurelia/platform-browser" "2.0.0-alpha.38"
-    "@aurelia/runtime" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/platform-browser" "2.0.0-alpha.39"
+    "@aurelia/runtime" "2.0.0-alpha.39"
 
-"@aurelia/runtime@2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/runtime/-/runtime-2.0.0-alpha.38.tgz#675ef2477a747777df84e2f71582cce7529a9ba4"
-  integrity sha512-23JVrZtAX2zfEtjv7x2ijgpvzda/zAq0Fyj3A5A4BEq5TCW9CWszwsd07rjBe2cUIcr9dqJQITml8nPk/tQBmA==
+"@aurelia/runtime@2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/runtime/-/runtime-2.0.0-alpha.39.tgz#3c5b8dbfc0be0d2e474ecc3a633d290d6740acff"
+  integrity sha512-9S3u0MTl0sEBjfK8bsQ++nwYyc7d4JWy/kFi4XFx64KBKQMmS1zoSIm3cdWYtAWWIQQQ9rwwfhSakzuCu1wM6w==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
 
-"@aurelia/testing@^2.0.0-alpha.38":
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/@aurelia/testing/-/testing-2.0.0-alpha.38.tgz#cb42eaa5ab11ee313d3e431c39f34d67bf7e1789"
-  integrity sha512-i6NNlYuByfae57K31g2EYVHTDYwFsdEh1YJ0Qd5/ykVg+Zztlus2up+EHqkIovOD7Z/u1w1AxhMYiPwqeuOt+g==
+"@aurelia/testing@^2.0.0-alpha.39":
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/@aurelia/testing/-/testing-2.0.0-alpha.39.tgz#463510aaa3e21b947d72f13541dbc654deb76409"
+  integrity sha512-PB7Z0z0EA332NYhMqvbAEc6zRbvQvSJ3iokCOzHtsxSpdHGY+lj7i1HM64bijLqJUONX/RvHkLUcwbRSLsOSmw==
   dependencies:
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
-    "@aurelia/platform-browser" "2.0.0-alpha.38"
-    "@aurelia/runtime" "2.0.0-alpha.38"
-    "@aurelia/runtime-html" "2.0.0-alpha.38"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/platform-browser" "2.0.0-alpha.39"
+    "@aurelia/runtime" "2.0.0-alpha.39"
+    "@aurelia/runtime-html" "2.0.0-alpha.39"
 
 "@babel/runtime@^7.3.1":
   version "7.18.9"
@@ -152,21 +152,21 @@ ansi-styles@^5.0.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-aurelia@^2.0.0-alpha.38:
-  version "2.0.0-alpha.38"
-  resolved "https://registry.yarnpkg.com/aurelia/-/aurelia-2.0.0-alpha.38.tgz#0f873746112a2ad0270ae7ad040a09b34bd3ec7d"
-  integrity sha512-ME/j9TLFxpTbIfsw+51oHlyH+eKC+6YbYuhzFNO22/2QFRXL1VJo7kSQRFpNPm8m5v+U7JFoJvykeFtro64vFQ==
+aurelia@^2.0.0-alpha.39:
+  version "2.0.0-alpha.39"
+  resolved "https://registry.yarnpkg.com/aurelia/-/aurelia-2.0.0-alpha.39.tgz#b3103cc20bfa049d659b3cad36933c1f5543cee8"
+  integrity sha512-VJYH7h58V1a34PN0DtdQ149GPaQr+F8xV8iRrwOVBPEr0zumIh8tnR97A7omhKGY/77ksMXnYiR5vWGpC0dh9Q==
   dependencies:
-    "@aurelia/fetch-client" "2.0.0-alpha.38"
-    "@aurelia/kernel" "2.0.0-alpha.38"
-    "@aurelia/metadata" "2.0.0-alpha.38"
-    "@aurelia/platform" "2.0.0-alpha.38"
-    "@aurelia/platform-browser" "2.0.0-alpha.38"
-    "@aurelia/route-recognizer" "2.0.0-alpha.38"
-    "@aurelia/router" "2.0.0-alpha.38"
-    "@aurelia/router-lite" "2.0.0-alpha.38"
-    "@aurelia/runtime" "2.0.0-alpha.38"
-    "@aurelia/runtime-html" "2.0.0-alpha.38"
+    "@aurelia/fetch-client" "2.0.0-alpha.39"
+    "@aurelia/kernel" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.39"
+    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/platform-browser" "2.0.0-alpha.39"
+    "@aurelia/route-recognizer" "2.0.0-alpha.39"
+    "@aurelia/router" "2.0.0-alpha.39"
+    "@aurelia/router-lite" "2.0.0-alpha.39"
+    "@aurelia/runtime" "2.0.0-alpha.39"
+    "@aurelia/runtime-html" "2.0.0-alpha.39"
 
 chalk@^4.0.0:
   version "4.1.2"
@@ -256,7 +256,7 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-typescript@^4.7.3:
+typescript@~4.7:
   version "4.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
