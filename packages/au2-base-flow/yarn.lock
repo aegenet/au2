@@ -2,23 +2,23 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-alpha.39":
-  version "2.0.0-alpha.39"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.39.tgz#47963b2317917928fe2e8690a298cc69ed6cd97d"
-  integrity sha512-0i2iUEtp8K9QySfU2KjILPZz/hi5WU0KqT4F4fALYrtlvtZKyqUNy6ZXHp9YaUFzIW0FHXOc994nW/3LRdnYOw==
+"@aurelia/kernel@^2.0.0-alpha.40":
+  version "2.0.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.40.tgz#6b951e944aef50f0bc36322d7c36c10330652dad"
+  integrity sha512-rENZ60ZslPzEMcrxhuiTkJ7ysvSvBJEmO02m2yGf+v2zxPpxYb7kOI7DknC9S3MQT5Q0/LcO9vgo7jvg2VaTSQ==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.39"
-    "@aurelia/platform" "2.0.0-alpha.39"
+    "@aurelia/metadata" "2.0.0-alpha.40"
+    "@aurelia/platform" "2.0.0-alpha.40"
 
-"@aurelia/metadata@2.0.0-alpha.39":
-  version "2.0.0-alpha.39"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.39.tgz#a817e3d39f4c56d408fa0a14d58404b92819a563"
-  integrity sha512-wIUJXfU6hmdfVgucVORxGDFLxZM6kQ5FyvQn33ydo3wH5lYRwLlqIEaTV1E/XKZfK8EGM/WmfoVTDLmmvgeXyA==
+"@aurelia/metadata@2.0.0-alpha.40":
+  version "2.0.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.40.tgz#cfe336f047d6014e7274a63c9d631c0eb173b8df"
+  integrity sha512-zVOYTNTQB7aE7lqgG5gKyHYHFXErM2rkWr7VPFlszGeieqlShd03+ZU+Wpd41hNNUmuEPoOsua+2y3E1B+CnJg==
 
-"@aurelia/platform@2.0.0-alpha.39":
-  version "2.0.0-alpha.39"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.39.tgz#6ba39856e89625274358985bb1d86e395f537cb8"
-  integrity sha512-sCemzOmVhOz8oQC7G9xdqak1ndkGV0zquaJctRq4eyvWyo1iPNDxIVn1jpdJ5FuS1XGUh9p5wM7TAQmHC2/pWQ==
+"@aurelia/platform@2.0.0-alpha.40":
+  version "2.0.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.40.tgz#0501ed051df369f39cb831f6a4d989e870dac2e0"
+  integrity sha512-YLh3ofxI1I8CZnPvfbv4bJs8rbM3C76feTMY1dl4qQvMZUuQ/L07+IkT+eyZz0bBOwiLBryy5D07aYw3gajZug==
 
 "@types/jest@^27.0.3":
   version "27.5.2"
@@ -34,9 +34,9 @@
   integrity sha512-Z61JK7DKDtdKTWwLeElSEBcWGRLY8g95ic5FoQqI9CMx0ns/Ghep3B4DfcEimiKMvtamNVULVNKEsiwV3aQmXw==
 
 "@types/node@^16.11.10":
-  version "16.11.56"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.56.tgz#dcbb617669481e158e0f1c6204d1c768cd675901"
-  integrity sha512-aFcUkv7EddxxOa/9f74DINReQ/celqH8DiB3fRYgVDM2Xm5QJL8sl80QKuAnGvwAsMn+H3IFA6WCrQh1CY7m1A==
+  version "16.11.57"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.57.tgz#786f74cef16acf2c5eb11795b6c3f7ae93596662"
+  integrity sha512-diBb5AE2V8h9Fs9zEDtBwSeLvIACng/aAkdZ3ujMV+cGuIQ9Nc/V+wQqurk9HJp8ni5roBxQHW21z/ZYbGDivg==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
