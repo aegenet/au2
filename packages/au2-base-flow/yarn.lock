@@ -2,23 +2,23 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-alpha.40":
-  version "2.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.40.tgz#6b951e944aef50f0bc36322d7c36c10330652dad"
-  integrity sha512-rENZ60ZslPzEMcrxhuiTkJ7ysvSvBJEmO02m2yGf+v2zxPpxYb7kOI7DknC9S3MQT5Q0/LcO9vgo7jvg2VaTSQ==
+"@aurelia/kernel@^2.0.0-alpha.41":
+  version "2.0.0-alpha.41"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-alpha.41.tgz#5fabc31e3d3f8f5e6d81afdaecfa3dae739463a2"
+  integrity sha512-Hyv6dypy3zxEIls1l7UoRkOzc6iexiAWad8H9+MzQxwiv+sw6tCSSFtmZNWNbtMEEe3+zV6RHi+70IEk/M0ONQ==
   dependencies:
-    "@aurelia/metadata" "2.0.0-alpha.40"
-    "@aurelia/platform" "2.0.0-alpha.40"
+    "@aurelia/metadata" "2.0.0-alpha.41"
+    "@aurelia/platform" "2.0.0-alpha.41"
 
-"@aurelia/metadata@2.0.0-alpha.40":
-  version "2.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.40.tgz#cfe336f047d6014e7274a63c9d631c0eb173b8df"
-  integrity sha512-zVOYTNTQB7aE7lqgG5gKyHYHFXErM2rkWr7VPFlszGeieqlShd03+ZU+Wpd41hNNUmuEPoOsua+2y3E1B+CnJg==
+"@aurelia/metadata@2.0.0-alpha.41":
+  version "2.0.0-alpha.41"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-alpha.41.tgz#01afaeaf43abd877b5c48dd52d24fbf69dbe065f"
+  integrity sha512-9P/zsuC9JN6bpypQe87t2kBgO3UUpS0qilivaUTACU4qwxLz4Qz7ackBPy/yzHOR9xT7zjR6CiD1ZOaVdhvifA==
 
-"@aurelia/platform@2.0.0-alpha.40":
-  version "2.0.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.40.tgz#0501ed051df369f39cb831f6a4d989e870dac2e0"
-  integrity sha512-YLh3ofxI1I8CZnPvfbv4bJs8rbM3C76feTMY1dl4qQvMZUuQ/L07+IkT+eyZz0bBOwiLBryy5D07aYw3gajZug==
+"@aurelia/platform@2.0.0-alpha.41":
+  version "2.0.0-alpha.41"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-alpha.41.tgz#437c23a22c231217a5f8502849547513bd1b2799"
+  integrity sha512-flz0+lmtmBzPI8jHBb5bBCj8KadCXXrefn1TaPS9mabO54oBb0MO6x32V8cBtBUkRyy4HbR9UVpT4bwlMkS1bQ==
 
 "@types/jest@^27.0.3":
   version "27.5.2"
@@ -34,9 +34,9 @@
   integrity sha512-Z61JK7DKDtdKTWwLeElSEBcWGRLY8g95ic5FoQqI9CMx0ns/Ghep3B4DfcEimiKMvtamNVULVNKEsiwV3aQmXw==
 
 "@types/node@^16.11.10":
-  version "16.11.57"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.57.tgz#786f74cef16acf2c5eb11795b6c3f7ae93596662"
-  integrity sha512-diBb5AE2V8h9Fs9zEDtBwSeLvIACng/aAkdZ3ujMV+cGuIQ9Nc/V+wQqurk9HJp8ni5roBxQHW21z/ZYbGDivg==
+  version "16.11.59"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.59.tgz#823f238b9063ccc3b3b7f13186f143a57926c4f6"
+  integrity sha512-6u+36Dj3aDzhfBVUf/mfmc92OEdzQ2kx2jcXGdigfl70E/neV21ZHE6UCz4MDzTRcVqGAM27fk+DLXvyDsn3Jw==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
