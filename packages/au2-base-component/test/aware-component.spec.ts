@@ -1,8 +1,8 @@
 import { DemoComponent } from '../dev-app/demo-component';
-import { AwareEventButton } from '../src';
+import { AwareComponent } from '../src';
 import { getViewModel, renderInDOM } from './helper';
 
-describe('aware-event-button', () => {
+describe('aware-component', () => {
   it('Event me by component', async () => {
     await renderInDOM(
       `<demo-component view-model.ref="demoComponent" event-name="tab1">
@@ -15,14 +15,14 @@ describe('aware-event-button', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-event-button view-model.ref="awareBtnRef" event-name="demo-component:tab1" property="select" value.bind="['two']">Do it!</aware-event-button>`,
-      [DemoComponent, AwareEventButton],
+  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]">Do it!</aware-component>`,
+      [DemoComponent, AwareComponent],
       async result => {
         debugger;
         const vm = getViewModel<DemoComponent>(result, {
           ref: 'demoComponent',
         });
-        const vmBtn = getViewModel<AwareEventButton>(result, {
+        const vmBtn = getViewModel<AwareComponent>(result, {
           ref: 'awareBtnRef',
         });
         expect(vm.slotNames.length).toBe(2);
@@ -57,8 +57,8 @@ describe('aware-event-button', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-event-button view-model.ref="awareBtnRef" event-name="demo-component:tab1" next.call="something = 'No!'" property="select" value.bind="['two']">Do it!</aware-event-button>`,
-      [DemoComponent, AwareEventButton],
+  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]" next.call="something = 'No!'">Do it!</aware-component>`,
+      [DemoComponent, AwareComponent],
       async result => {
         debugger;
         const vm = getViewModel<DemoComponent>(result, {
@@ -67,7 +67,7 @@ describe('aware-event-button', () => {
         const myDiv: HTMLDivElement = getViewModel<HTMLDivElement>(result, {
           ref: 'myDiv',
         });
-        const vmBtn = getViewModel<AwareEventButton>(result, {
+        const vmBtn = getViewModel<AwareComponent>(result, {
           ref: 'awareBtnRef',
         });
         expect(vm.slotNames.length).toBe(2);

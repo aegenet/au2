@@ -7,4 +7,4 @@ export type { IAwareEvent } from './aware/i-aware-event';
 export { AwareComponentService } from './aware/aware-component-service';
 export { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
 export type { ICustomElementAware } from './aware/i-custom-element-aware';
-export { AwareEventButton } from './aware/aware-event-button';
+export { AwareComponent } from './aware/aware-component';
