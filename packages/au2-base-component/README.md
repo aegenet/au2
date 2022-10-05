@@ -1,7 +1,7 @@
 # @aegenet/au2-base-component
 
-> `BaseComponent` with `EventAggregator`, `I18N` and `AntiBounce`
-> `BasePage` with `EventAggregator`, `I18N` and `AntiBounce`
+> `BaseComponent` with `EventAggregator`, `I18N`, `Aware Event` and `AntiBounce`
+> `BasePage` with `EventAggregator`, `I18N`, `Aware Event` and `AntiBounce`
 
 
 This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).

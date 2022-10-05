@@ -6,6 +6,7 @@ import { MyApp } from './my-app';
 // import shared from './shared.scss';
 import { DemoComponent } from './demo-component';
 import { DemoAuSlot } from './demo-au-slot';
+import { register } from '../src/register';
 
 Aurelia
   /*
@@ -15,6 +16,6 @@ Aurelia
   }))
   */
   // Register all exports of the plugin
-  .register(DemoComponent, DemoAuSlot)
+  .register(register(), DemoComponent, DemoAuSlot)
   .app(MyApp)
   .start();

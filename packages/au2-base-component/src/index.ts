@@ -1,2 +1,10 @@
 export { BaseComponent } from './base-component';
+export type { IBaseComponent } from './i-base-component';
 export { BasePage } from './base-page';
+export type { IBasePage } from './i-base-page';
+export { register } from './register';
+export type { IAwareEvent } from './aware/i-aware-event';
+export { AwareComponentService } from './aware/aware-component-service';
+export { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
+export type { ICustomElementAware } from './aware/i-custom-element-aware';
+export { AwareEventButton } from './aware/aware-event-button';

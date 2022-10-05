@@ -51,6 +51,7 @@ module.exports = function(
     const production = env.production || process.env.NODE_ENV === 'production';
     options.libraryType = options.libraryType ?? 'commonjs';
     return {
+      name: options.libraryType,
       target: options.target ? options.target : 'es2017', // production ? 'node' : 'web',
       mode: production ? 'production' : 'development',
       devtool: production ? undefined : 'eval-cheap-source-map',
@@ -92,7 +93,7 @@ module.exports = function(
       },
       externalsType: 'module',
       resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.js', '.ts', '.tsx', '.json'],
         alias: {
           [options.name]: path.join(directory, 'src'),
           [`@${options.org}/${options.name}`]: path.join(directory, 'src/'),
@@ -186,9 +187,6 @@ module.exports = function(
             exclude: /node_modules/,
           },
         ],
-      },
-      resolve: {
-        extensions: ['.js', '.ts', '.tsx', '.json']
       },
       externalsPresets: { node: production },
       externals: [

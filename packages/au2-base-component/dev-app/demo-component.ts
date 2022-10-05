@@ -15,6 +15,9 @@ export class DemoComponent extends BaseComponent {
   @bindable()
   public tabSlot?: string;
 
+  /** Else (for test) */
+  public something: string = '';
+
   constructor(element: Element, container: IContainer) {
     super(element, container);
   }
@@ -35,4 +38,12 @@ export class DemoComponent extends BaseComponent {
   public select(tabSlot: string): void {
     this.tabSlot = tabSlot;
   }
+
+  /**
+   * Sélectionne un tab
+   * @param tabSlot
+   */
+  public selectAlt = (tabSlot: string): void => {
+    this.tabSlot = tabSlot;
+  };
 }

@@ -1,12 +1,14 @@
-import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
+import { disposeAntiBounces, type IAntiBounce } from '@aegenet/belt-anti-bounce';
 import { I18N } from '@aurelia/i18n';
 import { IContainer, IEventAggregator, IPlatform, type TaskQueue } from 'aurelia';
-import { IRouter, type IRouteableComponent, type RoutingInstruction, type Navigation, type Parameters } from '@aurelia/router';
+import { IRouter, type RoutingInstruction, type Navigation, type Parameters } from '@aurelia/router';
+import type { IBasePage } from './i-base-page';
+import { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
 
 /**
  * Base Page
  */
-export abstract class BasePage implements IRouteableComponent, IAntiBounceSupport {
+export abstract class BasePage implements IBasePage {
   /**
    * Instances of anti-bounce
    * @remark Don't edit manually
@@ -22,6 +24,20 @@ export abstract class BasePage implements IRouteableComponent, IAntiBounceSuppor
    * @core
    */
   protected readonly _ea: IEventAggregator;
+
+  /**
+   * Specify a special name for this instance
+   *
+   * "Je suis spécial !"
+   */
+  public eventName?: string;
+
+  /**
+   * Aware Service
+   * @service
+   * @core
+   */
+  protected readonly _aware: IAwareComponentService;
 
   /**
    * i18n
@@ -55,6 +71,7 @@ export abstract class BasePage implements IRouteableComponent, IAntiBounceSuppor
   constructor(protected readonly _container: IContainer) {
     this._ea = this._container.get(IEventAggregator);
     this._platform = this._container.get(IPlatform);
+    this._aware = this._container.get(DIAwareComponentService);
     if (this._container.has(I18N, true)) {
       this.i18n = this._container.get(I18N);
     } else {
@@ -68,6 +85,7 @@ export abstract class BasePage implements IRouteableComponent, IAntiBounceSuppor
   }
 
   public async load?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void> {
+    this._aware.subscribe(this);
     await Promise.resolve(this._init(parameters, instruction, navigation));
     this._isInit = true;
   }
@@ -87,6 +105,7 @@ export abstract class BasePage implements IRouteableComponent, IAntiBounceSuppor
   /** Unload the page */
   public async unload(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void> {
     disposeAntiBounces(this);
+    this._aware.unsubscribe(this);
     await Promise.resolve(this._deinit(instruction, navigation));
     this._isInit = false;
   }
@@ -98,5 +117,14 @@ export abstract class BasePage implements IRouteableComponent, IAntiBounceSuppor
    */
   public get taskQueue(): TaskQueue {
     return this._platform.taskQueue;
+  }
+
+  /**
+   * Event aggregator
+   * @service
+   * @core
+   */
+  public get ea(): IEventAggregator {
+    return this._ea;
   }
 }

@@ -1,9 +1,10 @@
 import Aurelia, { CustomElement } from 'aurelia';
+import { register } from '../src';
 
 async function _renderDiv(div: HTMLElement, componentOrTemplate: string | unknown, ...deps: readonly unknown[]) {
   const wrapper = typeof componentOrTemplate === 'string' ? CustomElement.define({ name: 'wrapper', template: componentOrTemplate }) : componentOrTemplate;
 
-  const au = new Aurelia().register(...deps).app({
+  const au = new Aurelia().register(register(), ...deps).app({
     host: div,
     component: wrapper,
   });
@@ -28,7 +29,7 @@ export async function renderInDOM(componentOrTemplate: string | unknown, deps: r
     const au = await _renderDiv(div, componentOrTemplate, ...deps);
 
     await action(div, div.innerHTML);
-    await au.stop();
+    await au.stop(true);
   } finally {
     if (div) {
       document.body.removeChild(div);
@@ -41,12 +42,23 @@ export async function renderInDOM(componentOrTemplate: string | unknown, deps: r
  * @param result
  * @returns
  */
-export function getViewModel<T>(result: HTMLElement, propertyName?: string): T {
-  const baseChildren = result['$au']['au:resource:custom-element'].children;
-  const vm = baseChildren ? baseChildren[0].scope.bindingContext : undefined;
+export function getViewModel<T>(
+  result: HTMLElement,
+  options: {
+    propertyName?: string;
+    ref?: string;
+  } = {}
+): T {
+  let vm: T;
+  if (options.ref && result['$au']['au:resource:custom-element'].viewModel && options.ref in result['$au']['au:resource:custom-element'].viewModel) {
+    vm = result['$au']['au:resource:custom-element'].viewModel[options.ref];
+  } else {
+    const baseChildren = result['$au']['au:resource:custom-element'].children;
+    vm = baseChildren ? baseChildren[0].scope.bindingContext : undefined;
+  }
 
-  if (vm && propertyName?.length) {
-    return vm[propertyName];
+  if (vm && options.propertyName?.length) {
+    return vm[options.propertyName];
   } else {
     return vm;
   }

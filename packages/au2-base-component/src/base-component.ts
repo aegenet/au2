@@ -1,11 +1,14 @@
-import { type ICustomElementViewModel, IEventAggregator, IPlatform, type TaskQueue, IAuSlotsInfo, bindable, type IContainer } from 'aurelia';
+import { IEventAggregator, IPlatform, type TaskQueue, IAuSlotsInfo, bindable, type IContainer } from 'aurelia';
 import { I18N } from '@aurelia/i18n';
-import { disposeAntiBounces, type IAntiBounce, type IAntiBounceSupport } from '@aegenet/belt-anti-bounce';
+import { disposeAntiBounces, type IAntiBounce } from '@aegenet/belt-anti-bounce';
+import type { IBaseComponent } from './i-base-component';
+import { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
+import type { IHydratedController, LifecycleFlags } from '@aurelia/runtime-html';
 
 /**
  * Base component, with basic logic
  */
-export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IAntiBounceSupport {
+export class BaseComponent<EBD = unknown> implements IBaseComponent {
   private static _COUNTER: number = 1;
   /**
    * Instances of anti-bounce
@@ -30,6 +33,13 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
   protected readonly _ea: IEventAggregator;
 
   /**
+   * Aware Service
+   * @service
+   * @core
+   */
+  protected readonly _aware: IAwareComponentService;
+
+  /**
    * Platform
    * @service
    * @core
@@ -48,6 +58,14 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
    * @core
    */
   public readonly uid?: string;
+
+  /**
+   * Specify a special name for this instance
+   *
+   * "Je suis spécial !"
+   */
+  @bindable()
+  public eventName?: string;
 
   /**
    * Has been init ? (attached & _init())
@@ -93,11 +111,6 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
    */
   public isBusy?: boolean;
 
-  // /**
-  //  * Alert service
-  //  */
-  // public readonly alertService?: IAlertService;
-
   /** Données encapsulées  */
   @bindable()
   public embedData?: EBD;
@@ -117,13 +130,13 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
     this.uid = `au2-comp-${BaseComponent._COUNTER++}`;
     this._auSlotInfo = this._container.get(IAuSlotsInfo);
     this._ea = this._container.get(IEventAggregator);
+    this._aware = this._container.get(DIAwareComponentService);
     this._platform = this._container.get(IPlatform);
     if (this._container.has(I18N, true)) {
       this.i18n = this._container.get(I18N);
     } else {
       console.debug('I18N cannot be used without right configuration.');
     }
-    // this.alertService = SharedContainer.instance.get(IAlertService);
   }
 
   /** Permet de savoir si un slot existe */
@@ -133,11 +146,19 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
       this._refreshSlots();
 
       this.isBusy = true;
+      this._aware.subscribe(this);
       await Promise.resolve(this._init());
       this._isInit = true;
     } finally {
       this.isBusy = false;
     }
+  }
+
+  /**
+   * Detaching
+   */
+  public detaching(initiator: IHydratedController, parent: IHydratedController, flags: LifecycleFlags) {
+    this._aware.unsubscribe(this);
   }
 
   /**
@@ -166,7 +187,7 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
     }
 
     if (this._element) {
-      const slots = Array.from(this._element.children).filter(f => f.slot);
+      const slots = this._element.children ? Array.from(this._element.children).filter(f => f.slot) : [];
       for (let i = 0; i < slots.length; i++) {
         const sloti = slots[i];
         if (sloti) {
@@ -200,5 +221,14 @@ export class BaseComponent<EBD = unknown> implements ICustomElementViewModel, IA
    */
   public get taskQueue(): TaskQueue {
     return this._platform.taskQueue;
+  }
+
+  /**
+   * Event aggregator
+   * @service
+   * @core
+   */
+  public get ea(): IEventAggregator {
+    return this._ea;
   }
 }
