@@ -18,7 +18,9 @@ export class AwareComponentService implements IAwareComponentService {
     if (customElement.eventName && customElement.$controller?.definition) {
       const definition = customElement.$controller.definition;
       if (definition.name) {
-        customElement.$awareToken = this._ev.subscribe(`${definition.name}:${customElement.eventName}`, (options: IAwareEvent) => {
+        // if the user specify a namespace manually, we don't auto prefix with custom element name.
+        const eventName = customElement.eventName.indexOf(':') !== -1 ? customElement.eventName : `${definition.name}:${customElement.eventName}`;
+        customElement.$awareToken = this._ev.subscribe(eventName, (options: IAwareEvent) => {
           this.publish(customElement, options);
         });
       }
