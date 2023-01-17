@@ -117,7 +117,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
 
   /**
    * Event au changement de valeur
-   * évènement à appeler via la fonction .call et non .bind
+   * évènement à appeler via .bind avec une fonction anonyme
    * @type callback
    * @input newValue
    * @input oldValue

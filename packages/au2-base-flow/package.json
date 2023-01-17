@@ -20,25 +20,25 @@
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-flow",
   "dependencies": {},
   "peerDependencies": {
-    "@aurelia/kernel": "^2.0.0-alpha.41"
+    "@aurelia/kernel": "^2.0.0-beta.1"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.3",
-    "@types/mocha": "^9.1.0",
-    "@types/node": "^16.11.10",
-    "@aurelia/kernel": "^2.0.0-alpha.41"
+    "@aurelia/kernel": "^2.0.0-beta.1",
+    "@types/jest": "^27",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18"
   },
   "pre-commit": [
     "lint"
   ],
   "scripts": {
-    "clean": "node ./../../node_modules/rimraf/bin ./dist && node ./../../node_modules/rimraf/bin ./coverage && node ./../../node_modules/rimraf/bin ./.nyc_output && node ./../../node_modules/rimraf/bin ./node_modules",
+    "clean": "node ./../../node_modules/rimraf ./dist && node ./../../node_modules/rimraf ./coverage && node ./../../node_modules/rimraf ./.nyc_output && node ./../../node_modules/rimraf ./node_modules",
     "lint": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",
     "lint:fix": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx} --fix",
     "test-browser": "node ./../../node_modules/jest/bin/jest --config ./jest.web.config.cjs",
     "test-node": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
-    "analyze": "node ./../../node_modules/rimraf/bin dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
+    "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "build": "yarn run build:webpack",
-    "build:webpack": "node ./../../node_modules/rimraf/bin dist && node ./../../node_modules/webpack/bin/webpack --env production"
+    "build:webpack": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production"
   }
 }

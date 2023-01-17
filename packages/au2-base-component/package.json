@@ -21,13 +21,13 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@aegenet/belt-anti-bounce": "^999.1649280157577.0",
-    "@aurelia/i18n": "^2.0.0-alpha.41",
-    "@aurelia/router": "^2.0.0-alpha.41",
-    "@aurelia/testing": "^2.0.0-alpha.41",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.10",
-    "aurelia": "^2.0.0-alpha.41",
+    "@aegenet/belt-anti-bounce": "^999",
+    "@aurelia/i18n": "^2.0.0-beta.1",
+    "@aurelia/router": "^2.0.0-beta.1",
+    "@aurelia/testing": "^2.0.0-beta.1",
+    "@types/jest": "^27",
+    "@types/node": "^18.11.18",
+    "aurelia": "^2.0.0-beta.1",
     "typescript": "~4.7"
   },
   "scripts": {

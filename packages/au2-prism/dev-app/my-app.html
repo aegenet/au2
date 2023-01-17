@@ -1,7 +1,7 @@
 <h2>Prism Editor</h2>
 <prism-editor view-model.ref="prismRef" code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></prism-editor>
 
-<button click.delegate="prismRef.code = 'Ok ok'">Change !</button>
+<button click.trigger="prismRef.code = 'Ok ok'">Change !</button>
 
 <h3>Value</h3>
 <pre><code innerhtml.bind="prismRef.code"></code></pre>

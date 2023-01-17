@@ -17,7 +17,7 @@ import type { IAwareEvent } from './i-aware-event';
  *
  * <aware-component view-model.ref="awareEvRef"
  *    events.bind="[{ name: 'ra-checkbox:my-box', options: { property: 'value', value: !isChecked } }]"
- *    next.call="nextHasBeenCalled = true"
+ *    next.bind="() => nextHasBeenCalled = true"
  * >
  *      Toggled via event
  * </aware-component>

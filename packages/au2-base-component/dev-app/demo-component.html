@@ -3,7 +3,7 @@
     <a repeat.for="slotName of slotNames"
         class="nav-link ${slotName === tabSlot ? 'active' : ''} pointer"
         id="${uid}-${slotName}-tab"
-        role="tab" aria-controls="${uid}-${slotName}-content" aria-selected="true" click.delegate="select(slotName)">${slots[slotName].attributes.title.value}</a>
+        role="tab" aria-controls="${uid}-${slotName}-content" aria-selected="true" click.trigger="select(slotName)">${slots[slotName].attributes.title.value}</a>
   </div>
 </nav>
 <div class="tab-content">

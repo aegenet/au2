@@ -57,7 +57,7 @@ describe('aware-component', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]" next.call="something = 'No!'">Do it!</aware-component>`,
+  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
         debugger;
@@ -104,7 +104,7 @@ describe('aware-component', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo:tab1', options: { property: 'select', value: ['two'] } }]" next.call="something = 'No!'">Do it!</aware-component>`,
+  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
         debugger;

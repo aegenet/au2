@@ -6,18 +6,30 @@ const tasks = {
   clean: project => `cd ./packages/${project.name}/ && yarn run clean`,
   /** Delete dependencies */
   deleteNodeModules: project => {
-    let cmd = `node ./node_modules/rimraf/bin ./packages/${project.name}/node_modules`;
+    let cmd = `node ./node_modules/rimraf ./packages/${project.name}/node_modules`;
     return cmd;
   },
   /** Upgrade dependencies */
   upgrade: project => {
-    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf/bin ./node_modules && node ./../../node_modules/rimraf/bin ./yarn.lock`;
+    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf ./node_modules && node ./../../node_modules/rimraf ./yarn.lock`;
     
     project.links.forEach(link => {
       cmd += ` && yarn link ${link}`;
     });
 
-    cmd += ' && yarn && yarn link';
+    cmd += ' && yarn && yarn upgrade && yarn link';
+  
+    return cmd;
+  },
+  /** Upgrade dependencies */
+  upgradeLatest: project => {
+    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf ./node_modules && node ./../../node_modules/rimraf ./yarn.lock`;
+    
+    project.links.forEach(link => {
+      cmd += ` && yarn link ${link}`;
+    });
+
+    cmd += ' && yarn && yarn upgrade --latest && yarn link';
   
     return cmd;
   },

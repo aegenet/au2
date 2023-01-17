@@ -19,14 +19,14 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "codemirror": "^6.0.1",
-    "@codemirror/lang-json": "^6.0.0"
+    "@codemirror/lang-json": "^6.0.1",
+    "codemirror": "^6.0.1"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-alpha.41",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.10",
-    "aurelia": "^2.0.0-alpha.41",
+    "@aurelia/testing": "^2.0.0-beta.1",
+    "@types/jest": "^27",
+    "@types/node": "^18.11.18",
+    "aurelia": "^2.0.0-beta.1",
     "typescript": "~4.7"
   },
   "scripts": {
