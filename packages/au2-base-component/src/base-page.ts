@@ -84,26 +84,26 @@ export abstract class BasePage implements IBasePage {
     }
   }
 
-  public async load?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void> {
+  public async loading?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void> {
     this._aware.subscribe(this);
     await Promise.resolve(this._init(parameters, instruction, navigation));
     this._isInit = true;
   }
 
   /**
-   * Custom logic (on load)
+   * Custom logic (on loading)
    */
   protected _init(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): void | Promise<void> {
     //
   }
 
-  /** Custom logic (on unload) */
+  /** Custom logic (on unloading) */
   protected _deinit(instruction: RoutingInstruction, navigation: Navigation | null): void | Promise<void> {
     //
   }
 
   /** Unload the page */
-  public async unload(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void> {
+  public async unloading(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void> {
     disposeAntiBounces(this);
     this._aware.unsubscribe(this);
     await Promise.resolve(this._deinit(instruction, navigation));

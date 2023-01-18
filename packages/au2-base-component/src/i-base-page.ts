@@ -33,10 +33,10 @@ export interface IBasePage extends IRouteableComponent, IAntiBounceSupport, ICus
    */
   lastError?: string;
 
-  load?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void>;
+  loading?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void>;
 
   /** Unload the page */
-  unload(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void>;
+  unloading(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void>;
 
   /**
    * TaskQueue
