@@ -1,5 +1,5 @@
 import { IHydratedController } from '@aurelia/runtime-html';
-import { bindable, customElement, LifecycleFlags, type ICustomElementViewModel } from 'aurelia';
+import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
 
 import Prism from 'prismjs';
 import 'prismjs/components/prism-cmake.js';
@@ -38,7 +38,7 @@ export class PrismView implements ICustomElementViewModel {
     this._element.appendChild(style);
   }
 
-  public attached(initiator: IHydratedController, flags: LifecycleFlags): void | Promise<void> {
+  public attached(initiator: IHydratedController): void | Promise<void> {
     this.codeChanged(this.code, '');
   }
 

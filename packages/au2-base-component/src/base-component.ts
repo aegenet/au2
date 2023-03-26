@@ -3,7 +3,7 @@ import { I18N } from '@aurelia/i18n';
 import { disposeAntiBounces, type IAntiBounce } from '@aegenet/belt-anti-bounce';
 import type { IBaseComponent } from './i-base-component';
 import { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
-import type { IHydratedController, LifecycleFlags } from '@aurelia/runtime-html';
+import type { IHydratedController } from '@aurelia/runtime-html';
 
 /**
  * Base component, with basic logic
@@ -157,7 +157,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
   /**
    * Detaching
    */
-  public detaching(initiator: IHydratedController, parent: IHydratedController, flags: LifecycleFlags) {
+  public detaching(initiator: IHydratedController, parent: IHydratedController) {
     this._aware.unsubscribe(this);
   }
 

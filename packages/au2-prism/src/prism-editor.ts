@@ -1,5 +1,5 @@
 import { IHydratedController } from '@aurelia/runtime-html';
-import { bindable, customElement, LifecycleFlags, type ICustomElementViewModel } from 'aurelia';
+import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
 
 import Prism from 'prismjs';
 import 'prismjs/components/prism-cmake.js';
@@ -132,7 +132,7 @@ export class PrismEditor implements ICustomElementViewModel {
   };
   public lineNumbersHeight: string = '20px';
 
-  public attached(initiator: IHydratedController, flags: LifecycleFlags): void | Promise<void> {
+  public attached(initiator: IHydratedController): void | Promise<void> {
     this._recordCurrentState();
     this.styleLineNumbers();
     this._boundedKeydown = this.handleKeyDown.bind(this);
@@ -140,7 +140,7 @@ export class PrismEditor implements ICustomElementViewModel {
     this.codeChanged(this.code, this.code);
   }
 
-  public detaching(initiator: IHydratedController, parent: IHydratedController, flags: LifecycleFlags): void | Promise<void> {
+  public detaching(initiator: IHydratedController, parent: IHydratedController): void | Promise<void> {
     this.textAreaRef.removeEventListener('keydown', this._boundedKeydown);
   }
 
