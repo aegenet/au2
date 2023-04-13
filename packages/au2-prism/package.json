@@ -22,10 +22,10 @@
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.3",
+    "@aurelia/testing": "^2.0.0-beta.4",
     "@types/jest": "^27",
     "@types/node": "^18.11.18",
-    "aurelia": "^2.0.0-beta.3",
+    "aurelia": "^2.0.0-beta.4",
     "typescript": "~4.7"
   },
   "scripts": {
