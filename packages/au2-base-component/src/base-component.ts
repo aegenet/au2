@@ -177,7 +177,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
    * Refresh slots and au-slots
    */
   private _refreshSlots() {
-    this.auSlotNames = this._auSlotInfo.projectedSlots;
+    this.auSlotNames = this._auSlotInfo.projectedSlots as string[];
     this.auSlots = {};
     this.slots = {};
     if (this.auSlotNames.length) {
