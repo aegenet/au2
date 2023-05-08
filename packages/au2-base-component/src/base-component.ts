@@ -168,7 +168,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
     //
   }
 
-  /** Custom logic (after detached) */
+  /** Custom logic (after detaching and unbinding, before dispose) */
   protected _deinit(): void | Promise<void> {
     //
   }
@@ -202,9 +202,9 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
   }
 
   /**
-   * Dispose
+   * Unbinding
    */
-  public async dispose(): Promise<void> {
+  public async unbinding(): Promise<void> {
     this.slots = {};
     this.slotNames = [];
     this.auSlots = {};

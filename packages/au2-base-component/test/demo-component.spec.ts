@@ -25,7 +25,7 @@ describe('demo-component', () => {
         expect(vm.slots.one).toBeTruthy();
         expect(vm.slots.two).toBeTruthy();
 
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -59,7 +59,7 @@ describe('demo-component', () => {
         vm.select(vm.slotNames[1]);
         await result.$aurelia.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -96,7 +96,7 @@ describe('demo-component', () => {
         });
         await result.$aurelia.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -133,7 +133,7 @@ describe('demo-component', () => {
         });
         await result.$aurelia.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -170,7 +170,7 @@ describe('demo-component', () => {
         });
         await result.$aurelia.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -207,7 +207,7 @@ describe('demo-component', () => {
         });
         await result.$aurelia.waitForIdle();
         expect(vm.something).toBe('else');
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }

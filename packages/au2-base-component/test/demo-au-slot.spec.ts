@@ -24,7 +24,7 @@ describe('demo-au-slot', () => {
         expect(Object.keys(vm.auSlots).length).toBe(2);
         expect(vm.auSlots.one).toBeTruthy();
         expect(vm.auSlots.two).toBeTruthy();
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.auSlotNames.length).toBe(0);
         expect(Object.keys(vm.auSlotNames).length).toBe(0);
       }
@@ -54,7 +54,7 @@ describe('demo-au-slot', () => {
         expect(vm.auSlots.two).toBeTruthy();
 
         expect(vm.tabSlot).toBe(vm.auSlotNames[0]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.auSlotNames.length).toBe(0);
         expect(Object.keys(vm.auSlotNames).length).toBe(0);
       }

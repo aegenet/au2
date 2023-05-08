@@ -38,7 +38,7 @@ describe('aware-component', () => {
 
         await result.$aurelia.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -85,7 +85,7 @@ describe('aware-component', () => {
         await result.$aurelia.waitForIdle();
         expect(myDiv.textContent).toBe('No!');
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
@@ -132,7 +132,7 @@ describe('aware-component', () => {
         await result.$aurelia.waitForIdle();
         expect(myDiv.textContent).toBe('No!');
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
-        await vm.dispose();
+        await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
         // expect(Object.keys(vm.slots).length).toBe(0);
       }
