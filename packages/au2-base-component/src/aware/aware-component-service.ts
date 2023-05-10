@@ -48,7 +48,6 @@ export class AwareComponentService implements IAwareComponentService {
           customElement[options.property] = options.value;
         }
       } else if (customElement[options.property] instanceof Function) {
-        debugger;
         (customElement[options.property] as () => void).apply(customElement, options.value);
       }
     }

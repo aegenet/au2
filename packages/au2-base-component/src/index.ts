@@ -8,3 +8,5 @@ export { AwareComponentService } from './aware/aware-component-service';
 export { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
 export type { ICustomElementAware } from './aware/i-custom-element-aware';
 export { AwareComponent } from './aware/aware-component';
+export type { IStoreService } from './store/i-store-service';
+export { StoreService } from './store/store-service';

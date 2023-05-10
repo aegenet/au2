@@ -18,7 +18,6 @@ describe('aware-component', () => {
   <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
-        debugger;
         const vm = getViewModel<DemoComponent>(result, {
           ref: 'demoComponent',
         });
@@ -60,7 +59,6 @@ describe('aware-component', () => {
   <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
-        debugger;
         const vm = getViewModel<DemoComponent>(result, {
           ref: 'demoComponent',
         });
@@ -107,7 +105,6 @@ describe('aware-component', () => {
   <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
-        debugger;
         const vm = getViewModel<DemoComponent>(result, {
           ref: 'demoComponent',
         });

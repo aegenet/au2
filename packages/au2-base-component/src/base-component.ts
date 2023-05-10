@@ -4,6 +4,7 @@ import { disposeAntiBounces, type IAntiBounce } from '@aegenet/belt-anti-bounce'
 import type { IBaseComponent } from './i-base-component';
 import { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
 import type { IHydratedController } from '@aurelia/runtime-html';
+import { DIStoreService, type IStoreService } from './store/i-store-service';
 
 /**
  * Base component, with basic logic
@@ -44,7 +45,14 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
    * @service
    * @core
    */
-  private readonly _platform: IPlatform;
+  protected readonly _platform: IPlatform;
+
+  /**
+   * StoreService
+   * @service
+   * @core
+   */
+  protected readonly _store: IStoreService;
 
   /**
    * i18n
@@ -132,6 +140,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
     this._ea = this._container.get(IEventAggregator);
     this._aware = this._container.get(DIAwareComponentService);
     this._platform = this._container.get(IPlatform);
+    this._store = this._container.get(DIStoreService);
     if (this._container.has(I18N, true)) {
       this.i18n = this._container.get(I18N);
     } else {

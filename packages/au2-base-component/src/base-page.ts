@@ -4,6 +4,7 @@ import { IContainer, IEventAggregator, IPlatform, type TaskQueue } from 'aurelia
 import { IRouter, type RoutingInstruction, type Navigation, type Parameters } from '@aurelia/router';
 import type { IBasePage } from './i-base-page';
 import { DIAwareComponentService, type IAwareComponentService } from './aware/i-aware-component-service';
+import { DIStoreService, type IStoreService } from './store/i-store-service';
 
 /**
  * Base Page
@@ -40,6 +41,13 @@ export abstract class BasePage implements IBasePage {
   protected readonly _aware: IAwareComponentService;
 
   /**
+   * StoreService
+   * @service
+   * @core
+   */
+  protected _store: IStoreService;
+
+  /**
    * i18n
    * @service
    * @core
@@ -72,6 +80,7 @@ export abstract class BasePage implements IBasePage {
     this._ea = this._container.get(IEventAggregator);
     this._platform = this._container.get(IPlatform);
     this._aware = this._container.get(DIAwareComponentService);
+    this._store = this._container.get(DIStoreService);
     if (this._container.has(I18N, true)) {
       this.i18n = this._container.get(I18N);
     } else {
