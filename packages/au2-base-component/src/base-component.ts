@@ -219,8 +219,8 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
     this.auSlots = {};
     this.auSlotNames = [];
     disposeAntiBounces(this);
-    await Promise.resolve(this._deinit());
     this._isInit = false;
+    await Promise.resolve(this._deinit());
   }
 
   /**
