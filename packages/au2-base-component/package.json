@@ -22,12 +22,12 @@
   "peerDependencies": {},
   "devDependencies": {
     "@aegenet/belt-anti-bounce": "^0.3.1",
-    "@aurelia/i18n": "^2.0.0-beta.5",
-    "@aurelia/router": "^2.0.0-beta.5",
-    "@aurelia/testing": "^2.0.0-beta.5",
+    "@aurelia/i18n": "^2.0.0-beta.6",
+    "@aurelia/router": "^2.0.0-beta.6",
+    "@aurelia/testing": "^2.0.0-beta.6",
     "@types/jest": "^27",
     "@types/node": "^18.11.18",
-    "aurelia": "^2.0.0-beta.5",
+    "aurelia": "^2.0.0-beta.6",
     "typescript": "^5"
   },
   "scripts": {
