@@ -23,10 +23,10 @@
     "codemirror": "^6.0.1"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.6",
+    "@aurelia/testing": "^2.0.0-beta.7",
     "@types/jest": "^27",
     "@types/node": "^18.11.18",
-    "aurelia": "^2.0.0-beta.6",
+    "aurelia": "^2.0.0-beta.7",
     "typescript": "^5"
   },
   "scripts": {
