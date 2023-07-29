@@ -2,23 +2,23 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-beta.7.tgz#159eedadbbc0f041b13e703a363942d1d2a70c68"
-  integrity sha512-T2eXGdyfxh9T7xNljUJVbVE2EWsGKtyZYYHmYeE0GoctI6Ia7arN9g191DrXZZslz79nC/1ZFjxcsATx2GipHQ==
+"@aurelia/kernel@^2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-beta.8.tgz#db3697f70d9925a15101791882762a8032dedcca"
+  integrity sha512-xTjMkoAMZbsphg8VNmCVjWYbWKl48lSDn0j//WFxLrj6DCYDqwbvPc8T5r9NF/KqArXHS5+wdbp/A+Qkdz0C0g==
   dependencies:
-    "@aurelia/metadata" "2.0.0-beta.7"
-    "@aurelia/platform" "2.0.0-beta.7"
+    "@aurelia/metadata" "2.0.0-beta.8"
+    "@aurelia/platform" "2.0.0-beta.8"
 
-"@aurelia/metadata@2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-beta.7.tgz#a5d3b43310268bdad9fae18a4cb5cd0131eb0728"
-  integrity sha512-/e1PrqErA9eDvw7Wg6LC6z2+F7Kiojfyraq1Sv0OxafiwLq1Oao/TRVL4C0jUZOsRqQ+XXS0iRm+zAQ247Trxg==
+"@aurelia/metadata@2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-beta.8.tgz#735158a61451866264dfb87731285fb21be82553"
+  integrity sha512-zru0FxkJhgSqqYT9xeNoF4GhfSeAUXVEpGR/YX0C9nx43Y0l2FYGynwO5ARendGUKeHn0UsVp0obyd9rpvPp/Q==
 
-"@aurelia/platform@2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-beta.7.tgz#5f27db794990ea765c3b498daea4df0a48bdb784"
-  integrity sha512-yimI627UmzbTL8gwQ8G3sDERjGCAXq7ictekvRc0Nena9fZltu/DS4Rln10cGTMTFKAg2SGQ5zsiiVEVXTm0tg==
+"@aurelia/platform@2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-beta.8.tgz#40c8674d2fa16284a495e97d74ce4719d2a5c6b9"
+  integrity sha512-ti0sczra2oGAqR69fi4lRibTFjFWeWKHbYPoZnVVubZdFhTWBJw2+rjOrOwmq+RjHbra4h3q6zsLAI3AThdLSw==
 
 "@types/jest@^27":
   version "27.5.2"
@@ -34,9 +34,9 @@
   integrity sha512-/fvYntiO1GeICvqbQ3doGDIP97vWmvFt83GKguJ6prmQM2iXZfFcq6YE8KteFyRtX2/h5Hf91BYvPodJKFYv5Q==
 
 "@types/node@^18.11.18":
-  version "18.16.18"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.18.tgz#85da09bafb66d4bc14f7c899185336d0c1736390"
-  integrity sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==
+  version "18.17.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.17.1.tgz#84c32903bf3a09f7878c391d31ff08f6fe7d8335"
+  integrity sha512-xlR1jahfizdplZYRU59JlUx9uzF1ARa8jbhM11ccpCJya8kvos5jwdm2ZAgxSCwOl0fq21svP18EVwPBXMQudw==
 
 ansi-regex@^5.0.1:
   version "5.0.1"

@@ -4,7 +4,7 @@ import { DemoAuSlot } from '../dev-app/demo-au-slot';
 describe('demo-au-slot', () => {
   it('Slots', async () => {
     await renderInDOM(
-      `<demo-au-slot view-model.ref="demoComponent2">
+      `<demo-au-slot component.ref="demoComponent2">
           <span au-slot="one" title="French">
             <h5>Second slide label</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -33,7 +33,7 @@ describe('demo-au-slot', () => {
 
   it('next tab', async () => {
     await renderInDOM(
-      `<demo-au-slot view-model.ref="demoComponent2">
+      `<demo-au-slot component.ref="demoComponent2">
       <span au-slot="one" title="French">
         <h5>Second slide label</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

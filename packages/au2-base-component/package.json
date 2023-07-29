@@ -22,12 +22,12 @@
   "peerDependencies": {},
   "devDependencies": {
     "@aegenet/belt-anti-bounce": "^1.0.2",
-    "@aurelia/i18n": "^2.0.0-beta.7",
-    "@aurelia/router": "^2.0.0-beta.7",
-    "@aurelia/testing": "^2.0.0-beta.7",
+    "@aurelia/i18n": "^2.0.0-beta.8",
+    "@aurelia/router": "^2.0.0-beta.8",
+    "@aurelia/testing": "^2.0.0-beta.8",
     "@types/jest": "^27",
     "@types/node": "^18.11.18",
-    "aurelia": "^2.0.0-beta.7",
+    "aurelia": "^2.0.0-beta.8",
     "typescript": "^5"
   },
   "scripts": {
@@ -37,8 +37,8 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
     "pretest": "npm run lint",
     "start": "node ./../../node_modules/webpack/bin/webpack serve --config-name commonjs",
-    "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production && yarn run build:dts",
-    "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
+    "build": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js dist && node ./../../node_modules/webpack/bin/webpack --env production && yarn run build:dts",
+    "analyze": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
     "build:dts": "tsc src/index.ts --target ES2017 --stripInternal --skipLibCheck --emitDecoratorMetadata --experimentalDecorators --moduleResolution node --declaration --emitDeclarationOnly --outDir ./dist",
     "tsc": "echo nothing",

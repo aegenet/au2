@@ -4,7 +4,7 @@ import { DemoComponent } from '../dev-app/demo-component';
 describe('demo-component', () => {
   it('Slots', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent">
+      `<demo-component component.ref="demoComponent">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -34,7 +34,7 @@ describe('demo-component', () => {
 
   it('next tab', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent">
+      `<demo-component component.ref="demoComponent">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -68,7 +68,7 @@ describe('demo-component', () => {
 
   it('Event me by function', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent" event-name="tab1">
+      `<demo-component component.ref="demoComponent" event-name="tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -105,7 +105,7 @@ describe('demo-component', () => {
 
   it('Event me by property function', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent" event-name="tab1">
+      `<demo-component component.ref="demoComponent" event-name="tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -142,7 +142,7 @@ describe('demo-component', () => {
 
   it('Event me by bindable property', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent" event-name="tab1">
+      `<demo-component component.ref="demoComponent" event-name="tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -179,7 +179,7 @@ describe('demo-component', () => {
 
   it('Event me by property', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent" event-name="tab1">
+      `<demo-component component.ref="demoComponent" event-name="tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

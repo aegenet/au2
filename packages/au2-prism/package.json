@@ -22,10 +22,10 @@
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.7",
+    "@aurelia/testing": "^2.0.0-beta.8",
     "@types/jest": "^27",
     "@types/node": "^18.11.18",
-    "aurelia": "^2.0.0-beta.7",
+    "aurelia": "^2.0.0-beta.8",
     "typescript": "^5"
   },
   "scripts": {
@@ -35,9 +35,9 @@
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
     "pretest": "npm run lint",
     "start": "node ./../../node_modules/webpack/bin/webpack serve",
-    "build": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production && npm run build:dts",
+    "build": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js dist && node ./../../node_modules/webpack/bin/webpack --env production && npm run build:dts",
     "build:dts": "tsc --project ./tsconfig.bundle.json && node ./../../.build/build-typings.js",
-    "analyze": "node ./../../node_modules/rimraf dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
+    "analyze": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
     "tsc": "echo nothing",
     "test-node": "yarn run test"

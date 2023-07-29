@@ -5,7 +5,7 @@ import { getViewModel, renderInDOM } from './helper';
 describe('aware-component', () => {
   it('Event me by component', async () => {
     await renderInDOM(
-      `<demo-component view-model.ref="demoComponent" event-name="tab1">
+      `<demo-component component.ref="demoComponent" event-name="tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -15,7 +15,7 @@ describe('aware-component', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]">Do it!</aware-component>`,
+  <aware-component component.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
         const vm = getViewModel<DemoComponent>(result, {
@@ -46,7 +46,7 @@ describe('aware-component', () => {
 
   it('Event me by component - then', async () => {
     await renderInDOM(
-      `<let something="My Div"></let><div ref="myDiv">\${something}</div><demo-component view-model.ref="demoComponent" event-name="tab1">
+      `<let something="My Div"></let><div ref="myDiv">\${something}</div><demo-component component.ref="demoComponent" event-name="tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -56,7 +56,7 @@ describe('aware-component', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
+  <aware-component component.ref="awareBtnRef" events.bind="[{ name: 'demo-component:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
         const vm = getViewModel<DemoComponent>(result, {
@@ -92,7 +92,7 @@ describe('aware-component', () => {
 
   it('Event me  with specified namespace', async () => {
     await renderInDOM(
-      `<let something="My Div"></let><div ref="myDiv">\${something}</div><demo-component view-model.ref="demoComponent" event-name="demo:tab1">
+      `<let something="My Div"></let><div ref="myDiv">\${something}</div><demo-component component.ref="demoComponent" event-name="demo:tab1">
     <span slot="one" title="French">
       <h5>Second slide label</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -102,7 +102,7 @@ describe('aware-component', () => {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </span>
   </demo-component>
-  <aware-component view-model.ref="awareBtnRef" events.bind="[{ name: 'demo:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
+  <aware-component component.ref="awareBtnRef" events.bind="[{ name: 'demo:tab1', options: { property: 'select', value: ['two'] } }]" next.bind="() => something = 'No!'">Do it!</aware-component>`,
       [DemoComponent, AwareComponent],
       async result => {
         const vm = getViewModel<DemoComponent>(result, {

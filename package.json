@@ -102,8 +102,8 @@
     "cover": "yarn run cover:clean && yarn run cover:merge && yarn run cover:report"
   },
   "devDependencies": {
-    "@aurelia/ts-jest": "^2.0.0-beta.7",
-    "@aurelia/webpack-loader": "^2.0.0-beta.7",
+    "@aurelia/ts-jest": "^2.0.0-beta.8",
+    "@aurelia/webpack-loader": "^2.0.0-beta.8",
     "@commitlint/cli": "^17.4.2",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
@@ -126,7 +126,7 @@
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "prettier": "^2.8.3",
-    "rimraf": "^4.1.0",
+    "rimraf": "^5.0.1",
     "sass": "^1.57.1",
     "sass-lint": "^1.13.1",
     "sass-loader": "^13.2.0",

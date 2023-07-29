@@ -6,12 +6,12 @@ const tasks = {
   clean: project => `cd ./packages/${project.name}/ && yarn run clean`,
   /** Delete dependencies */
   deleteNodeModules: project => {
-    let cmd = `node ./node_modules/rimraf ./packages/${project.name}/node_modules`;
+    let cmd = `node ./node_modules/rimraf/dist/cjs/src/bin.js ./packages/${project.name}/node_modules`;
     return cmd;
   },
   /** Upgrade dependencies */
   upgrade: project => {
-    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf ./node_modules && node ./../../node_modules/rimraf ./yarn.lock`;
+    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./node_modules && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./yarn.lock`;
     
     project.links.forEach(link => {
       cmd += ` && yarn link ${link}`;
@@ -23,7 +23,7 @@ const tasks = {
   },
   /** Upgrade dependencies */
   upgradeLatest: project => {
-    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf ./node_modules && node ./../../node_modules/rimraf ./yarn.lock`;
+    let cmd = `cd ./packages/${project.name}/ && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./node_modules && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./yarn.lock`;
     
     project.links.forEach(link => {
       cmd += ` && yarn link ${link}`;
