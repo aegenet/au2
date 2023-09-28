@@ -115,8 +115,8 @@ export abstract class BasePage implements IBasePage {
   public async unloading(instruction: RoutingInstruction, navigation: Navigation | null): Promise<void> {
     disposeAntiBounces(this);
     this._aware.unsubscribe(this);
-    await Promise.resolve(this._deinit(instruction, navigation));
     this._isInit = false;
+    await Promise.resolve(this._deinit(instruction, navigation));
   }
 
   /**
