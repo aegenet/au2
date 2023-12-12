@@ -20,10 +20,10 @@
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-flow",
   "dependencies": {},
   "peerDependencies": {
-    "@aurelia/kernel": "^2.0.0-beta.8"
+    "@aurelia/kernel": "^2.0.0-beta.9"
   },
   "devDependencies": {
-    "@aurelia/kernel": "^2.0.0-beta.8",
+    "@aurelia/kernel": "^2.0.0-beta.9",
     "@types/jest": "^27",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18"
@@ -32,13 +32,13 @@
     "lint"
   ],
   "scripts": {
-    "clean": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./dist && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./coverage && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./.nyc_output && node ./../../node_modules/rimraf/dist/cjs/src/bin.js ./node_modules",
+    "clean": "node ./../../node_modules/rimraf/dist/esm/bin.mjs ./dist && node ./../../node_modules/rimraf/dist/esm/bin.mjs ./coverage && node ./../../node_modules/rimraf/dist/esm/bin.mjs ./.nyc_output && node ./../../node_modules/rimraf/dist/esm/bin.mjs ./node_modules",
     "lint": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",
     "lint:fix": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx} --fix",
     "test-browser": "node ./../../node_modules/jest/bin/jest --config ./jest.web.config.cjs",
     "test-node": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
-    "analyze": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
+    "analyze": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
     "build": "yarn run build:webpack",
-    "build:webpack": "node ./../../node_modules/rimraf/dist/cjs/src/bin.js dist && node ./../../node_modules/webpack/bin/webpack --env production"
+    "build:webpack": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/webpack/bin/webpack --env production"
   }
 }
