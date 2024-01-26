@@ -2,23 +2,23 @@
 # yarn lockfile v1
 
 
-"@aurelia/kernel@^2.0.0-beta.9":
-  version "2.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-beta.9.tgz#52606747d4d5e3d21ad7f3283b33b9e8022c1a76"
-  integrity sha512-TXRElWsdH/QmrIXd73JqtxoLjbWe2/H/0s5lwCkv1iuNQvJtQnBiBlqxdBezDiTCt3dlV0BGxfW6enKLrQRh6Q==
+"@aurelia/kernel@^2.0.0-beta.10":
+  version "2.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@aurelia/kernel/-/kernel-2.0.0-beta.10.tgz#21cf8c77b59ed7dd8549abe22bd821a86753810d"
+  integrity sha512-TZ/4zdkd6FyNCsZyLSQQjMWattWNW6qk0FSD23nKNF+oChRtI4kOF5VHQAacVzxOHWegLoS5GYO3xGKuX/PmZg==
   dependencies:
-    "@aurelia/metadata" "2.0.0-beta.9"
-    "@aurelia/platform" "2.0.0-beta.9"
+    "@aurelia/metadata" "2.0.0-beta.10"
+    "@aurelia/platform" "2.0.0-beta.10"
 
-"@aurelia/metadata@2.0.0-beta.9":
-  version "2.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-beta.9.tgz#cc1219e1874a122ef6828af6eeca5fd5552e0c59"
-  integrity sha512-tttNe2ZqNXz94O2h9hAqgNQM3Csn7KqxF+Ee6IfygAWyjWg5L0A7e0Ff6b7DX53vqvuIJqWFXUN837f0eisdeg==
+"@aurelia/metadata@2.0.0-beta.10":
+  version "2.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@aurelia/metadata/-/metadata-2.0.0-beta.10.tgz#577bce77a5dcae4da505ea73aef9b55f5b961924"
+  integrity sha512-NUh+/JGrvEL6Yc/xRqz7e028FgE3oqslfMs44mJGJf14UvmzUeTVtkNYH5XhJVNwH34LeaIPK/xS7uoA0MDbyg==
 
-"@aurelia/platform@2.0.0-beta.9":
-  version "2.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-beta.9.tgz#2b27e01834a13316abfbecfa64ffb8ccff3fe321"
-  integrity sha512-VNCcwtisTqSkgOAh2u3SG0jRDm/ZBjdhpttv7v8kdxliSLEzzJt4XY54UDbVo8lFZ/c/KiFKKiaojRCNOa5bQw==
+"@aurelia/platform@2.0.0-beta.10":
+  version "2.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@aurelia/platform/-/platform-2.0.0-beta.10.tgz#c2f1000da7438b8e782d419ee7988bdd7770edc3"
+  integrity sha512-i+Ta0taMrcga2AA6gH3d+iGRMjtIplFCmfdDsXirKQ8lXhChzQXlI8wE0ZfikkmHGqMTGLCcqX7Ts5O+Ol9A+Q==
 
 "@types/jest@^27":
   version "27.5.2"
@@ -34,9 +34,9 @@
   integrity sha512-dJvrYWxP/UcXm36Qn36fxhUKu8A/xMRXVT2cliFF1Z7UA9liG5Psj3ezNSZw+5puH2czDXRLcXQxf8JbJt0ejg==
 
 "@types/node@^18.11.18":
-  version "18.19.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.3.tgz#e4723c4cb385641d61b983f6fe0b716abd5f8fc0"
-  integrity sha512-k5fggr14DwAytoA/t8rPrIz++lXK7/DqckthCmoZOKNsEbJkId4Z//BqgApXBUGrGddrigYa1oqheo/7YmW4rg==
+  version "18.19.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.10.tgz#4de314ab66faf6bc8ba691021a091ddcdf13a158"
+  integrity sha512-IZD8kAM02AW1HRDTPOlz3npFava678pr8Ie9Vp8uRhBROXAv8MXT2pCnGZZAKYdromsNQLHQcfWQ6EOatVLtqA==
   dependencies:
     undici-types "~5.26.4"
 

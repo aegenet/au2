@@ -17,16 +17,16 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "@codemirror/lang-json": "^6.0.1",
     "codemirror": "^6.0.1"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.9",
+    "@aurelia/testing": "^2.0.0-beta.10",
     "@types/jest": "^27",
     "@types/node": "^18.11.18",
-    "aurelia": "^2.0.0-beta.9",
+    "aurelia": "^2.0.0-beta.10",
     "typescript": "^5"
   },
   "scripts": {

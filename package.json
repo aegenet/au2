@@ -4,7 +4,7 @@
   "description": "Aurelia 2 Plugins / Tools monorepo",
   "main": "index.mjs",
   "author": "Alexandre Genet",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "nyc": {
     "report-dir": "./coverage",
     "temp-dir": "./.nyc_output",
@@ -102,8 +102,8 @@
     "cover": "yarn run cover:clean && yarn run cover:merge && yarn run cover:report"
   },
   "devDependencies": {
-    "@aurelia/ts-jest": "^2.0.0-beta.9",
-    "@aurelia/webpack-loader": "^2.0.0-beta.9",
+    "@aurelia/ts-jest": "^2.0.0-beta.10",
+    "@aurelia/webpack-loader": "^2.0.0-beta.10",
     "@commitlint/cli": "^17.4.2",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
