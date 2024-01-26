@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@aegenet/belt-anti-bounce@^1.0.2":
+"@aegenet/belt-anti-bounce@^1.3.2":
   version "1.3.2"
   resolved "https://npm.pkg.github.com/download/@aegenet/belt-anti-bounce/1.3.2/47edfd732edd896b87ad1d2ebbab09aa8df1fd1e#47edfd732edd896b87ad1d2ebbab09aa8df1fd1e"
   integrity sha512-12rPusv+ibD2qQfopv2jCGWl5yVTfqnin+LPAu/FijXLLQp+hXAsulXvs+YlPxCt4H5hvtPDEOdzR4eFd5iFVw==
