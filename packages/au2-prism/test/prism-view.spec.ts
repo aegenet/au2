@@ -1,5 +1,5 @@
 import { getViewModel, renderInDOM } from './helper';
-import { PrismView } from '../src/prism-view';
+import { PrismView } from '../src/index';
 
 describe('prism-view', () => {
   it('should render code', async () => {

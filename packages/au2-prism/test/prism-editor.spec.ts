@@ -2,6 +2,18 @@ import { getViewModel, renderInDOM } from './helper';
 import { PrismEditor } from '../src/prism-editor';
 
 describe('prism-editor', () => {
+  it('should render empty', async () => {
+    await renderInDOM('<prism-editor></prism-editor>', [PrismEditor], async result => {
+      expect(result.textContent.trim()).toBe('');
+    });
+  });
+
+  it('should render null', async () => {
+    await renderInDOM('<prism-editor code.bind="null"></prism-editor>', [PrismEditor], async result => {
+      expect(result.textContent.trim()).toBe('');
+    });
+  });
+
   it('should render code', async () => {
     await renderInDOM('<prism-editor code="foo"></prism-editor>', [PrismEditor], async result => {
       expect(result.textContent.indexOf('foo') !== -1).toBe(true);

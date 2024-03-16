@@ -133,6 +133,12 @@ export class PrismEditor implements ICustomElementViewModel {
   };
   public lineNumbersHeight: string = '20px';
 
+  public binding(initiator: IHydratedController, parent: IHydratedController): void | Promise<void> {
+    if (this.code == null) {
+      this.code = '';
+    }
+  }
+
   public attached(initiator: IHydratedController): void | Promise<void> {
     this._recordCurrentState();
     this.styleLineNumbers();
@@ -269,7 +275,7 @@ export class PrismEditor implements ICustomElementViewModel {
 
     // Update values and selection state
     // On change la value
-    this.code = record.value;
+    this.code = record.value || '';
     input.value = record.value;
     input.selectionStart = record.selectionStart;
     input.selectionEnd = record.selectionEnd;
@@ -279,6 +285,10 @@ export class PrismEditor implements ICustomElementViewModel {
   }
 
   public codeChanged(newValue: string, oldValue: string) {
+    if (newValue == null) {
+      this.code = '';
+    }
+
     const { value, selectionStart, selectionEnd } = this.textAreaRef as HTMLTextAreaElement;
 
     this._recordChange(
