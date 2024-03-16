@@ -98,7 +98,7 @@
     "codecov": "./node_modules/.bin/codecov",
     "cover:clean": "rimraf ./coverage/ && rimraf ./.nyc_output/",
     "cover:merge": "node ./.build/coverage.merge.js",
-    "cover:report": "c8 report -t ./.nyc_output/ --reporter html --reporter text-summary",
+    "cover:report": "nyc report -t ./.nyc_output/ --reporter html --reporter text-summary",
     "cover": "yarn run cover:clean && yarn run cover:merge && yarn run cover:report"
   },
   "devDependencies": {
@@ -109,7 +109,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "autoprefixer": "^10.4.18",
     "bundle-declarations-webpack-plugin": "^5.1.1",
-    "c8": "^9.1.0",
+    "nyc": "^15.1.0",
     "css-loader": "^6.10.0",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.57.0",
