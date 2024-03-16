@@ -1,10 +1,6 @@
 {
 	"folders": [
     {
-      "name": "engine/au2-base-flow",
-      "path": "./packages/au2-base-flow"
-    },
-    {
       "name": "components/au2-base-component",
       "path": "./packages/au2-base-component"
     },

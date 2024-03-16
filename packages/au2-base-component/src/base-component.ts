@@ -76,20 +76,20 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
   public eventName?: string;
 
   /**
-   * Has been init ? (attached & _init())
+   * Has been init? (attached & _init())
    * @core
    */
   protected _isInit?: boolean;
 
   /**
-   * Have u met T... Slots ? (slot)
+   * Have u met T... Slots? (slot)
    * @remark We fill this object with slot only (not au-slot)
    * @core
    */
   public slots: Record<string, Element> = {};
 
   /**
-   * Have u met T... AuSlots ? (au-slot)
+   * Have u met T... AuSlots? (au-slot)
    * @remark We fill this object with au-slot only (just the name)
    * @core
    */
@@ -119,13 +119,13 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
    */
   public isBusy?: boolean;
 
-  /** Données encapsulées  */
+  /** Embed data */
   @bindable()
   public embedData?: EBD;
 
   /**
-   * Event au changement de valeur
-   * évènement à appeler via .bind avec une fonction anonyme
+   * This predicate is called when the value of the bindable (value) property changes.
+   *
    * @type callback
    * @input newValue
    * @input oldValue
@@ -134,7 +134,10 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
   @bindable()
   public changed?: (...args) => void;
 
-  constructor(protected _element: Element, protected _container: IContainer) {
+  constructor(
+    protected _element: Element,
+    protected _container: IContainer
+  ) {
     this.uid = `au2-comp-${BaseComponent._COUNTER++}`;
     this._auSlotInfo = this._container.get(IAuSlotsInfo);
     this._ea = this._container.get(IEventAggregator);
@@ -148,10 +151,13 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
     }
   }
 
-  /** Permet de savoir si un slot existe */
+  /**
+   * On attached we refresh slots and au-slots objects, subscribe to aware service,
+   * then we call the protected `_init()` method
+   */
   public async attached(): Promise<void> {
     try {
-      // Récupère les slots si besoin
+      // Retrieve the slots and au-slots
       this._refreshSlots();
 
       this.isBusy = true;
@@ -196,17 +202,18 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
     }
 
     if (this._element) {
-      const slots = this._element.children ? Array.from(this._element.children).filter(f => f.slot) : [];
+      const slots = this._element.children ? Array.from(this._element.children) : [];
+      const slotNames = [];
+      let sloti: Element & {
+        slot?: string;
+      };
       for (let i = 0; i < slots.length; i++) {
-        const sloti = slots[i];
-        if (sloti) {
-          this.slots[sloti.slot] = sloti;
+        if ((sloti = slots[i]) && sloti.slot) {
+          this.slots[sloti.slot!] = sloti;
+          slotNames.push(sloti.slot!);
         }
       }
-
-      if (slots.length) {
-        this.slotNames = Object.keys(this.slots);
-      }
+      this.slotNames = slotNames;
     }
   }
 

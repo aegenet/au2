@@ -65,7 +65,7 @@ export abstract class BasePage implements IBasePage {
   protected readonly _platform: IPlatform;
 
   /**
-   * Has been init ? (attached & _init())
+   * Has been init? (attached & _init())
    * @core
    */
   protected _isInit?: boolean;

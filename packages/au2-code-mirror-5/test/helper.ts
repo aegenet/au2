@@ -5,7 +5,7 @@ async function _renderDiv(div: HTMLElement, componentOrTemplate: string | unknow
 
   const au = new Aurelia().register(...deps).app({
     host: div,
-    component: wrapper,
+    component: wrapper as object,
   });
 
   await au.start();

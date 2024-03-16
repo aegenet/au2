@@ -90,7 +90,7 @@ describe('aware-component', () => {
     );
   });
 
-  it('Event me  with specified namespace', async () => {
+  it('Event me with specified namespace', async () => {
     await renderInDOM(
       `<let something="My Div"></let><div ref="myDiv">\${something}</div><demo-component component.ref="demoComponent" event-name="demo:tab1">
     <span slot="one" title="French">

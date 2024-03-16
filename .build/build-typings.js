@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 const packageJson = require(path.join(process.cwd(), './package.json'));
 const bundleDtsPath = path.join(process.cwd(), './dist/bundle.d.ts');
 

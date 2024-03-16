@@ -1,4 +1,5 @@
-import { IHydratedController } from '@aurelia/runtime-html';
+/** Disclaimer: inspired by https://github.com/koca/vue-prism-editor/ */
+import type { IHydratedController } from '@aurelia/runtime-html';
 import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
 
 import Prism from 'prismjs';
@@ -503,10 +504,10 @@ export class PrismEditor implements ICustomElementViewModel {
         ? // Trigger redo with ⌘+Shift+Z on Mac
           e.metaKey && e.key === PrismEditor._KEY_Z && e.shiftKey
         : isWindows
-        ? // Trigger redo with Ctrl+Y on Windows
-          e.ctrlKey && e.key === PrismEditor._KEY_Y
-        : // Trigger redo with Ctrl+Shift+Z on other platforms
-          e.ctrlKey && e.key === PrismEditor._KEY_Z && e.shiftKey) &&
+          ? // Trigger redo with Ctrl+Y on Windows
+            e.ctrlKey && e.key === PrismEditor._KEY_Y
+          : // Trigger redo with Ctrl+Shift+Z on other platforms
+            e.ctrlKey && e.key === PrismEditor._KEY_Z && e.shiftKey) &&
       !e.altKey
     ) {
       e.preventDefault();

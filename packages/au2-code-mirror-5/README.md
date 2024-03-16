@@ -63,3 +63,7 @@ Run unit tests in watch mode.
 ## Analyze webpack bundle
 
     npm run analyze
+
+# License
+
+[The MIT License](LICENSE) - Copyright © 2022-2024 [Alexandre Genet](https://github.com/aegenet).

@@ -40,14 +40,14 @@ export interface IBaseComponent<EBD = unknown> extends ICustomElementViewModel, 
   eventName?: string;
 
   /**
-   * Have u met T... Slots ? (slot)
+   * Have u met T... Slots? (slot)
    * @remark We fill this object with slot only (not au-slot)
    * @core
    */
   slots: Record<string, Element>;
 
   /**
-   * Have u met T... AuSlots ? (au-slot)
+   * Have u met T... AuSlots? (au-slot)
    * @remark We fill this object with au-slot only (just the name)
    * @core
    */
@@ -77,12 +77,12 @@ export interface IBaseComponent<EBD = unknown> extends ICustomElementViewModel, 
    */
   isBusy?: boolean;
 
-  /** Données encapsulées  */
+  /** Embed data */
   embedData?: EBD;
 
   /**
-   * Event au changement de valeur
-   * évènement à appeler via .bind avec une fonction anonyme
+   * This predicate is called when the value of the bindable (value) property changes.
+   *
    * @type callback
    * @input newValue
    * @input oldValue

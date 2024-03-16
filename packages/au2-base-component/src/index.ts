@@ -10,3 +10,4 @@ export type { ICustomElementAware } from './aware/i-custom-element-aware';
 export { AwareComponent } from './aware/aware-component';
 export { DIStoreService, type IStoreService, type StoreKey, type StoreLoadOptions } from './store/i-store-service';
 export { StoreService } from './store/store-service';
+export { type DebugContainerStats, ResolverStrategyMap, debugContainer } from './container/au2-di-debugger';

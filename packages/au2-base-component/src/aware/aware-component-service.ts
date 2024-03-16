@@ -37,9 +37,8 @@ export class AwareComponentService implements IAwareComponentService {
       if (descriptor) {
         // Properties has descriptor (function don't have)
         if (descriptor.set || descriptor.get) {
-          // La propriété a un getter/setter, nous l'utilisons
           if (descriptor.set) {
-            // Nous faisons seulement quelque chose si le setter existe
+            // We only do something if the setter exists
             customElement[options.property] = options.value;
           }
         } else if (descriptor.value instanceof Function) {

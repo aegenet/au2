@@ -10,7 +10,10 @@ export class StoreService implements IStoreService {
   private readonly _store: Map<StoreKey, StoreLoadOptions> = new Map();
   private _tokens: IDisposable[] = [];
 
-  constructor(private readonly _container: IContainer, private readonly _ev: IEventAggregator) {
+  constructor(
+    private readonly _container: IContainer,
+    private readonly _ev: IEventAggregator
+  ) {
     //
   }
 
