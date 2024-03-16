@@ -115,14 +115,14 @@ export class CodeMirror implements ICustomElementViewModel {
     this._codeMirror.setCursor(this._codeMirror.lineCount(), 0);
   }
 
-  private _hintFunction(cm: CodeMirrorLib.Editor, options: CodeMirrorLib.ShowHintOptions) {
+  private _hintFunction(cm: CodeMirrorLib.Editor, options?: { line?: number; ch?: number }) {
     //
     return new Promise((accept: (hints: CodeMirrorLib.Hints | null | undefined) => void) => {
       const cursor = cm.getCursor();
-      const line = cm.getLine(cursor.line);
-      let start = cursor.ch;
-      let end = cursor.ch;
-      while (start && /\w/.test(line.charAt(start - 1))) --start;
+      const line = cm.getLine(options?.line ?? cursor.line);
+      let start = options?.ch ?? cursor.ch;
+      let end = options?.ch ?? cursor.ch;
+      while (start > 0 && /\w/.test(line.charAt(start - 1))) --start;
       while (end < line.length && /\w/.test(line.charAt(end))) ++end;
       const partLine = line.slice(0, end).toLowerCase();
       let suggests = [];
@@ -146,6 +146,8 @@ export class CodeMirror implements ICustomElementViewModel {
           from: CodeMirrorLib.Pos(cursor.line, start),
           to: CodeMirrorLib.Pos(cursor.line, end),
         });
+      } else {
+        accept(null);
       }
     });
   }

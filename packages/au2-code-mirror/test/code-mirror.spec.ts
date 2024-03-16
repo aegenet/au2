@@ -1,5 +1,5 @@
 import { getViewModel, renderInDOM } from './helper';
-import { CodeMirror } from '../src/code-mirror';
+import { CodeMirror } from '../src/index';
 
 describe('code-mirror', () => {
   it('should render code', async () => {
