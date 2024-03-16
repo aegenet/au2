@@ -11,3 +11,4 @@ export { AwareComponent } from './aware/aware-component';
 export { DIStoreService, type IStoreService, type StoreKey, type StoreLoadOptions } from './store/i-store-service';
 export { StoreService } from './store/store-service';
 export { type DebugContainerStats, ResolverStrategyMap, debugContainer } from './container/au2-di-debugger';
+export { defaultCapture } from './common/default-capture';
