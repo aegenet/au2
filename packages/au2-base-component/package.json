@@ -22,6 +22,7 @@
   "peerDependencies": {},
   "devDependencies": {
     "@aegenet/belt-anti-bounce": "^1.4.2",
+    "@aegenet/belt-array-to-obj": "^1.4.2",
     "@aurelia/i18n": "^2.0.0-beta.13",
     "@aurelia/router": "^2.0.0-beta.13",
     "@aurelia/testing": "^2.0.0-beta.13",

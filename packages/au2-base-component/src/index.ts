@@ -10,5 +10,6 @@ export type { ICustomElementAware } from './aware/i-custom-element-aware';
 export { AwareComponent } from './aware/aware-component';
 export { DIStoreService, type IStoreService, type StoreKey, type StoreLoadOptions } from './store/i-store-service';
 export { StoreService } from './store/store-service';
+export type { IStoreMessenger } from './store/i-store-messenger';
 export { type DebugContainerStats, ResolverStrategyMap, debugContainer } from './container/au2-di-debugger';
 export { defaultCapture } from './common/default-capture';

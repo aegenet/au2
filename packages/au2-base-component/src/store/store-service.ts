@@ -1,5 +1,6 @@
-import { IEventAggregator, inject, IContainer, IDisposable } from 'aurelia';
+import { IEventAggregator, inject, IContainer, type IDisposable } from 'aurelia';
 import type { IStoreService, StoreKey, StoreLoadOptions } from './i-store-service';
+import type { IStoreMessenger } from './i-store-messenger';
 
 /**
  * StoreService
@@ -9,28 +10,46 @@ export class StoreService implements IStoreService {
   private _isInit: boolean = false;
   private readonly _store: Map<StoreKey, StoreLoadOptions> = new Map();
   private _tokens: IDisposable[] = [];
+  private _channel: string = 'au2.store-service';
 
   constructor(
     private readonly _container: IContainer,
-    private readonly _ev: IEventAggregator
+    private _ev: IStoreMessenger
   ) {
     //
   }
 
   /** Initialize */
-  public initialize(): void {
+  public initialize(
+    options: {
+      /** Own event aggregator implementation */
+      ownEventAggregator?: IStoreMessenger;
+      /** @default 'au2.store-service' */
+      channel?: string;
+    } = {}
+  ): void {
     if (this._isInit) {
       return;
     }
+    if (options.channel) {
+      this._channel = options.channel;
+    }
+    if (options.ownEventAggregator) {
+      this._ev = options.ownEventAggregator;
+    }
+
     this._isInit = true;
     this._tokens.push(
-      this._ev.subscribe('au2.store-service:set', async (options: StoreLoadOptions) => {
+      this._ev.subscribe(`${this._channel}:set`, async (options: StoreLoadOptions) => {
         await this.setStore(options);
       }),
-      this._ev.subscribe('au2.store-service:del', async (options: StoreLoadOptions) => {
+      // this._ev.subscribe(`${this._channel}:get`, async (options: StoreLoadOptions) => {
+      //   return this.getStore(options.key);
+      // }),
+      this._ev.subscribe(`${this._channel}:del`, async (options: StoreLoadOptions) => {
         await this.delStore(options.key);
       }),
-      this._ev.subscribe('au2.store-service:refresh', async (options: StoreLoadOptions) => {
+      this._ev.subscribe(`${this._channel}:refresh`, async (options: StoreLoadOptions) => {
         await this.refreshStore(options.key);
       })
     );
@@ -64,7 +83,7 @@ export class StoreService implements IStoreService {
     }
     if (!store.data && store.load) {
       store.data = await store.load(this._container);
-      this._ev.publish('au2.store-service:loaded', {
+      this._ev.publish(`${this._channel}:loaded`, {
         key,
         data: store.data,
       });
@@ -80,7 +99,7 @@ export class StoreService implements IStoreService {
     }
     if (store.load) {
       store.data = await store.load(this._container);
-      this._ev.publish('au2.store-service:loaded', {
+      this._ev.publish(`${this._channel}:loaded`, {
         key,
         data: store.data,
       });

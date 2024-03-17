@@ -1,4 +1,5 @@
 import { DI, type IContainer } from 'aurelia';
+import type { IStoreMessenger } from './i-store-messenger';
 
 export const DIStoreService = DI.createInterface<IStoreService>('au2.store-service');
 
@@ -15,7 +16,12 @@ export type StoreLoadOptions = {
  */
 export interface IStoreService {
   /** Initialize */
-  initialize(): void;
+  initialize(options?: {
+    /** Own event aggregator implementation */
+    ownEventAggregator?: IStoreMessenger;
+    /** @default 'au2.store-service' */
+    channel?: string;
+  }): void;
 
   /** Dispose */
   dispose(): void;
