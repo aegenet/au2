@@ -17,4 +17,10 @@ export interface IStoreMessenger {
    * @param message - The message to publish on the channel.
    */
   publish<T, C extends string>(channel: C, message: T): unknown;
+
+  /** Get single subscriber result for the channel */
+  getSingle?<T, C extends string, O = unknown>(channel: C, message: T): Promise<O | undefined>;
+
+  /** Get all subscribers results for the channel */
+  getAll?<T, C extends string, O = unknown>(channel: C, message: T): Promise<O[] | undefined>;
 }

@@ -18,7 +18,7 @@ export interface IStoreService {
   /** Initialize */
   initialize(options?: {
     /** Own event aggregator implementation */
-    ownEventAggregator?: IStoreMessenger;
+    eventAggregator?: IStoreMessenger;
     /** @default 'au2.store-service' */
     channel?: string;
   }): void;

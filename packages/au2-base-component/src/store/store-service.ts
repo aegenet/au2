@@ -1,29 +1,27 @@
-import { IEventAggregator, inject, IContainer, type IDisposable } from 'aurelia';
+import { inject, IContainer, type IDisposable } from 'aurelia';
 import type { IStoreService, StoreKey, StoreLoadOptions } from './i-store-service';
 import type { IStoreMessenger } from './i-store-messenger';
 
 /**
  * StoreService
  */
-@inject(IContainer, IEventAggregator)
+@inject(IContainer)
 export class StoreService implements IStoreService {
   private _isInit: boolean = false;
   private readonly _store: Map<StoreKey, StoreLoadOptions> = new Map();
   private _tokens: IDisposable[] = [];
   private _channel: string = 'au2.store-service';
+  private _ev?: IStoreMessenger;
 
-  constructor(
-    private readonly _container: IContainer,
-    private _ev: IStoreMessenger
-  ) {
+  constructor(private readonly _container: IContainer) {
     //
   }
 
   /** Initialize */
   public initialize(
     options: {
-      /** Own event aggregator implementation */
-      ownEventAggregator?: IStoreMessenger;
+      /** event aggregator implementation */
+      eventAggregator?: IStoreMessenger;
       /** @default 'au2.store-service' */
       channel?: string;
     } = {}
@@ -34,25 +32,28 @@ export class StoreService implements IStoreService {
     if (options.channel) {
       this._channel = options.channel;
     }
-    if (options.ownEventAggregator) {
-      this._ev = options.ownEventAggregator;
+    if (options.eventAggregator) {
+      this._ev = options.eventAggregator;
+    }
+
+    if (this._ev) {
+      this._tokens.push(
+        this._ev.subscribe(`${this._channel}:set`, async (options: StoreLoadOptions) => {
+          await this.setStore(options);
+        }),
+        this._ev.subscribe(`${this._channel}:get`, async (options: StoreLoadOptions) => {
+          return this.getStore(options.key);
+        }),
+        this._ev.subscribe(`${this._channel}:del`, async (options: StoreLoadOptions) => {
+          await this.delStore(options.key);
+        }),
+        this._ev.subscribe(`${this._channel}:refresh`, async (options: StoreLoadOptions) => {
+          await this.refreshStore(options.key);
+        })
+      );
     }
 
     this._isInit = true;
-    this._tokens.push(
-      this._ev.subscribe(`${this._channel}:set`, async (options: StoreLoadOptions) => {
-        await this.setStore(options);
-      }),
-      // this._ev.subscribe(`${this._channel}:get`, async (options: StoreLoadOptions) => {
-      //   return this.getStore(options.key);
-      // }),
-      this._ev.subscribe(`${this._channel}:del`, async (options: StoreLoadOptions) => {
-        await this.delStore(options.key);
-      }),
-      this._ev.subscribe(`${this._channel}:refresh`, async (options: StoreLoadOptions) => {
-        await this.refreshStore(options.key);
-      })
-    );
   }
 
   /** Dispose */
@@ -83,7 +84,7 @@ export class StoreService implements IStoreService {
     }
     if (!store.data && store.load) {
       store.data = await store.load(this._container);
-      this._ev.publish(`${this._channel}:loaded`, {
+      this._ev?.publish(`${this._channel}:loaded`, {
         key,
         data: store.data,
       });
@@ -99,7 +100,7 @@ export class StoreService implements IStoreService {
     }
     if (store.load) {
       store.data = await store.load(this._container);
-      this._ev.publish(`${this._channel}:loaded`, {
+      this._ev?.publish(`${this._channel}:loaded`, {
         key,
         data: store.data,
       });
