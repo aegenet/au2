@@ -15,6 +15,7 @@
     </div>
     <div class="prism-editor__container">
       <textarea
+      value.bind="code"
       style="padding-top:4px"
       ref="textAreaRef"
       spellcheck="false"
@@ -26,7 +27,6 @@
       readonly.bind="readonly"
       data-testid="textarea"
       class="prism-editor__textarea ${isEmpty ? 'prism-editor__textarea--empty' : ''}"
-      value.bind="code"
     >
     </textarea>
     <pre ref="preRef"

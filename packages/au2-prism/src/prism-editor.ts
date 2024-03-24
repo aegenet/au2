@@ -133,14 +133,13 @@ export class PrismEditor implements ICustomElementViewModel {
   };
   public lineNumbersHeight: string = '20px';
 
-  public binding(initiator: IHydratedController, parent: IHydratedController): void | Promise<void> {
+  public bound(initiator: IHydratedController, parent: IHydratedController): void | Promise<void> {
     if (this.code == null) {
       this.code = '';
     }
   }
 
   public attached(initiator: IHydratedController): void | Promise<void> {
-    this._recordCurrentState();
     this.styleLineNumbers();
     this._boundedKeydown = this.handleKeyDown.bind(this);
     this.textAreaRef.addEventListener('keydown', this._boundedKeydown);
@@ -179,20 +178,6 @@ export class PrismEditor implements ICustomElementViewModel {
     // });
   }
 
-  private _recordCurrentState(): void {
-    const input = this.textAreaRef as HTMLTextAreaElement;
-
-    if (!input) return;
-    // Save current state of the input
-    const { value, selectionStart, selectionEnd } = input;
-
-    this._recordChange({
-      value,
-      selectionStart,
-      selectionEnd,
-    });
-  }
-
   private _getLines(text: string, position: number): Array<string> {
     return text.substring(0, position).split('\n');
   }
@@ -201,7 +186,6 @@ export class PrismEditor implements ICustomElementViewModel {
     // Save last selection state
     const input = this.textAreaRef as HTMLTextAreaElement;
     const last = this.history.stack[this.history.offset];
-
     if (last && input) {
       this.history.stack[this.history.offset] = {
         ...last,
@@ -307,7 +291,8 @@ export class PrismEditor implements ICustomElementViewModel {
   //   // this.props.onValueChange(value);
   // }
 
-  private _undoEdit(): void {
+  /** Undo */
+  public undo(): void {
     const { stack, offset } = this.history;
 
     // Get the previous edit
@@ -320,7 +305,8 @@ export class PrismEditor implements ICustomElementViewModel {
     }
   }
 
-  private _redoEdit(): void {
+  /** Redo */
+  private redo(): void {
     const { stack, offset } = this.history;
 
     // Get the next edit
@@ -508,7 +494,7 @@ export class PrismEditor implements ICustomElementViewModel {
     ) {
       e.preventDefault();
 
-      this._undoEdit();
+      this.undo();
     } else if (
       (isMacLike
         ? // Trigger redo with ⌘+Shift+Z on Mac
@@ -522,7 +508,7 @@ export class PrismEditor implements ICustomElementViewModel {
     ) {
       e.preventDefault();
 
-      this._redoEdit();
+      this.redo();
     } else if (e.key === PrismEditor._KEY_M && e.ctrlKey && (isMacLike ? e.shiftKey : true)) {
       e.preventDefault();
 

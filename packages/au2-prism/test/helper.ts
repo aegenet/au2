@@ -41,12 +41,23 @@ export async function renderInDOM(componentOrTemplate: string | unknown, deps: r
  * @param result
  * @returns
  */
-export function getViewModel<T>(result: HTMLElement, propertyName?: string): T {
-  const baseChildren = result['$au']['au:resource:custom-element'].children;
-  const vm = baseChildren ? baseChildren[0].scope.bindingContext : undefined;
+export function getViewModel<T>(
+  result: HTMLElement,
+  options: {
+    propertyName?: string;
+    ref?: string;
+  } = {}
+): T {
+  let vm: T;
+  if (options.ref && result['$au']['au:resource:custom-element'].viewModel && options.ref in result['$au']['au:resource:custom-element'].viewModel) {
+    vm = result['$au']['au:resource:custom-element'].viewModel[options.ref];
+  } else {
+    const baseChildren = result['$au']['au:resource:custom-element'].children;
+    vm = baseChildren ? baseChildren[0].scope.bindingContext : undefined;
+  }
 
-  if (vm && propertyName?.length) {
-    return vm[propertyName];
+  if (vm && options.propertyName?.length) {
+    return vm[options.propertyName];
   } else {
     return vm;
   }

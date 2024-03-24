@@ -1,5 +1,5 @@
 import { getViewModel, renderInDOM } from './helper';
-import { PrismEditor } from '../src/prism-editor';
+import { PrismEditor } from '../src/index';
 
 describe('prism-editor', () => {
   it('should render empty', async () => {
@@ -59,4 +59,57 @@ describe('prism-editor', () => {
       expect(result.textContent.indexOf(newCode) !== -1).toBe(true);
     });
   });
+
+  it('lineNumbers changed', async () => {
+    const code = "const sample = { code: 'oh' };\nconst tata = { ha: 'hoh' };";
+    const newCode = "const yes = 'yes';";
+    await renderInDOM(`<prism-editor component.ref="prismVM" line-numbers.bind="false" code="${code}" language="javascript"></prism-editor>`, [PrismEditor], async result => {
+      expect(result.textContent.indexOf(code) !== -1).toBe(true);
+      const vm = getViewModel<PrismEditor>(result, {
+        ref: 'prismVM',
+      });
+      expect(vm.code).toBe(code);
+      expect(vm.lineNumbers).toBe(false);
+      expect(vm.lineNumbersCount).toBe(2);
+
+      vm.code = newCode;
+      await result.$aurelia.waitForIdle();
+      expect(vm.code).toBe(newCode);
+      expect(vm.lineNumbersCount).toBe(1);
+
+      expect(result.textContent.indexOf(newCode) !== -1).toBe(true);
+
+      vm.lineNumbers = true;
+      await result.$aurelia.waitForIdle();
+      expect(vm.lineNumbers).toBe(true);
+    });
+  });
+
+  // it('Undo', async () => {
+  //   const code = "const sample = { code: 'oh' };\nconst tata = { ha: 'hoh' };";
+  //   const newCode = "const yes = 'yes';";
+  //   await renderInDOM(`<prism-editor component.ref="prismVM" line-numbers.bind="true" code="${code}" language="javascript"></prism-editor>`, [PrismEditor], async result => {
+  //     expect(result.textContent.indexOf(code) !== -1).toBe(true);
+  //     const vm = getViewModel<PrismEditor>(result, {
+  //       ref: 'prismVM',
+  //     });
+  //     expect(vm.code).toBe(code);
+  //     expect(vm.lineNumbers).toBe(true);
+  //     expect(vm.lineNumbersCount).toBe(2);
+
+  //     vm.code = newCode;
+  //     await result.$aurelia.waitForIdle();
+  //     expect(vm.code).toBe(newCode);
+  //     expect(vm.lineNumbersCount).toBe(1);
+
+  //     expect(result.textContent.indexOf(newCode) !== -1).toBe(true);
+
+  //     vm.undo();
+  //     await result.$aurelia.waitForIdle();
+
+  //     expect(vm.code).toBe(code);
+  //     expect(vm.lineNumbers).toBe(true);
+  //     expect(vm.lineNumbersCount).toBe(2);
+  //   });
+  // });
 });

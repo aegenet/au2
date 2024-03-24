@@ -100,11 +100,11 @@ module.exports = function(
           ...['fetch-client', 'kernel', 'metadata', 'platform', 'platform-browser', 'plugin-conventions', 'route-recognizer', 'router', 'router-lite', 'runtime', 'runtime-html', 'testing', 'webpack-loader'].reduce(
             (map, pkg) => {
               const name = `@aurelia/${pkg}`;
-              map[name] = path.resolve(__dirname, 'node_modules', name, production ? 'dist/esm/index.mjs' : 'dist/esm/index.dev.mjs');
+              map[name] = path.resolve(directory, 'node_modules', name, production ? 'dist/esm/index.mjs' : 'dist/esm/index.dev.mjs');
               return map;
             },
             {
-              aurelia: path.resolve(__dirname, production ? 'node_modules/aurelia/dist/esm/index.mjs' : 'node_modules/aurelia/dist/esm/index.dev.mjs'),
+              aurelia: path.resolve(directory, production ? 'node_modules/aurelia/dist/esm/index.mjs' : 'node_modules/aurelia/dist/esm/index.dev.mjs'),
               // add your development aliasing here
             }
           ),
