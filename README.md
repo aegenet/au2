@@ -8,10 +8,10 @@
 
 | Name | Usage |
 |--|--|
-| [@aegenet/au2-base-component](./packages/au2-base-flow/README.md) | Base component with `EventAggregator`, `I18N` and `AntiBounce` |
-| [@aegenet/au2-prism](./packages/au2-prism/README.md) | Prism view and Prism Editor implementation |
-| [@aegenet/au2-code-mirror](./packages/au2-code-mirror/README.md) | CodeMirror 5 implementation - Draft only |
-| [@aegenet/au2-code-mirror-5](./packages/au2-code-mirror-5/README.md) | CodeMirror 6+ implementation - Draft only |
+| [@aegenet/au2-base-component](./packages/au2-base-component/README.md) | Base component with `EventAggregator`, `I18N` and `AntiBounce` |
+| [@aegenet/au2-prism](./packages/au2-prism/README.md) | Prism view and Prism Editor component |
+| [@aegenet/au2-code-mirror](./packages/au2-code-mirror/README.md) | CodeMirror 5 component - Draft only |
+| [@aegenet/au2-code-mirror-5](./packages/au2-code-mirror-5/README.md) | CodeMirror 6+ component - Draft only |
 
 <!-- ## Tools
 

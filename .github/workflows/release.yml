@@ -32,12 +32,20 @@ jobs:
       - name: Build-n-test
         run: yarn run build-n-test
   
-      - name: Publish packages
+      - name: Publish packages GitHub
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: yarn run publish
-  
+
+      - name: Publish packages npm
+        env:
+          CI: true
+          NPM_PUBLISH_PUBLIC: '1'
+          NPM_PUSH_REGISTRY: https://registry.npmjs.org/
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+        run: yarn run publish
+
       # - name: Upload coverage reports to Codecov
       #   uses: codecov/codecov-action@v4
       #   env:

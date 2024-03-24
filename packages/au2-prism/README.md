@@ -1,10 +1,10 @@
-# @au2/prism
+# @aegenet/au2-prism
 
-> *DRAFT* Aurelia 2 implementation of Prism & Prism Editor.
+> Aurelia 2 component: Prism & Prism Editor.
 
-> /!\ Fork of Prism Editor: https://github.com/koca/vue-prism-editor
+> *Fork of Prism Editor: https://github.com/koca/vue-prism-editor*
 
-> Missing a lot of tests in our implementation ! (see: https://github.com/koca/vue-prism-editor/blob/master/packages/vue-prism-editor/tests/Editor.spec.ts for base of tests)
+> Missing a lot of tests in our implementation! (see: https://github.com/koca/vue-prism-editor/blob/master/packages/vue-prism-editor/tests/Editor.spec.ts for base of tests)
 
 
 This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
@@ -27,27 +27,27 @@ Note when you do `npm publish` or `npm pack` to prepare the plugin package, it a
 
 If your plugin is published to npm or a private registry, just install the plugin package.json
 
-    npm install au2-code-mirror-5
+    npm install @aegenet/au2-prism
 
 If you want to directly use plugin's git repo.
 
-    npm install git@github.com:username/au2-code-mirror-5.git
+    npm install git@github.com:username/@aegenet/au2-prism.git
 
 or
 
-    npm install https://some.git.server/username/au2-code-mirror-5.git
+    npm install https://some.git.server/username/@aegenet/au2-prism.git
 
-If you want to install from local folder, don't do "npm install ../local/au2-code-mirror-5/" as the folder's `node_modules/` will cause webpack to complain about duplicated dependency like "@aurelia/metadata".
+If you want to install from local folder, don't do "npm install ../local/@aegenet/au2-prism/" as the folder's `node_modules/` will cause webpack to complain about duplicated dependency like "@aurelia/metadata".
 
 In this plugin's folder, do
 
     npm pack
 
-This will pack the plugin into au2-code-mirror-5
+This will pack the plugin into @aegenet/au2-prism
 In an application project's main file.
 
 ```js
-import * as myPlugin from 'au2-code-mirror-5';
+import * as AU2PrismPlugins from '@aegenet/au2-prism';
 Aurelia
   // Load all exports from the plugin
   .register(myPlugin)

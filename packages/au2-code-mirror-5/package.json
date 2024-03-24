@@ -12,7 +12,7 @@
     "dist"
   ],
   "author": "Alexandre Genet",
-  "version": "999.0.0",
+  "version": "0.0.0-dev",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-code-mirror-5",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

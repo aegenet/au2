@@ -24,7 +24,7 @@ Note when you do `npm publish` or `npm pack` to prepare the plugin package, it a
 
 If your plugin is published to npm or a private registry, just install the plugin package.json
 
-    npm install @aegenet/au2-base-component
+    npm install @aegenet/au2-base-component@^1.6.0
 
 If you want to directly use plugin's git repo.
 
