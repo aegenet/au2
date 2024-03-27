@@ -4,13 +4,13 @@
 
 "@aegenet/belt-anti-bounce@^1.5.0":
   version "1.5.0"
-  resolved "https://npm.pkg.github.com/download/@aegenet/belt-anti-bounce/1.5.0/2631523590244fff1906d924f34375a14c256f47#2631523590244fff1906d924f34375a14c256f47"
-  integrity sha512-xZSC0KveAmkUjOfJRlAaUC91NnmrblD1mNsLcOWN5t3BFIQg0E5x96Fyaj/I1ybJ6/jLTC5yXdboJ7igyvER0Q==
+  resolved "https://registry.yarnpkg.com/@aegenet/belt-anti-bounce/-/belt-anti-bounce-1.5.0.tgz#308bbce995c6f7ca39fd2c28f6791161fc0bcc64"
+  integrity sha512-rkPEPfYJb5oNMZp3LuX7eR8CIwWtiwSSq1P4Oiat+vWjLixjSoP3FJ5eeHJAzqJSgIUHYVBbIo1bAGDgJxwWWw==
 
 "@aegenet/belt-array-to-obj@^1.5.0":
   version "1.5.0"
-  resolved "https://npm.pkg.github.com/download/@aegenet/belt-array-to-obj/1.5.0/115faff63a409b7f01b49b3a974c6e07363bb1f8#115faff63a409b7f01b49b3a974c6e07363bb1f8"
-  integrity sha512-oTG1gGFty4IUrLIDN64ta32tFfz5AOmhy6J5Zccr1VytCQgdkwGilWRHdqO1/rgXoE1Mj+vf8O6MhxZEbquonQ==
+  resolved "https://registry.yarnpkg.com/@aegenet/belt-array-to-obj/-/belt-array-to-obj-1.5.0.tgz#1abad42da94fb1de6b016660a8361c508fbdf831"
+  integrity sha512-xsbL8AGPZp/6oHFH7Ck5210ydYv8WrbUoxicQySjgj75OGj3qYwJzFDqPu/kwrLoOqHucB+j7QBvleviWXF88g==
 
 "@aurelia/fetch-client@2.0.0-beta.13":
   version "2.0.0-beta.13"

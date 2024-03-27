@@ -136,4 +136,9 @@ export abstract class BasePage implements IBasePage {
   public get ea(): IEventAggregator {
     return this._ea;
   }
+
+  /** Router */
+  public get router(): IRouter {
+    return this._router;
+  }
 }

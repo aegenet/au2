@@ -30,6 +30,7 @@ export async function renderInDOM(componentOrTemplate: string | unknown, deps: r
 
     await action(div, div.innerHTML);
     await au.stop(true);
+    await au.waitForIdle();
   } finally {
     if (div) {
       document.body.removeChild(div);
