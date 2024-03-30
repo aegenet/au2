@@ -17,6 +17,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
+  "keywords": [
+    "aurelia",
+    "aurelia2",
+    "codemirror",
+    "codeeditor"
+  ],
   "license": "MIT",
   "dependencies": {
     "@codemirror/lang-json": "^6.0.1",

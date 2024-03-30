@@ -12,6 +12,14 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "aurelia",
+    "aurelia2",
+    "prism",
+    "codeeditor",
+    "codemirror",
+    "highlight"
+  ],
   "version": "0.0.0-dev",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-prism",
   "license": "MIT",

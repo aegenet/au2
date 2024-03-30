@@ -12,6 +12,14 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "aurelia",
+    "aurelia2",
+    "au2",
+    "plugins",
+    "component",
+    "base-component"
+  ],
   "version": "0.0.0-dev",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-component",
   "license": "MIT",
