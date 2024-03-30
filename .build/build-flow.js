@@ -75,12 +75,12 @@ const tasks = {
   /** Publish */
   publish: project => {
     if (project.publish) {
+      const registry = process.env.NPM_PUSH_REGISTRY || 'https://npm.pkg.github.com/';
       const cmds = [
         // Remove devDependencies in npm package
-        `json -I -f ./packages/${project.name}/package.json -e "this.devDependencies={};this.scripts={};this.jest=undefined;"`,
+        `node ./node_modules/json -I -f ./packages/${project.name}/package.json -e "this.devDependencies={};this.scripts={};this.jest=undefined;this.publishConfig['@aegenet:registry']='${registry}';"`,
         `cd ./packages/${project.name}/`,
-        // `npm version "999.${new Date().getTime()}.0"`,
-        `npm publish --registry=${project.registry || 'https://npm.pkg.github.com/'}`
+        `npm publish --@aegenet:registry=${registry}${process.env.NPM_PUBLISH_PUBLIC === '1' ? ' --access public' : '' }`
       ];
       return cmds.join(' && ');
     } else {
