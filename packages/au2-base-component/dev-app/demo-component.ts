@@ -11,11 +11,11 @@ import template from './demo-component.html';
 })
 @inject(Element, IContainer)
 export class DemoComponent extends BaseComponent {
-  /** Tab actuel */
+  /** Current tab */
   @bindable()
   public tabSlot?: string;
 
-  /** Else (for test) */
+  /** Else (test) */
   public something: string = '';
 
   constructor(element: Element, container: IContainer) {
@@ -24,7 +24,7 @@ export class DemoComponent extends BaseComponent {
 
   /** @inheritdoc */
   protected async _init(): Promise<void> {
-    // Si pas de tab par défaut, nous sélectionnons le premier
+    // If any tab by default, we select the first one
     if (!this.tabSlot) {
       this.tabSlot = this.slotNames.length ? this.slotNames[0] : undefined;
     }
@@ -32,7 +32,7 @@ export class DemoComponent extends BaseComponent {
   }
 
   /**
-   * Sélectionne un tab
+   * Select a tab
    * @param tabSlot
    */
   public select(tabSlot: string): void {
@@ -40,7 +40,7 @@ export class DemoComponent extends BaseComponent {
   }
 
   /**
-   * Sélectionne un tab
+   * (alt) Select a tab
    * @param tabSlot
    */
   public selectAlt = (tabSlot: string): void => {

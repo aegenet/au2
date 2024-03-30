@@ -11,7 +11,7 @@ import template from './store-component.html';
 })
 @inject(Element, IContainer)
 export class StoreComponent extends BaseComponent {
-  /** Tab actuel */
+  /** Current tab */
   @bindable()
   public tabSlot?: string;
 
@@ -31,7 +31,7 @@ export class StoreComponent extends BaseComponent {
 
   /** @inheritdoc */
   protected async _init(): Promise<void> {
-    // Si pas de tab par défaut, nous sélectionnons le premier
+    // If any tab by default, we select the first one
     if (!this.tabSlot) {
       this.tabSlot = this.slotNames.length ? this.slotNames[0] : undefined;
     }
@@ -40,7 +40,7 @@ export class StoreComponent extends BaseComponent {
   }
 
   /**
-   * Sélectionne un tab
+   * Select a tab
    * @param tabSlot
    */
   public select(tabSlot: string): void {
@@ -48,7 +48,7 @@ export class StoreComponent extends BaseComponent {
   }
 
   /**
-   * Sélectionne un tab
+   * Select a tab (alt)
    * @param tabSlot
    */
   public selectAlt = (tabSlot: string): void => {

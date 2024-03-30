@@ -1,3 +1,6 @@
+[![npm version](https://img.shields.io/npm/v/@aegenet/au2-prism.svg)](https://www.npmjs.com/package/@aegenet/au2-prism)
+<br>
+
 # @aegenet/au2-prism
 
 > Aurelia 2 component: Prism & Prism Editor.
@@ -6,8 +9,57 @@
 
 > Missing a lot of tests in our implementation! (see: https://github.com/koca/vue-prism-editor/blob/master/packages/vue-prism-editor/tests/Editor.spec.ts for base of tests)
 
+# Installation
 
-This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
+```shell
+npm install @aegenet/au2-prism@^1.6.1
+# or
+yarn add @aegenet/au2-prism@^1.6.1
+```
+
+# Usage
+
+## Register the plugin
+
+```js
+import * as myPlugin from '@aegenet/au2-prism';
+Aurelia
+  // Load all exports from the plugin
+  .register(myPlugin)
+  .app(MyApp)
+  .start();
+```
+
+## Components usage
+
+### Prism View
+
+```html
+<prism-view code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></prism-view>
+```
+
+### Prism Editor
+
+```html
+<prism-editor code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></prism-editor>
+```
+
+### Example
+
+```html
+<h2>Prism Editor</h2>
+<prism-editor component.ref="prismRef" code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></prism-editor>
+
+<button click.trigger="prismRef.code = 'Ok ok'">Change!</button>
+
+<h2>Value</h2>
+<pre><code innerhtml.bind="prismRef.code"></code></pre>
+
+<h2>Prism View</h2>
+<prism-view code.bind="prismRef.code" language="javascript"></prism-view>
+```
+
+# Development
 
 ## Start dev web server
 
@@ -22,38 +74,6 @@ Note this plugin project comes with a dev-app. The above command starts the dev 
 It builds plugin into `dist/index.mjs` file.
 
 Note when you do `npm publish` or `npm pack` to prepare the plugin package, it automatically run the above build command by the `prepare` script defined in your package.json `"scripts"` section.
-
-## Consume the plugin
-
-If your plugin is published to npm or a private registry, just install the plugin package.json
-
-    npm install @aegenet/au2-prism
-
-If you want to directly use plugin's git repo.
-
-    npm install git@github.com:username/@aegenet/au2-prism.git
-
-or
-
-    npm install https://some.git.server/username/@aegenet/au2-prism.git
-
-If you want to install from local folder, don't do "npm install ../local/@aegenet/au2-prism/" as the folder's `node_modules/` will cause webpack to complain about duplicated dependency like "@aurelia/metadata".
-
-In this plugin's folder, do
-
-    npm pack
-
-This will pack the plugin into @aegenet/au2-prism
-In an application project's main file.
-
-```js
-import * as AU2PrismPlugins from '@aegenet/au2-prism';
-Aurelia
-  // Load all exports from the plugin
-  .register(myPlugin)
-  .app(MyApp)
-  .start();
-```
 
 ## Unit Tests
 

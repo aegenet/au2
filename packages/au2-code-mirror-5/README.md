@@ -1,9 +1,39 @@
+[![npm version](https://img.shields.io/npm/v/@aegenet/au2-code-mirror-5.svg)](https://www.npmjs.com/package/@aegenet/au2-code-mirror-5)
+<br>
+
 # @aegenet/au2-code-mirror-5
 
 > *DRAFT* Aurelia 2 component: CodeMirror 5.
 
+# Installation
 
-This project is bootstrapped by [aurelia/new](https://github.com/aurelia/new).
+```shell
+npm install @aegenet/au2-code-mirror-5@^1.6.1
+# or
+yarn add @aegenet/au2-code-mirror-5@^1.6.1
+```
+
+# Usage
+
+## Register the plugin
+
+```js
+import * as myPlugin from '@aegenet/au2-code-mirror-5';
+Aurelia
+  // Load all exports from the plugin
+  .register(myPlugin)
+  .app(MyApp)
+  .start();
+```
+
+## Component usage
+
+```html
+<code-mirror code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></code-mirror>
+```
+
+
+# Development
 
 ## Start dev web server
 
@@ -18,38 +48,6 @@ Note this plugin project comes with a dev-app. The above command starts the dev 
 It builds plugin into `dist/index.mjs` file.
 
 Note when you do `npm publish` or `npm pack` to prepare the plugin package, it automatically run the above build command by the `prepare` script defined in your package.json `"scripts"` section.
-
-## Consume the plugin
-
-If your plugin is published to npm or a private registry, just install the plugin package.json
-
-    npm install @aegenet/au2-code-mirror-5@^1.6.0
-
-If you want to directly use plugin's git repo.
-
-    npm install git@github.com:username/@aegenet/au2-code-mirror-5.git
-
-or
-
-    npm install https://some.git.server/username/@aegenet/au2-code-mirror-5.git
-
-If you want to install from local folder, don't do "npm install ../local/@aegenet/au2-code-mirror-5/" as the folder's `node_modules/` will cause webpack to complain about duplicated dependency like "@aurelia/metadata".
-
-In this plugin's folder, do
-
-    npm pack
-
-This will pack the plugin into @aegenet/au2-code-mirror-5
-In an application project's main file.
-
-```js
-import * as myPlugin from '@aegenet/au2-code-mirror-5';
-Aurelia
-  // Load all exports from the plugin
-  .register(myPlugin)
-  .app(MyApp)
-  .start();
-```
 
 ## Unit Tests
 
