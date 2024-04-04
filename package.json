@@ -107,8 +107,8 @@
     "cover": "yarn run cover:clean && yarn run cover:merge && yarn run cover:report"
   },
   "devDependencies": {
-    "@aurelia/ts-jest": "^2.0.0-beta.13",
-    "@aurelia/webpack-loader": "^2.0.0-beta.13",
+    "@aurelia/ts-jest": "^2.0.0-beta.14",
+    "@aurelia/webpack-loader": "^2.0.0-beta.14",
     "@commitlint/cli": "^19.2.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",

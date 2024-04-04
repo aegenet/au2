@@ -31,12 +31,12 @@
   "devDependencies": {
     "@aegenet/belt-anti-bounce": "^1.5.0",
     "@aegenet/belt-array-to-obj": "^1.5.0",
-    "@aurelia/i18n": "^2.0.0-beta.13",
-    "@aurelia/router": "^2.0.0-beta.13",
-    "@aurelia/testing": "^2.0.0-beta.13",
+    "@aurelia/i18n": "^2.0.0-beta.14",
+    "@aurelia/router": "^2.0.0-beta.14",
+    "@aurelia/testing": "^2.0.0-beta.14",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.28",
-    "aurelia": "^2.0.0-beta.13",
+    "aurelia": "^2.0.0-beta.14",
     "typescript": "^5"
   },
   "scripts": {

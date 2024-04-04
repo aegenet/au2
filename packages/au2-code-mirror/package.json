@@ -29,10 +29,10 @@
     "codemirror": "^6.0.1"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.13",
+    "@aurelia/testing": "^2.0.0-beta.14",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.28",
-    "aurelia": "^2.0.0-beta.13",
+    "aurelia": "^2.0.0-beta.14",
     "typescript": "^5"
   },
   "scripts": {
