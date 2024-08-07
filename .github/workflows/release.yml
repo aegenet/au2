@@ -32,9 +32,11 @@ jobs:
 
       - name: Lint
         run: npm run lint
+      - name: Set version
+        run: npm run version
       - name: Build
         run: npm run build
-      - name: Build
+      - name: Tests
         run: npm run test:coverage
 
       - name: Publish packages GitHub

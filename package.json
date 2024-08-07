@@ -92,6 +92,7 @@
     "dependencies": "yawt --task=dependencies",
     "lint": "yawt --task=lint",
     "build": "yawt --task=build",
+    "version": "yawt --task=version",
     "publish": "yawt --task=publish",
     "upgrade": "npm cache clean && yawt --task=upgrade",
     "delete": "yawt --task=deleteNodeModules",
