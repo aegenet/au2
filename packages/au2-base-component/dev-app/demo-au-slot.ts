@@ -1,7 +1,7 @@
 import { bindable, customElement, IContainer, inject } from 'aurelia';
 import { BaseComponent } from '../src';
 
-import template from './demo-au-slot.html';
+import template from './demo-au-slot.html?raw';
 @customElement({
   name: 'demo-au-slot',
   template,
@@ -19,7 +19,7 @@ export class DemoAuSlot extends BaseComponent {
   protected async _init(): Promise<void> {
     // If any tab by default, we select the first one
     if (!this.tabSlot) {
-      this.tabSlot = this.auSlotNames.length ? this.auSlotNames[0] : undefined;
+      this.tabSlot = this.auSlotNames?.length ? this.auSlotNames[0] : undefined;
     }
     await super._init();
   }

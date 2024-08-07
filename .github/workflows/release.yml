@@ -18,20 +18,25 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
           scope: '@aegenet'
-  
+
+      - name: Root dependencies
+        env:
+          CI: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm i
       - name: Install dependencies
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: yarn run dependencies
-      - name: Our dependencies
-        env:
-          CI: true
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: yarn
-      - name: Build-n-test
-        run: yarn run build-n-test
-  
+        run: npm run dependencies
+
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+      - name: Build
+        run: npm run test:coverage
+
       - name: Publish packages GitHub
         env:
           CI: true

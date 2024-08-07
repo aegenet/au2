@@ -5,6 +5,7 @@ coverage/
 .nyc_output/
 .vscode/
 yarn-error.log
+*.timestamp-*
 packages/au2-code-mirror-5/node_modules/
 packages/au2-code-mirror-5/build/
 packages/au2-code-mirror-5/dist/

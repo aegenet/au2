@@ -1,3 +1,6 @@
+/**
+ * @vitest-environment jsdom
+ */
 import { getViewModel, renderInDOM } from './helper';
 import { DemoComponent } from '../dev-app/demo-component';
 
@@ -57,7 +60,7 @@ describe('demo-component', () => {
 
         expect(vm.tabSlot).toBe(vm.slotNames[0]);
         vm.select(vm.slotNames[1]);
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
@@ -94,7 +97,7 @@ describe('demo-component', () => {
           property: 'select',
           value: [vm.slotNames[1]],
         });
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
@@ -131,7 +134,7 @@ describe('demo-component', () => {
           property: 'selectAlt',
           value: [vm.slotNames[1]],
         });
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
@@ -168,7 +171,7 @@ describe('demo-component', () => {
           property: 'tabSlot',
           value: vm.slotNames[1],
         });
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
@@ -205,7 +208,7 @@ describe('demo-component', () => {
           property: 'something',
           value: 'else',
         });
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(vm.something).toBe('else');
         await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);

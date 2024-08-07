@@ -1,7 +1,7 @@
-import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
+import { bindable, customElement, inject, type ICustomElementViewModel } from 'aurelia';
 
-import styles from './code-mirror.scss';
-import template from './code-mirror.html';
+import styles from './code-mirror.scss?inline';
+import template from './code-mirror.html?raw';
 
 import { EditorState } from '@codemirror/state';
 import { EditorView, basicSetup } from 'codemirror';
@@ -10,17 +10,18 @@ import { json } from '@codemirror/lang-json';
 /**
  * CodeMirror
  */
+@inject(HTMLElement)
 @customElement({
   name: 'code-mirror',
   template,
 })
 export class CodeMirror implements ICustomElementViewModel {
-  private _codeMirror: EditorView; // CodeMirror.Editor;
-  public codeArea: HTMLDivElement;
+  private _codeMirror?: EditorView; // CodeMirror.Editor;
+  public codeArea!: HTMLDivElement;
 
   /** Code */
   @bindable()
-  public code: string;
+  public code?: string;
 
   constructor(private readonly _element: HTMLElement) {
     const style = document.createElement('style');
@@ -42,9 +43,9 @@ export class CodeMirror implements ICustomElementViewModel {
 
   public codeChanged(newValue: string, oldValue: string) {
     if (newValue !== oldValue) {
-      if (newValue !== this._codeMirror.state.doc.toString()) {
-        this._codeMirror.dispatch({
-          changes: { from: 0, to: this._codeMirror.state.doc.length, insert: newValue },
+      if (newValue !== this._codeMirror!.state.doc.toString()) {
+        this._codeMirror!.dispatch({
+          changes: { from: 0, to: this._codeMirror!.state.doc.length, insert: newValue },
         });
         this._setCursorAtEnd();
       }
@@ -53,13 +54,13 @@ export class CodeMirror implements ICustomElementViewModel {
 
   /** Set the cursor at the end of existing content */
   private _setCursorAtEnd() {
-    this._codeMirror.dispatch({ selection: { anchor: this._codeMirror.state.doc.lines } });
+    this._codeMirror!.dispatch({ selection: { anchor: this._codeMirror!.state.doc.lines } });
   }
 
   public detaching(): void | Promise<void> {
     if (this._codeMirror) {
       this._codeMirror.destroy();
-      this._codeMirror = null;
+      this._codeMirror = undefined;
     }
   }
 }

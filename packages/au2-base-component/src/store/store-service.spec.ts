@@ -1,3 +1,6 @@
+/**
+ * @vitest-environment jsdom
+ */
 import * as assert from 'node:assert';
 import { StoreService } from './store-service';
 import { DIStoreService, type IStoreService } from './i-store-service';
@@ -15,13 +18,13 @@ describe('store-service', () => {
     storeService = container.get<IStoreService>(DIStoreService);
   });
   afterAll(() => {
-    storeService.dispose();
-    container.dispose();
+    storeService!.dispose();
+    container!.dispose();
   });
 
   afterEach(() => {
     localStorage.setItem('user', JSON.stringify([]));
-    storeService.delStore('user');
+    storeService!.delStore('user');
   });
 
   it('get & init storeService', async () => {
@@ -31,92 +34,110 @@ describe('store-service', () => {
   });
 
   it('re-init storeService', async () => {
-    storeService.initialize();
+    storeService!.initialize();
   });
 
   it('Setup & get & refresh', async () => {
-    assert.rejects(async () => await storeService.getStore('user'), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await storeService!.getStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
 
     // Setup
-    storeService.setStore(
+    storeService!.setStore(
       {
         key: 'user',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
           return JSON.parse(localStorage.getItem('user') || '[]');
         },
       },
       {
         key: 'user_index',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
-          return arrayToObject((await storeService.getStore('user')) as unknown[], 'id');
+          return arrayToObject((await storeService!.getStore('user')) as unknown[], 'id');
         },
       }
     );
 
     // Get
-    assert.deepStrictEqual(await storeService.getStore('user'), []);
+    assert.deepStrictEqual(await storeService!.getStore('user'), []);
 
     // Refresh
     localStorage.setItem('user', JSON.stringify([{ id: 1, name: 'John' }]));
-    await storeService.refreshStore('user');
+    await storeService!.refreshStore('user');
 
     // Get
-    assert.deepStrictEqual(await storeService.getStore('user'), [{ id: 1, name: 'John' }]);
+    assert.deepStrictEqual(await storeService!.getStore('user'), [{ id: 1, name: 'John' }]);
   });
 
   it('Delete store', async () => {
-    assert.rejects(async () => await storeService.getStore('user'), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await storeService!.getStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
     // Do nothing
-    await storeService.delStore('user');
-    assert.rejects(async () => await storeService.getStore('user'), { message: 'Unknown store was provided: user' });
+    await storeService!.delStore('user');
+    await assert.rejects(async () => await storeService!.getStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
 
     // Setup
-    storeService.setStore(
+    storeService!.setStore(
       {
         key: 'user',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
           return JSON.parse(localStorage.getItem('user') || '[]');
         },
       },
       {
         key: 'user_index',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
-          return arrayToObject((await storeService.getStore('user')) as unknown[], 'id');
+          return arrayToObject((await storeService!.getStore('user')) as unknown[], 'id');
         },
       }
     );
 
     // Get
-    assert.deepStrictEqual(await storeService.getStore('user'), []);
+    assert.deepStrictEqual(await storeService!.getStore('user'), []);
 
     // Delete
-    await storeService.delStore('user');
-    assert.rejects(async () => await storeService.getStore('user'), { message: 'Unknown store was provided: user' });
+    await storeService!.delStore('user');
+    await assert.rejects(async () => await storeService!.getStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
   });
 
   it('Refresh unknown store', async () => {
-    assert.rejects(async () => await storeService.refreshStore('user'), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await storeService!.refreshStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
   });
 
   it('Custom Event aggegator & Setup & get & refresh', async () => {
-    const storeWCustomEv = new StoreService(container);
-    const commonEv = container.get(IEventAggregator);
+    const storeWCustomEv = new StoreService(container!);
+    const commonEv = container!.get(IEventAggregator);
     storeWCustomEv.initialize({
       eventAggregator: commonEv,
       channel: 'custom-store',
     });
-    assert.rejects(async () => await storeWCustomEv.getStore('user'), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await storeWCustomEv.getStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
 
     // Setup
     storeWCustomEv.setStore(
       {
         key: 'user',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
           return JSON.parse(localStorage.getItem('user') || '[]');
         },
       },
       {
         key: 'user_index',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
           return arrayToObject((await storeWCustomEv.getStore('user')) as unknown[], 'id');
         },
@@ -136,11 +157,13 @@ describe('store-service', () => {
     // Delete
     await commonEv.publish('custom-store:del', { key: 'user' });
 
-    assert.rejects(async () => await storeWCustomEv.getStore('user'), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await storeWCustomEv.getStore('user'), {
+      message: 'Unknown store was provided: user',
+    });
   });
 
   it('Own Event aggegator with async publish', async () => {
-    const storeWCustomEv = new StoreService(container);
+    const storeWCustomEv = new StoreService(container!);
     class CustomEventAggregator implements IStoreMessenger {
       private _map = new Map<string, ((message: unknown, channel: string) => void)[]>();
       constructor() {}
@@ -149,7 +172,7 @@ describe('store-service', () => {
         curCallbacks.push(callback as unknown as (message: unknown, channel: string) => void);
         this._map.set(channel, curCallbacks);
         return {
-          dispose() {
+          dispose: () => {
             const idx = curCallbacks.indexOf(callback as unknown as (message: unknown, channel: string) => void);
             if (idx !== -1) {
               curCallbacks.splice(idx, 1);
@@ -165,7 +188,7 @@ describe('store-service', () => {
         }
       }
       /** Get single subscriber result for the channel */
-      async getSingle<T, C extends string, O = unknown>(channel: C, message: T): Promise<O> {
+      async getSingle<T, C extends string, O = unknown>(channel: C, message: T): Promise<O | undefined> {
         const cbs = this._map.get(channel);
         if (cbs?.length) {
           if (cbs.length === 1) {
@@ -190,18 +213,22 @@ describe('store-service', () => {
       eventAggregator: customEv,
       channel: 'custom-store',
     });
-    assert.rejects(async () => await customEv.getSingle('custom-store:get', { key: 'user' }), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await customEv.getSingle('custom-store:get', { key: 'user' }), {
+      message: 'Unknown store was provided: user',
+    });
 
     // Setup
     storeWCustomEv.setStore(
       {
         key: 'user',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
           return JSON.parse(localStorage.getItem('user') || '[]');
         },
       },
       {
         key: 'user_index',
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         async load(container) {
           return arrayToObject((await storeWCustomEv.getStore('user')) as unknown[], 'id');
         },
@@ -221,6 +248,8 @@ describe('store-service', () => {
     // Delete
     await customEv.publish('custom-store:del', { key: 'user' });
 
-    assert.rejects(async () => await customEv.getSingle('custom-store:get', { key: 'user' }), { message: 'Unknown store was provided: user' });
+    await assert.rejects(async () => await customEv.getSingle('custom-store:get', { key: 'user' }), {
+      message: 'Unknown store was provided: user',
+    });
   });
 });

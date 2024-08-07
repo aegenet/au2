@@ -52,10 +52,10 @@ export abstract class BasePage implements IBasePage {
    * @service
    * @core
    */
-  public readonly i18n: I18N;
+  public readonly i18n!: I18N;
 
   /** Router */
-  protected readonly _router: IRouter;
+  protected readonly _router!: IRouter;
 
   /**
    * Platform
@@ -93,7 +93,11 @@ export abstract class BasePage implements IBasePage {
     }
   }
 
-  public async loading?(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): Promise<void> {
+  public async loading?(
+    parameters: Parameters,
+    instruction: RoutingInstruction,
+    navigation: Navigation
+  ): Promise<void> {
     this._aware.subscribe(this);
     await Promise.resolve(this._init(parameters, instruction, navigation));
     this._isInit = true;
@@ -102,11 +106,19 @@ export abstract class BasePage implements IBasePage {
   /**
    * Custom logic (on loading)
    */
-  protected _init(parameters: Parameters, instruction: RoutingInstruction, navigation: Navigation): void | Promise<void> {
+  protected _init(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    parameters: Parameters,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    instruction: RoutingInstruction,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    navigation: Navigation
+  ): void | Promise<void> {
     //
   }
 
   /** Custom logic (on unloading) */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected _deinit(instruction: RoutingInstruction, navigation: Navigation | null): void | Promise<void> {
     //
   }
@@ -139,6 +151,6 @@ export abstract class BasePage implements IBasePage {
 
   /** Router */
   public get router(): IRouter {
-    return this._router;
+    return this._router!;
   }
 }

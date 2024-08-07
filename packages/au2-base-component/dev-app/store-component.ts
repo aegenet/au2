@@ -1,7 +1,7 @@
 import { bindable, customElement, IContainer, inject, useShadowDOM } from 'aurelia';
 import { BaseComponent } from '../src';
 
-import template from './store-component.html';
+import template from './store-component.html?raw';
 @customElement({
   name: 'store-component',
   template,
@@ -17,7 +17,7 @@ export class StoreComponent extends BaseComponent {
 
   /** Else (for test) */
   public something: string = '';
-  public keys: string[];
+  public keys?: string[];
 
   constructor(element: Element, container: IContainer) {
     super(element, container);

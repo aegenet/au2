@@ -1,7 +1,10 @@
 import Aurelia, { CustomElement } from 'aurelia';
 
 async function _renderDiv(div: HTMLElement, componentOrTemplate: string | unknown, ...deps: readonly unknown[]) {
-  const wrapper = typeof componentOrTemplate === 'string' ? CustomElement.define({ name: 'wrapper', template: componentOrTemplate }) : componentOrTemplate;
+  const wrapper =
+    typeof componentOrTemplate === 'string'
+      ? CustomElement.define({ name: 'wrapper', template: componentOrTemplate })
+      : componentOrTemplate;
 
   const au = new Aurelia().register(...deps).app({
     host: div,
@@ -20,7 +23,11 @@ async function _renderDiv(div: HTMLElement, componentOrTemplate: string | unknow
  * @param deps
  * @param action
  */
-export async function renderInDOM(componentOrTemplate: string | unknown, deps: readonly unknown[], action: (result: HTMLElement & { $aurelia?: Aurelia }, innerHTML: string) => Promise<void>): Promise<void> {
+export async function renderInDOM(
+  componentOrTemplate: string | unknown,
+  deps: readonly unknown[],
+  action: (result: HTMLElement & { $aurelia?: Aurelia }, innerHTML: string) => Promise<void>
+): Promise<void> {
   const div = document.createElement('div');
   try {
     document.body.appendChild(div);
@@ -42,7 +49,7 @@ export async function renderInDOM(componentOrTemplate: string | unknown, deps: r
  * @returns
  */
 export function getViewModel<T>(result: HTMLElement, propertyName?: string): T {
-  const baseChildren = result['$au']['au:resource:custom-element'].children;
+  const baseChildren = (result as Record<string, any>)['$au']['au:resource:custom-element'].children;
   const vm = baseChildren ? baseChildren[0].scope.bindingContext : undefined;
 
   if (vm && propertyName?.length) {

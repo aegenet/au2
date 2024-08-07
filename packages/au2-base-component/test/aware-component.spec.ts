@@ -1,3 +1,6 @@
+/**
+ * @vitest-environment jsdom
+ */
 import { DemoComponent } from '../dev-app/demo-component';
 import { AwareComponent } from '../src';
 import { getViewModel, renderInDOM } from './helper';
@@ -35,7 +38,7 @@ describe('aware-component', () => {
         expect(vm.tabSlot).toBe(vm.slotNames[0]);
         await vmBtn.publish();
 
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();
         expect(vm.slotNames.length).toBe(0);
@@ -80,7 +83,7 @@ describe('aware-component', () => {
         expect(vm.tabSlot).toBe(vm.slotNames[0]);
         await vmBtn.publish();
 
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(myDiv.textContent).toBe('No!');
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();
@@ -126,7 +129,7 @@ describe('aware-component', () => {
         expect(vm.tabSlot).toBe(vm.slotNames[0]);
         await vmBtn.publish();
 
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(myDiv.textContent).toBe('No!');
         expect(vm.tabSlot).toBe(vm.slotNames[1]);
         await vm.unbinding();

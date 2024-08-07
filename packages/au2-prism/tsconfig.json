@@ -1,22 +1,22 @@
 {
-  "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "target": "ES2017",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "importHelpers": true,
-    "sourceMap": true,
-    "newLine": "LF"
-  },
+  "extends": "./../../node_modules/@aegenet/yawt/tsconfig.base.json",
+  "compileOnSave": true,
+  "exclude": [
+    "./node_modules",
+    "./samples"
+  ],
   "include": [
+    "dev-app",
     "test",
     "src"
   ],
+  "atom": {
+    "rewriteTsconfig": false
+  },
+  "compilerOptions": {
+    "verbatimModuleSyntax": false
+  },
   "files": [
-    "src/resource.d.ts"
+    "./src/resource.d.ts"
   ]
 }

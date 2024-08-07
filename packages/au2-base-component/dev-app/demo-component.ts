@@ -1,7 +1,7 @@
 import { bindable, customElement, IContainer, inject, useShadowDOM } from 'aurelia';
 import { BaseComponent } from '../src';
 
-import template from './demo-component.html';
+import template from './demo-component.html?raw';
 @customElement({
   name: 'demo-component',
   template,

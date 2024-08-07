@@ -1,28 +1,29 @@
-import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
-import CodeMirrorLib from 'codemirror';
+import { bindable, customElement, inject, type ICustomElementViewModel } from 'aurelia';
+import CodeMirrorLib, { EditorEventMap, HintFunction } from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/cmake/cmake';
 import 'codemirror/addon/hint/show-hint';
 import 'codemirror/addon/hint/javascript-hint';
 const isNodeJS = typeof process === 'object';
 
-import styles from './code-mirror.scss';
-import template from './code-mirror.html';
+import styles from './code-mirror.scss?inline';
+import template from './code-mirror.html?raw';
 
 /**
  * CodeMirror
  */
+@inject(HTMLElement)
 @customElement({
   name: 'code-mirror',
   template,
 })
 export class CodeMirror implements ICustomElementViewModel {
-  private _codeMirror: CodeMirrorLib.Editor;
-  public codeArea: HTMLDivElement;
+  private _codeMirror?: CodeMirrorLib.Editor;
+  public codeArea!: HTMLDivElement;
 
   /** Code */
   @bindable()
-  public code: string;
+  public code?: string;
 
   @bindable()
   public language = 'javascript';
@@ -42,8 +43,8 @@ export class CodeMirror implements ICustomElementViewModel {
   @bindable()
   public autofocus: boolean = false;
 
-  private _boundedChange: () => void;
-  private _boundedFocus: () => void;
+  private _boundedChange?: () => void;
+  private _boundedFocus?: () => void;
 
   constructor(private readonly _element: HTMLElement) {
     const style = document.createElement('style');
@@ -74,7 +75,7 @@ export class CodeMirror implements ICustomElementViewModel {
     if (this.suggestions?.length) {
       options.extraKeys = { 'Ctrl-Space': 'autocomplete' };
       options.hintOptions = {
-        hint: this._hintFunction.bind(this),
+        hint: this._hintFunction.bind(this) as HintFunction,
         container: this.codeArea,
       };
     }
@@ -82,8 +83,8 @@ export class CodeMirror implements ICustomElementViewModel {
     this._codeMirror = CodeMirrorLib(this.codeArea, options);
 
     /** Sync */
-    this._boundedChange = function () {
-      const currentValue = this._codeMirror.getValue();
+    this._boundedChange = function (this: CodeMirror) {
+      const currentValue = this._codeMirror!.getValue();
       if (this.code !== currentValue) {
         this.code = currentValue;
       }
@@ -93,7 +94,7 @@ export class CodeMirror implements ICustomElementViewModel {
     if (this.autofocus) {
       this._boundedFocus = (() => {
         this._setCursorAtEnd();
-        this._codeMirror.off('focus', this._boundedFocus);
+        this._codeMirror!.off('focus', this._boundedFocus as EditorEventMap['focus']);
       }).bind(this);
       /** Once, at begin */
       this._codeMirror.on('focus', this._boundedFocus);
@@ -102,8 +103,8 @@ export class CodeMirror implements ICustomElementViewModel {
 
   public codeChanged(newValue: string, oldValue: string) {
     if (newValue !== oldValue) {
-      if (newValue !== this._codeMirror.getValue()) {
-        this._codeMirror.setValue(newValue);
+      if (newValue !== this._codeMirror!.getValue()) {
+        this._codeMirror!.setValue(newValue);
         // this._codeMirror.focus();
         this._setCursorAtEnd();
       }
@@ -112,7 +113,7 @@ export class CodeMirror implements ICustomElementViewModel {
 
   /** Set the cursor at the end of existing content */
   private _setCursorAtEnd() {
-    this._codeMirror.setCursor(this._codeMirror.lineCount(), 0);
+    this._codeMirror!.setCursor(this._codeMirror!.lineCount(), 0);
   }
 
   private _hintFunction(cm: CodeMirrorLib.Editor, options?: { line?: number; ch?: number }) {
@@ -125,7 +126,7 @@ export class CodeMirror implements ICustomElementViewModel {
       while (start > 0 && /\w/.test(line.charAt(start - 1))) --start;
       while (end < line.length && /\w/.test(line.charAt(end))) ++end;
       const partLine = line.slice(0, end).toLowerCase();
-      let suggests = [];
+      let suggests: string[] = [];
       for (let i = 0; i < this.suggestions.length; i++) {
         const suggest = this.suggestions[i];
         if (typeof suggest.term === 'string') {
@@ -157,8 +158,8 @@ export class CodeMirror implements ICustomElementViewModel {
       if (this._boundedChange) {
         this._codeMirror.off('change', this._boundedChange);
       }
-      this.codeArea.removeChild(this.codeArea.firstElementChild);
-      this._codeMirror = null;
+      this.codeArea.removeChild(this.codeArea.firstElementChild!);
+      this._codeMirror = undefined;
     }
   }
 }

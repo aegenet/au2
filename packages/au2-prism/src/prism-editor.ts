@@ -1,6 +1,6 @@
 /** Disclaimer: inspired by https://github.com/koca/vue-prism-editor/ */
 import type { IHydratedController } from '@aurelia/runtime-html';
-import { bindable, customElement, type ICustomElementViewModel } from 'aurelia';
+import { bindable, customElement, inject, type ICustomElementViewModel } from 'aurelia';
 
 import Prism from 'prismjs';
 import 'prismjs/components/prism-cmake.js';
@@ -16,7 +16,7 @@ export interface EditorProps {
   autoStyleLineNumbers: boolean;
   readonly: boolean;
   value: string;
-  highlight: () => string;
+  highlight: (...args: unknown[]) => unknown;
   tabSize: number;
   insertSpaces: boolean;
   ignoreTabKey: boolean;
@@ -34,17 +34,18 @@ export interface History {
   offset: number;
 }
 
-import styles from './prism-editor.scss';
-import template from './prism-editor.html';
+import styles from './prism-editor.scss?inline';
+import template from './prism-editor.html?raw';
 
 /**
  * Prism Editor
  */
+@inject(HTMLElement)
 @customElement({
   name: 'prism-editor',
   template,
 })
-export class PrismEditor implements ICustomElementViewModel {
+class PrismEditor implements ICustomElementViewModel {
   private static readonly _KEY_ENTER = 'Enter';
   private static readonly _KEY_TAB = 'Tab';
   private static readonly _KEY_BACKSPACE = 'Backspace';
@@ -60,9 +61,9 @@ export class PrismEditor implements ICustomElementViewModel {
   private static readonly _HISTORY_LIMIT = 100;
   private static readonly _HISTORY_TIME_GAP = 3000;
 
-  public preRef: HTMLPreElement;
-  public textAreaRef: HTMLTextAreaElement;
-  private _boundedKeydown: () => boolean;
+  public preRef?: HTMLPreElement;
+  public textAreaRef?: HTMLTextAreaElement;
+  private _boundedKeydown?: (e: KeyboardEvent) => boolean | void;
 
   constructor(private readonly _element: HTMLElement) {
     const style = document.createElement('style');
@@ -89,8 +90,7 @@ export class PrismEditor implements ICustomElementViewModel {
   public code: string = '';
 
   @bindable()
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  public highlight: Function;
+  public highlight?: () => string;
 
   @bindable()
   public tabSize: number = 2;
@@ -133,21 +133,26 @@ export class PrismEditor implements ICustomElementViewModel {
   };
   public lineNumbersHeight: string = '20px';
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public bound(initiator: IHydratedController, parent: IHydratedController): void | Promise<void> {
     if (this.code == null) {
       this.code = '';
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public attached(initiator: IHydratedController): void | Promise<void> {
     this.styleLineNumbers();
     this._boundedKeydown = this.handleKeyDown.bind(this);
-    this.textAreaRef.addEventListener('keydown', this._boundedKeydown);
+    this.textAreaRef!.addEventListener('keydown', this._boundedKeydown);
     this.codeChanged(this.code, this.code);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public detaching(initiator: IHydratedController, parent: IHydratedController): void | Promise<void> {
-    this.textAreaRef.removeEventListener('keydown', this._boundedKeydown);
+    if (this._boundedKeydown) {
+      this.textAreaRef!.removeEventListener('keydown', this._boundedKeydown);
+    }
   }
 
   public setLineNumbersHeight(): void {
@@ -268,6 +273,7 @@ export class PrismEditor implements ICustomElementViewModel {
     // this.props.onValueChange(record.value);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public codeChanged(newValue: string, oldValue: string) {
     if (newValue == null) {
       this.code = '';
@@ -284,7 +290,7 @@ export class PrismEditor implements ICustomElementViewModel {
       true
     );
 
-    this.preRef.innerHTML = this.generateContent();
+    this.preRef!.innerHTML = this.generateContent();
   }
   // public handleChange(e: KeyboardEvent): void {
   //   this.$emit('input', value);
@@ -319,7 +325,7 @@ export class PrismEditor implements ICustomElementViewModel {
     }
   }
 
-  public handleKeyDown(e: KeyboardEvent): boolean {
+  public handleKeyDown(e: KeyboardEvent): boolean | void {
     // console.log(navigator.platform);
     const { tabSize, insertSpaces, ignoreTabKey } = this;
 
@@ -368,7 +374,9 @@ export class PrismEditor implements ICustomElementViewModel {
             value: nextValue,
             // Move the start cursor if first line in selection was modified
             // It was modified only if it started with a tab
-            selectionStart: startLineText.startsWith(tabCharacter) ? selectionStart - tabCharacter.length : selectionStart,
+            selectionStart: startLineText.startsWith(tabCharacter)
+              ? selectionStart - tabCharacter.length
+              : selectionStart,
             // Move the end cursor by total number of characters removed
             selectionEnd: selectionEnd - (value.length - nextValue.length),
           });
@@ -449,7 +457,12 @@ export class PrismEditor implements ICustomElementViewModel {
           });
         }
       }
-    } else if (e.key === PrismEditor._KEY_PARENS || e.key === PrismEditor._KEY_BRACKETS || e.key === PrismEditor._KEY_QUOTE || e.key === PrismEditor._KEY_BACK_QUOTE) {
+    } else if (
+      e.key === PrismEditor._KEY_PARENS ||
+      e.key === PrismEditor._KEY_BRACKETS ||
+      e.key === PrismEditor._KEY_QUOTE ||
+      e.key === PrismEditor._KEY_BACK_QUOTE
+    ) {
       let chars;
 
       if (e.key === PrismEditor._KEY_PARENS && e.shiftKey) {
@@ -477,7 +490,12 @@ export class PrismEditor implements ICustomElementViewModel {
         e.preventDefault();
 
         this._applyEdits({
-          value: value.substring(0, selectionStart) + chars[0] + value.substring(selectionStart, selectionEnd) + chars[1] + value.substring(selectionEnd),
+          value:
+            value.substring(0, selectionStart) +
+            chars[0] +
+            value.substring(selectionStart, selectionEnd) +
+            chars[1] +
+            value.substring(selectionEnd),
           // Update caret position
           selectionStart,
           selectionEnd: selectionEnd + 2,
@@ -517,8 +535,10 @@ export class PrismEditor implements ICustomElementViewModel {
     }
   }
 
-  public $emit(evName: string, params) {
+  public $emit(evName: string, params: any) {
     // this.preRef.dispatchEvent(new Event(evName, params));
     console.log(evName, params);
   }
 }
+
+export { PrismEditor };

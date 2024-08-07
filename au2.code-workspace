@@ -33,6 +33,11 @@
       "**/dist": true,
       "**/scripts/" : true,
       "**/build/" : true
+    },
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+      "package.json": ".sass-lint.yml,.htmlhintrc,.gitignore,.npmrc,LICENSE,package-lock.json,tsconfig.json,eslint.config.cjs,eslint.config.mjs,.prettierrc.js,prettier.config.mjs,rollup.config.dts.mjs,vite.config.mjs,yarn.lock"
     }
   }
 }

@@ -1,3 +1,6 @@
+/**
+ * @vitest-environment jsdom
+ */
 import { getViewModel, renderInDOM } from './helper';
 import { DemoPage } from '../dev-app/demo-page';
 import { DemoPage2 } from '../dev-app/demo-page-2';
@@ -12,7 +15,7 @@ describe('base-page', () => {
       template: `<au-viewport></au-viewport>`,
     },
     class {
-      static routes = [
+      static routes: any = [
         {
           path: '',
           component: DemoPage,
@@ -111,7 +114,7 @@ describe('base-page', () => {
         expect(demoPage.router.activeNavigation.title).toBe('Home | Aurelia');
 
         await demoPage.router.load('p2');
-        await result.$aurelia.waitForIdle();
+        await result.$aurelia!.waitForIdle();
         expect(result.textContent).toBe('Demo! Page 2!');
         const demoPage2: DemoPage2 = (<Router>(vm as any).router).activeComponents[0].component.instance as DemoPage2;
         expect(demoPage2).toBeTruthy();

@@ -6,7 +6,10 @@ import type { ICustomElementAware } from './aware/i-custom-element-aware';
 /**
  * Base component, with basic logic
  */
-export interface IBaseComponent<EBD = unknown> extends ICustomElementViewModel, IAntiBounceSupport, ICustomElementAware {
+export interface IBaseComponent<EBD = unknown>
+  extends ICustomElementViewModel,
+    IAntiBounceSupport,
+    ICustomElementAware {
   /** Token of Aware Component */
   $awareToken?: IDisposable;
 
@@ -57,7 +60,7 @@ export interface IBaseComponent<EBD = unknown> extends ICustomElementViewModel, 
    * Array of au-slot names
    * @core
    */
-  auSlotNames: string[];
+  auSlotNames?: string[];
 
   /**
    * Array of slot names
@@ -88,7 +91,7 @@ export interface IBaseComponent<EBD = unknown> extends ICustomElementViewModel, 
    * @input oldValue
    * @input embedData
    */
-  changed?: (...args) => void;
+  changed?: (...args: unknown[]) => void;
 
   /**
    * TaskQueue

@@ -59,7 +59,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
    * @service
    * @core
    */
-  public readonly i18n: I18N;
+  public readonly i18n!: I18N;
 
   /**
    * Component ID
@@ -99,7 +99,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
    * Array of au-slot names
    * @core
    */
-  public auSlotNames: string[];
+  public auSlotNames?: string[];
 
   /**
    * Array of slot names
@@ -132,7 +132,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
    * @input embedData
    */
   @bindable()
-  public changed?: (...args) => void;
+  public changed?: (...args: unknown[]) => void;
 
   constructor(
     protected _element: Element,
@@ -172,6 +172,7 @@ export class BaseComponent<EBD = unknown> implements IBaseComponent {
   /**
    * Detaching
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public detaching(initiator: IHydratedController, parent: IHydratedController) {
     this._aware.unsubscribe(this);
   }

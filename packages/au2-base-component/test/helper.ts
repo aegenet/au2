@@ -2,7 +2,10 @@ import Aurelia, { CustomElement } from 'aurelia';
 import { register } from '../src';
 
 async function _renderDiv(div: HTMLElement, componentOrTemplate: string | unknown, ...deps: readonly unknown[]) {
-  const wrapper = typeof componentOrTemplate === 'string' ? CustomElement.define({ name: 'wrapper', template: componentOrTemplate }) : componentOrTemplate;
+  const wrapper =
+    typeof componentOrTemplate === 'string'
+      ? CustomElement.define({ name: 'wrapper', template: componentOrTemplate })
+      : componentOrTemplate;
 
   const au = new Aurelia().register(register(), ...deps).app({
     host: div,
@@ -21,7 +24,11 @@ async function _renderDiv(div: HTMLElement, componentOrTemplate: string | unknow
  * @param deps
  * @param action
  */
-export async function renderInDOM(componentOrTemplate: string | unknown, deps: readonly unknown[], action: (result: HTMLElement & { $aurelia?: Aurelia }, innerHTML: string) => Promise<void>): Promise<void> {
+export async function renderInDOM(
+  componentOrTemplate: string | unknown,
+  deps: readonly unknown[],
+  action: (result: HTMLElement & { $aurelia?: Aurelia }, innerHTML: string) => Promise<void>
+): Promise<void> {
   const div = document.createElement('div');
   try {
     document.body.appendChild(div);
@@ -51,15 +58,19 @@ export function getViewModel<T>(
   } = {}
 ): T {
   let vm: T;
-  if (options.ref && result['$au']['au:resource:custom-element'].viewModel && options.ref in result['$au']['au:resource:custom-element'].viewModel) {
-    vm = result['$au']['au:resource:custom-element'].viewModel[options.ref];
+  if (
+    options.ref &&
+    (result as Record<string, any>)['$au']['au:resource:custom-element'].viewModel &&
+    options.ref in (result as Record<string, any>)['$au']['au:resource:custom-element'].viewModel
+  ) {
+    vm = (result as Record<string, any>)['$au']['au:resource:custom-element'].viewModel[options.ref];
   } else {
-    const baseChildren = result['$au']['au:resource:custom-element'].children;
+    const baseChildren = (result as Record<string, any>)['$au']['au:resource:custom-element'].children;
     vm = baseChildren ? baseChildren[0].scope.bindingContext : undefined;
   }
 
   if (vm && options.propertyName?.length) {
-    return vm[options.propertyName];
+    return (vm as Record<string, unknown>)[options.propertyName] as T;
   } else {
     return vm;
   }

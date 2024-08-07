@@ -3,11 +3,21 @@
   "description": "Aurelia 2 - CodeMirror 5 plugin",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
+  "browser": "dist/index.mjs",
   "exports": {
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.mjs"
+    "node": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/bundle.d.ts"
+    },
+    "default": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/bundle.d.ts"
+    }
   },
-  "typings": "dist/bundle.d.ts",
+  "typings": "./dist/bundle.d.ts",
+  "types": "./dist/bundle.d.ts",
   "files": [
     "dist"
   ],
@@ -19,27 +29,27 @@
   },
   "license": "MIT",
   "dependencies": {
-    "codemirror": "^5.65.12"
+    "codemirror": "^5.65.17"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.14",
-    "@types/jest": "^29.5.12",
+    "@aurelia/testing": "^2.0.0-beta.20",
+    "@types/codemirror": "^5.60.15",
     "@types/node": "^20.11.28",
-    "aurelia": "^2.0.0-beta.14",
     "typescript": "^5"
   },
+  "peerDependencies": {
+    "aurelia": "^2.0.0-beta.20"
+  },
   "scripts": {
-    "lint:js": "node ./../../node_modules/eslint/bin/eslint src test --ext .js,.ts",
+    "lint:js": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",
     "lint:css": "node ./../../node_modules/sass-lint/bin/sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
     "lint:html": "node ./../../node_modules/htmlhint/bin/htmlhint -c .htmlhintrc src",
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
-    "pretest": "npm run lint",
-    "start": "node ./../../node_modules/webpack/bin/webpack serve",
-    "build": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/webpack/bin/webpack --env production && npm run build:dts",
-    "build:dts": "tsc --project ./tsconfig.bundle.json && node ./../../.build/build-typings.js",
-    "analyze": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
-    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
-    "tsc": "echo nothing",
-    "test-node": "yarn run test"
+    "start": "node ./../../node_modules/vite/bin/vite --port 3000",
+    "build": "npm run tsc && npm run build:vite && npm run build:dts",
+    "tsc": "node ./../../node_modules/rimraf/dist/esm/bin.mjs build && node ./../../node_modules/typescript/bin/tsc --noEmit",
+    "build:vite": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/vite/bin/vite build",
+    "build:dts": "node ./../../node_modules/rollup/dist/bin/rollup -c rollup.config.dts.mjs",
+    "test": "vitest run --test-timeout=60000 --environment jsdom"
   }
 }

@@ -1,7 +1,7 @@
 import { IContainer, customElement, inject } from 'aurelia';
 import { BasePage } from '../src';
 
-import template from './demo-page-2.html';
+import template from './demo-page-2.html?raw';
 @customElement({
   name: 'demo-page-2',
   template,

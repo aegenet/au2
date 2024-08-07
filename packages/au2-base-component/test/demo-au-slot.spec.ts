@@ -1,3 +1,6 @@
+/**
+ * @vitest-environment jsdom
+ */
 import { getViewModel, renderInDOM } from './helper';
 import { DemoAuSlot } from '../dev-app/demo-au-slot';
 
@@ -18,15 +21,15 @@ describe('demo-au-slot', () => {
       async result => {
         const vm = getViewModel<DemoAuSlot>(result);
         expect(vm.tabSlot).toBe('one');
-        expect(vm.auSlotNames.length).toBe(2);
-        expect(vm.auSlotNames[0]).toBe('one');
-        expect(vm.auSlotNames[1]).toBe('two');
+        expect(vm.auSlotNames!.length).toBe(2);
+        expect(vm.auSlotNames![0]).toBe('one');
+        expect(vm.auSlotNames![1]).toBe('two');
         expect(Object.keys(vm.auSlots).length).toBe(2);
         expect(vm.auSlots.one).toBeTruthy();
         expect(vm.auSlots.two).toBeTruthy();
         await vm.unbinding();
-        expect(vm.auSlotNames.length).toBe(0);
-        expect(Object.keys(vm.auSlotNames).length).toBe(0);
+        expect(vm.auSlotNames!.length).toBe(0);
+        expect(Object.keys(vm.auSlotNames!).length).toBe(0);
       }
     );
   });
@@ -46,17 +49,17 @@ describe('demo-au-slot', () => {
       [DemoAuSlot],
       async result => {
         const vm = getViewModel<DemoAuSlot>(result);
-        expect(vm.auSlotNames.length).toBe(2);
-        expect(vm.auSlotNames[0]).toBe('one');
-        expect(vm.auSlotNames[1]).toBe('two');
+        expect(vm.auSlotNames!.length).toBe(2);
+        expect(vm.auSlotNames![0]).toBe('one');
+        expect(vm.auSlotNames![1]).toBe('two');
         expect(Object.keys(vm.auSlots).length).toBe(2);
         expect(vm.auSlots.one).toBeTruthy();
         expect(vm.auSlots.two).toBeTruthy();
 
-        expect(vm.tabSlot).toBe(vm.auSlotNames[0]);
+        expect(vm.tabSlot).toBe(vm.auSlotNames![0]);
         await vm.unbinding();
-        expect(vm.auSlotNames.length).toBe(0);
-        expect(Object.keys(vm.auSlotNames).length).toBe(0);
+        expect(vm.auSlotNames!.length).toBe(0);
+        expect(Object.keys(vm.auSlotNames!).length).toBe(0);
       }
     );
   });

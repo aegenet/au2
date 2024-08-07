@@ -3,11 +3,21 @@
   "description": "Aurelia 2 - Base Component",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
+  "browser": "dist/index.mjs",
   "exports": {
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.mjs"
+    "node": {
+        "require": "./dist/index.cjs",
+        "import": "./dist/index.mjs",
+        "types": "./dist/bundle.d.ts"
+    },
+    "default": {
+        "require": "./dist/index.cjs",
+        "import": "./dist/index.mjs",
+        "types": "./dist/bundle.d.ts"
+    }
   },
-  "typings": "dist/index.d.ts",
+  "typings": "./dist/bundle.d.ts",
+  "types": "./dist/bundle.d.ts",
   "author": "Alexandre Genet",
   "files": [
     "dist"
@@ -23,34 +33,33 @@
   "version": "0.0.0-dev",
   "repository": "https://github.com/aegenet/au2/tree/master/packages/au2-base-component",
   "license": "MIT",
-  "dependencies": {},
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "peerDependencies": {},
+  "dependencies": {
+    "@aegenet/belt-anti-bounce": "^2.0.0",
+    "@aegenet/belt-array-to-obj": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@aurelia/i18n": "^2.0.0-beta.20",
+    "@aurelia/router": "^2.0.0-beta.20",
+    "aurelia": "^2.0.0-beta.20"
+  },
   "devDependencies": {
-    "@aegenet/belt-anti-bounce": "^1.5.0",
-    "@aegenet/belt-array-to-obj": "^1.5.0",
-    "@aurelia/i18n": "^2.0.0-beta.14",
-    "@aurelia/router": "^2.0.0-beta.14",
-    "@aurelia/testing": "^2.0.0-beta.14",
-    "@types/jest": "^29.5.12",
+    "@aurelia/testing": "^2.0.0-beta.20",
     "@types/node": "^20.11.28",
-    "aurelia": "^2.0.0-beta.14",
     "typescript": "^5"
   },
   "scripts": {
-    "lint:js": "node ./../../node_modules/eslint/bin/eslint src test --ext .js,.ts",
+    "lint:js": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",
     "lint:css": "node ./../../node_modules/sass-lint/bin/sass-lint -c .sass-lint.yml \"src/**/*.scss\"",
     "lint:html": "node ./../../node_modules/htmlhint/bin/htmlhint -c .htmlhintrc src",
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
-    "pretest": "npm run lint",
-    "start": "node ./../../node_modules/webpack/bin/webpack serve --config-name commonjs",
-    "build": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/webpack/bin/webpack --env production && yarn run build:dts",
-    "analyze": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/webpack/bin/webpack --env production --analyze",
-    "test": "node ./../../node_modules/jest/bin/jest --config ./jest.config.cjs",
-    "build:dts": "tsc src/index.ts --target ES2017 --stripInternal --skipLibCheck --emitDecoratorMetadata --experimentalDecorators --moduleResolution node --declaration --emitDeclarationOnly --outDir ./dist",
-    "tsc": "echo nothing",
-    "test-node": "yarn run test"
+    "start": "node ./../../node_modules/vite/bin/vite --port 3000",
+    "build": "npm run tsc && npm run build:vite && npm run build:dts",
+    "tsc": "node ./../../node_modules/rimraf/dist/esm/bin.mjs build && node ./../../node_modules/typescript/bin/tsc --noEmit",
+    "build:vite": "node ./../../node_modules/rimraf/dist/esm/bin.mjs dist && node ./../../node_modules/vite/bin/vite build",
+    "build:dts": "node ./../../node_modules/rollup/dist/bin/rollup -c rollup.config.dts.mjs",
+    "test": "vitest run --test-timeout=60000 --environment jsdom"
   }
 }

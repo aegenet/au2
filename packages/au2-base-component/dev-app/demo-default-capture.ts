@@ -1,7 +1,7 @@
 import { customElement, IContainer, inject } from 'aurelia';
 import { defaultCapture, BaseComponent } from '../src';
 
-import template from './demo-default-capture.html';
+import template from './demo-default-capture.html?raw';
 
 /**
  * Demo default capture

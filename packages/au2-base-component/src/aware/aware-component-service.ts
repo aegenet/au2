@@ -19,7 +19,10 @@ export class AwareComponentService implements IAwareComponentService {
       const definition = customElement.$controller.definition;
       if (definition.name) {
         // if the user specify a namespace manually, we don't auto prefix with custom element name.
-        const eventName = customElement.eventName.indexOf(':') !== -1 ? customElement.eventName : `${definition.name}:${customElement.eventName}`;
+        const eventName =
+          customElement.eventName.indexOf(':') !== -1
+            ? customElement.eventName
+            : `${definition.name}:${customElement.eventName}`;
         customElement.$awareToken = this._ev.subscribe(eventName, (options: IAwareEvent) => {
           this.publish(customElement, options);
         });
@@ -32,22 +35,29 @@ export class AwareComponentService implements IAwareComponentService {
    */
   public publish(customElement: ICustomElementAware, options: IAwareEvent) {
     // Ensure property begins with an alpha character
-    if (options?.property && AwareComponentService._RE_PROPERTY_CHECK.test(options.property) && options.property in customElement) {
+    if (
+      options?.property &&
+      AwareComponentService._RE_PROPERTY_CHECK.test(options.property) &&
+      options.property in customElement
+    ) {
       const descriptor = Object.getOwnPropertyDescriptor(customElement, options.property);
       if (descriptor) {
         // Properties has descriptor (function don't have)
         if (descriptor.set || descriptor.get) {
           if (descriptor.set) {
             // We only do something if the setter exists
-            customElement[options.property] = options.value;
+            (customElement as Record<string, unknown>)[options.property] = options.value;
           }
         } else if (descriptor.value instanceof Function) {
-          (descriptor.value as () => void).apply(customElement, options.value);
+          (descriptor.value as () => void).apply(customElement, options.value as []);
         } else {
-          customElement[options.property] = options.value;
+          (customElement as Record<string, unknown>)[options.property] = options.value;
         }
-      } else if (customElement[options.property] instanceof Function) {
-        (customElement[options.property] as () => void).apply(customElement, options.value);
+      } else if ((customElement as Record<string, unknown>)[options.property] instanceof Function) {
+        ((customElement as Record<string, unknown>)[options.property] as () => void).apply(
+          customElement,
+          options.value as []
+        );
       }
     }
   }

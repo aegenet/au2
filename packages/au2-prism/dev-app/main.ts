@@ -6,14 +6,16 @@ import { MyApp } from './my-app';
 // import shared from './shared.scss';
 import * as Plugin from '../src/index';
 
-Aurelia
-  /*
+Promise.resolve(
+  Aurelia
+    /*
   .register(StyleConfiguration.shadowDOM({
     // optionally add the shared styles for all components
     sharedStyles: [shared]
   }))
   */
-  // Register all exports of the plugin
-  .register(Plugin)
-  .app(MyApp)
-  .start();
+    // Register all exports of the plugin
+    .register(Plugin)
+    .app(MyApp)
+    .start()
+).catch(console.error);
