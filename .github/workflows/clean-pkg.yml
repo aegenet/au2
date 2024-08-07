@@ -8,16 +8,25 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4.1.7
       - name: Use Node.js 20.x
-        uses: actions/setup-node@v4.0.2
+        uses: actions/setup-node@v4.0.3
         with:
           node-version: 20.x
+          cache: 'npm'
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
           scope: '@aegenet'
+
+      - name: Install Yawt
+        env:
+          CI: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm i -g @aegenet/yawt
+
       - name: Get projects and set env
-        run: echo "DELETE_PACKAGE_NAMES=$(node ./.build/get-projects.js)" >> $GITHUB_ENV
+        run: echo "DELETE_PACKAGE_NAMES=$(yawt-projects)" >> $GITHUB_ENV
+
       - name: Delete old dev packages
         uses: aegenet/gh-delete-package-versions@v5.5.0
         with:

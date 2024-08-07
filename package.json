@@ -108,5 +108,8 @@
     "jsdom": "^24.1.1",
     "sass-lint": "^1.13.1",
     "rimraf": "^6.0.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.20.0"
   }
 }
