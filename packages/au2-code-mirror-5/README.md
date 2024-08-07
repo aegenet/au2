@@ -5,12 +5,14 @@
 
 > *DRAFT* Aurelia 2 component: CodeMirror 5.
 
+> Tested with [`Aurelia v2.0.0-beta.20`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.20).
+
 # Installation
 
 ```shell
-npm install @aegenet/au2-code-mirror-5@^1.6.1
+npm install @aegenet/au2-code-mirror-5@^2.0.0-alpha
 # or
-yarn add @aegenet/au2-code-mirror-5@^1.6.1
+yarn add @aegenet/au2-code-mirror-5@^2.0.0-alpha
 ```
 
 # Usage

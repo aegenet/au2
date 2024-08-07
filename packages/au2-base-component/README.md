@@ -6,13 +6,14 @@
 > `BaseComponent` with `EventAggregator`, `I18N`, `Aware Event` and `AntiBounce`
 > `BasePage` with `EventAggregator`, `I18N`, `Aware Event` and `AntiBounce`
 
+> Tested with [`Aurelia v2.0.0-beta.20`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.20).
 
 # Installation
 
 ```shell
-npm install @aegenet/au2-base-component@^1.6.1
+npm install @aegenet/au2-base-component@^2.0.0-alpha
 # or
-yarn add @aegenet/au2-base-component@^1.6.1
+yarn add @aegenet/au2-base-component@^2.0.0-alpha
 ```
 
 # Usage

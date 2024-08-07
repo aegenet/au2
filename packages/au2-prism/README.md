@@ -9,12 +9,14 @@
 
 > Missing a lot of tests in our implementation! (see: https://github.com/koca/vue-prism-editor/blob/master/packages/vue-prism-editor/tests/Editor.spec.ts for base of tests)
 
+> Tested with [`Aurelia v2.0.0-beta.20`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.20).
+
 # Installation
 
 ```shell
-npm install @aegenet/au2-prism@^1.6.1
+npm install @aegenet/au2-prism@^2.0.0-alpha
 # or
-yarn add @aegenet/au2-prism@^1.6.1
+yarn add @aegenet/au2-prism@^2.0.0-alpha
 ```
 
 # Usage
