@@ -8,7 +8,7 @@ This repository contains a collection of Aurelia 2 plugins and tools.
 
 **Note**:
 
-- Tested with [`Aurelia v2.0.0-beta.20`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.20).
+- Tested with [`Aurelia v2.0.0-beta.21`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.21).
 
 ## Plugins
 

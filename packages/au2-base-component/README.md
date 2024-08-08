@@ -6,7 +6,7 @@
 > `BaseComponent` with `EventAggregator`, `I18N`, `Aware Event` and `AntiBounce`
 > `BasePage` with `EventAggregator`, `I18N`, `Aware Event` and `AntiBounce`
 
-> Tested with [`Aurelia v2.0.0-beta.20`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.20).
+> Tested with [`Aurelia v2.0.0-beta.21`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.21).
 
 # Installation
 

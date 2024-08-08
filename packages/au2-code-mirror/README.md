@@ -5,7 +5,7 @@
 
 > *DRAFT* Aurelia 2 component: CodeMirror 6+.
 
-> Tested with [`Aurelia v2.0.0-beta.20`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.20).
+> Tested with [`Aurelia v2.0.0-beta.21`](https://github.com/aurelia/aurelia/releases/tag/v2.0.0-beta.21).
 
 # Installation
 
