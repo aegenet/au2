@@ -187,8 +187,10 @@ class PrismEditor implements ICustomElementViewModel {
     const newLineIndexWraps: { idx: number; wrap: number }[] = [];
     let lineWidth: number = 0;
     let wraps: number = 0;
+    this.measureRef!.textContent = 'M';
+    const charSize = this.measureRef!.offsetWidth;
     codeData.forEach((line, idx) => {
-      lineWidth = this.measureRef!.offsetWidth * (line.length || 1);
+      lineWidth = charSize * (line.length || 1);
       wraps = Math.ceil(lineWidth / editor.clientWidth); // Calculate number of wraps
       for (let i = 0; i < wraps; i++) {
         newLineIndexWraps.push({
@@ -197,6 +199,7 @@ class PrismEditor implements ICustomElementViewModel {
         });
       }
     });
+    this.measureRef!.textContent = '';
     this.lineIndexWraps = newLineIndexWraps;
   }
 

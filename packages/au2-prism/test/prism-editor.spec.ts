@@ -4,6 +4,20 @@
 import { getViewModel, renderInDOM } from './helper';
 import { PrismEditor } from '../src/index';
 
+beforeAll(() => {
+  global.ResizeObserver = class ResizeObserver {
+    observe() {
+      // do nothing
+    }
+    unobserve() {
+      // do nothing
+    }
+    disconnect() {
+      // do nothing
+    }
+  };
+});
+
 describe('prism-editor', () => {
   it('should render empty', async () => {
     await renderInDOM('<prism-editor></prism-editor>', [PrismEditor], async result => {
