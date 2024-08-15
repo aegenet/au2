@@ -2,39 +2,44 @@
   <div class="prism-editor-wrapper my-editor" language.bind="language">
 
     <div
-      if.bind="lines"
+      if.bind="lineNumbers"
       aria-hidden="true"
       class="prism-editor__line-numbers"
-      style.bind="{ minHeight: lineNumbersHeight }">
+      style.bind="{ minHeight: lineNumbersHeight, borderRight: '1px solid darkgrey' }">
+      <div style="padding-right: 1em;" >
         <div
           class="prism-editor__line-width-calc"
           style="height: 0px; visibility: hidden; pointer-events: none;">
           999
         </div>
-        <div repeat.for="i of lineNumbersCount" class="prism-editor__line-number token comment">${i+1}</div>
+        <div repeat.for="nbr of lineIndexWraps" class="prism-editor__line-number token comment">
+          ${$first || lineIndexWraps[$index - 1].idx !== nbr.idx ? nbr.idx : '-'}
+        </div>
+      </div>
     </div>
-    <div class="prism-editor__container">
+    <div class="prism-editor__container" style.bind="lineNumbers === true ? { wordBreak: 'break-all' } : {}">
       <textarea
-      value.bind="code"
-      style="padding-top:4px"
-      ref="textAreaRef"
-      spellcheck="false"
-      autocapitalize="off"
-      autocomplete="off"
-      autocorrect="off"
-      data-gramm="false"
-      placeholder.bind="placeholder"
-      readonly.bind="readonly"
-      data-testid="textarea"
-      class="prism-editor__textarea ${isEmpty ? 'prism-editor__textarea--empty' : ''}"
-    >
-    </textarea>
-    <pre ref="preRef"
-      data-testid="preview"
-      class="prism-editor__editor"
-      style="padding-top:4px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
-      innerhtml.bind="content"
-    ></pre>
+        value.bind="code"
+        style="padding-top:4px"
+        ref="textAreaRef"
+        spellcheck="false"
+        autocapitalize="off"
+        autocomplete="off"
+        autocorrect="off"
+        data-gramm="false"
+        placeholder.bind="placeholder"
+        readonly.bind="readonly"
+        data-testid="textarea"
+        class="prism-editor__textarea ${isEmpty ? 'prism-editor__textarea--empty' : ''}"
+      >
+      </textarea>
+      <pre ref="preRef"
+        data-testid="preview"
+        class="prism-editor__editor"
+        style="padding-top:4px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;"
+        innerhtml.bind="content"
+      ></pre>
     </div>
   </div>
 </div>
+<span ref="measureRef" class="" style="position: absolute;bottom: 8px;white-space:pre">M</span>

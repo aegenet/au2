@@ -13,7 +13,6 @@ const isMacLike = typeof window !== 'undefined' && navigator && /(Mac|iPhone|iPo
 
 export interface EditorProps {
   lineNumbers: boolean;
-  autoStyleLineNumbers: boolean;
   readonly: boolean;
   value: string;
   highlight: (...args: unknown[]) => unknown;
@@ -63,7 +62,10 @@ class PrismEditor implements ICustomElementViewModel {
 
   public preRef?: HTMLPreElement;
   public textAreaRef?: HTMLTextAreaElement;
+  public measureRef?: HTMLPreElement;
   private _boundedKeydown?: (e: KeyboardEvent) => boolean | void;
+
+  private observer!: ResizeObserver;
 
   constructor(private readonly _element: HTMLElement) {
     const style = document.createElement('style');
@@ -76,12 +78,11 @@ class PrismEditor implements ICustomElementViewModel {
   public lineNumbers: boolean = false;
 
   public lineNumbersChanged(): void {
-    this.styleLineNumbers();
     this.setLineNumbersHeight();
+    this.setLineNumbersWrap();
   }
 
-  @bindable()
-  public autoStyleLineNumbers: boolean = true;
+  public lineIndexWraps: { idx: number; wrap: number }[] = [];
 
   @bindable()
   public readonly: boolean = false;
@@ -107,6 +108,7 @@ class PrismEditor implements ICustomElementViewModel {
   public contentChanged() {
     if (this.lineNumbers) {
       this.setLineNumbersHeight();
+      this.setLineNumbersWrap();
     }
   }
 
@@ -142,10 +144,28 @@ class PrismEditor implements ICustomElementViewModel {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public attached(initiator: IHydratedController): void | Promise<void> {
-    this.styleLineNumbers();
+    const styles = getComputedStyle(this.preRef!);
+    this.measureRef!.style.font = styles.font;
+    this.measureRef!.style.padding = styles.padding;
+    this.measureRef!.style.margin = styles.margin;
+    this.measureRef!.style.border = styles.border;
+    this.measureRef!.style.lineHeight = styles.lineHeight;
+    this.measureRef!.style.textAlign = styles.textAlign;
+    this.measureRef!.style.overflow = styles.overflow;
+    this.measureRef!.style.letterSpacing = styles.letterSpacing;
+
     this._boundedKeydown = this.handleKeyDown.bind(this);
     this.textAreaRef!.addEventListener('keydown', this._boundedKeydown);
     this.codeChanged(this.code, this.code);
+
+    let observer = this.observer;
+    if (observer === void 0) {
+      observer = this.observer = new ResizeObserver(() => {
+        this.setLineNumbersHeight();
+        this.setLineNumbersWrap();
+      });
+    }
+    observer.observe(this.textAreaRef!, { box: 'border-box' });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -153,34 +173,31 @@ class PrismEditor implements ICustomElementViewModel {
     if (this._boundedKeydown) {
       this.textAreaRef!.removeEventListener('keydown', this._boundedKeydown);
     }
+    this.observer.disconnect();
+    this.observer = (void 0)!;
   }
 
   public setLineNumbersHeight(): void {
     this.lineNumbersHeight = getComputedStyle(this.preRef as HTMLPreElement).height;
   }
 
-  public styleLineNumbers(): void {
-    if (!this.lineNumbers || !this.autoStyleLineNumbers) return;
-
-    const $editor = this.preRef as HTMLPreElement;
-    const $lineNumbers: HTMLDivElement | null = this._element.querySelector('.prism-editor__line-numbers');
-    const editorStyles = window.getComputedStyle($editor);
-
-    // PLATFORM.taskQueue.queueTask(() => {
-    const btlr: any = 'border-top-left-radius';
-    const bblr: any = 'border-bottom-left-radius';
-    if (!$lineNumbers) return;
-    $lineNumbers.style[btlr] = editorStyles[btlr];
-    $lineNumbers.style[bblr] = editorStyles[bblr];
-    $editor.style[btlr] = '0';
-    $editor.style[bblr] = '0';
-
-    const stylesList = ['background-color', 'margin-top', 'padding-top', 'font-family', 'font-size', 'line-height'];
-    stylesList.forEach((style: any) => {
-      $lineNumbers.style[style] = editorStyles[style];
+  public setLineNumbersWrap(): void {
+    const editor = this.preRef!;
+    const codeData = this.code.split(/\r\n|\n/);
+    const newLineIndexWraps: { idx: number; wrap: number }[] = [];
+    let lineWidth: number = 0;
+    let wraps: number = 0;
+    codeData.forEach((line, idx) => {
+      lineWidth = this.measureRef!.offsetWidth * (line.length || 1);
+      wraps = Math.ceil(lineWidth / editor.clientWidth); // Calculate number of wraps
+      for (let i = 0; i < wraps; i++) {
+        newLineIndexWraps.push({
+          idx: idx + 1,
+          wrap: i,
+        });
+      }
     });
-    $lineNumbers.style['margin-bottom' as any] = '-' + editorStyles['padding-top' as any];
-    // });
+    this.lineIndexWraps = newLineIndexWraps;
   }
 
   private _getLines(text: string, position: number): Array<string> {

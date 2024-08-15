@@ -1,5 +1,8 @@
 <h2>Prism Editor</h2>
-<prism-editor component.ref="prismRef" code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };" language="javascript"></prism-editor>
+<prism-editor line-numbers.bind="true" component.ref="prismRef" code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };
+Line2 - Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World;
+Line3 HELLLLOOO
+Line4 Lorem ipsum odor amet, consectetuer adipiscing elit. Aliquet curae et ligula parturient curae lacinia nascetur. Ac hendrerit integer fusce ligula leo dignissim bibendum. Adipiscing condimentum venenatis nec fringilla quisque dolor tincidunt ante finibus. Curae vulputate neque cras pulvinar senectus, purus laoreet. Class diam fringilla nec rhoncus fusce erat mollis ut. Velit torquent himenaeos platea interdum euismod bibendum. Finibus porttitor tempus; cras sodales et neque. Lacus enim in senectus ad natoque turpis. Vel tempus vitae rutrum id sodales turpis." language="javascript"></prism-editor>
 
 <button click.trigger="prismRef.code = 'Ok ok'">Change !</button>
 
@@ -7,4 +10,20 @@
 <pre><code innerhtml.bind="prismRef.code"></code></pre>
 
 <h2>Prism View</h2>
-<prism-view code.bind="prismRef.code" language="javascript"></prism-view>
+<prism-view  line-numbers.bind="true" code.bind="prismRef.code" language="javascript"></prism-view>
+
+<hr>
+
+<h2>Prism Editor - without lines</h2>
+<prism-editor line-numbers.bind="false" component.ref="prismRef2" code="const myVar = { code: 'quantum', title: 'Unknown', where: 'Who know' };
+Line2 - Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World;
+Line3 HELLLLOOO
+Line4 Lorem ipsum odor amet, consectetuer adipiscing elit. Aliquet curae et ligula parturient curae lacinia nascetur. Ac hendrerit integer fusce ligula leo dignissim bibendum. Adipiscing condimentum venenatis nec fringilla quisque dolor tincidunt ante finibus. Curae vulputate neque cras pulvinar senectus, purus laoreet. Class diam fringilla nec rhoncus fusce erat mollis ut. Velit torquent himenaeos platea interdum euismod bibendum. Finibus porttitor tempus; cras sodales et neque. Lacus enim in senectus ad natoque turpis. Vel tempus vitae rutrum id sodales turpis." language="javascript"></prism-editor>
+
+<button click.trigger="prismRef2.code = 'Ok ok'">Change !</button>
+
+<h3>Value</h3>
+<pre><code innerhtml.bind="prismRef2.code"></code></pre>
+
+<h2>Prism View - without lines</h2>
+<prism-view  line-numbers.bind="false" code.bind="prismRef2.code" language="javascript"></prism-view>
