@@ -11,9 +11,9 @@
 # Installation
 
 ```shell
-npm install @aegenet/au2-base-component@^2.0.0-alpha
+npm install @aegenet/au2-base-component@^2.0.0
 # or
-yarn add @aegenet/au2-base-component@^2.0.0-alpha
+yarn add @aegenet/au2-base-component@^2.0.0
 ```
 
 # Usage
