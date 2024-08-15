@@ -101,7 +101,7 @@
     "test:coverage": "vitest run --environment jsdom --coverage --coverage.provider=istanbul --coverage.extension=.ts --coverage.exclude=\"**/packages/**/dev-app/**\" --coverage.exclude=\"**/packages/au2-static/**\""
   },
   "devDependencies": {
-    "@aegenet/yawt": "^0.8.1",
+    "@aegenet/yawt": "^0.8.2",
     "@aurelia/vite-plugin": "^2.0.0-beta.21",
     "@commitlint/cli": "^19.2.0",
     "@vitest/coverage-istanbul": "^2.0.5",
