@@ -37,16 +37,16 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@aegenet/belt-anti-bounce": "^2.0.0",
-    "@aegenet/belt-array-to-obj": "^2.0.0"
+    "@aegenet/belt-anti-bounce": "^2.3.0",
+    "@aegenet/belt-array-to-obj": "^2.3.0"
   },
   "peerDependencies": {
-    "@aurelia/i18n": "^2.0.0-beta.21",
-    "@aurelia/router": "^2.0.0-beta.21",
-    "aurelia": "^2.0.0-beta.21"
+    "@aurelia/i18n": "^2.0.0-beta.22",
+    "@aurelia/router": "^2.0.0-beta.22",
+    "aurelia": "^2.0.0-beta.22"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.21",
+    "@aurelia/testing": "^2.0.0-beta.22",
     "@types/node": "^20.11.28",
     "typescript": "^5"
   },

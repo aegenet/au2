@@ -123,8 +123,12 @@ export class CodeMirror implements ICustomElementViewModel {
       const line = cm.getLine(options?.line ?? cursor.line);
       let start = options?.ch ?? cursor.ch;
       let end = options?.ch ?? cursor.ch;
-      while (start > 0 && /\w/.test(line.charAt(start - 1))) --start;
-      while (end < line.length && /\w/.test(line.charAt(end))) ++end;
+      while (start > 0 && /\w/.test(line.charAt(start - 1))) {
+        --start;
+      }
+      while (end < line.length && /\w/.test(line.charAt(end))) {
+        ++end;
+      }
       const partLine = line.slice(0, end).toLowerCase();
       let suggests: string[] = [];
       for (let i = 0; i < this.suggestions.length; i++) {

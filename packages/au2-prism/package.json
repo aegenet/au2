@@ -40,12 +40,12 @@
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "@aurelia/testing": "^2.0.0-beta.21",
-    "@types/prismjs": "^1.26.4",
+    "@aurelia/testing": "^2.0.0-beta.22",
+    "@types/prismjs": "^1.26.5",
     "typescript": "^5"
   },
   "peerDependencies": {
-    "aurelia": "^2.0.0-beta.21"
+    "aurelia": "^2.0.0-beta.22"
   },
   "scripts": {
     "lint:js": "node ./../../node_modules/eslint/bin/eslint ./src/**/*.{js,ts,tsx}",

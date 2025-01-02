@@ -280,7 +280,9 @@ class PrismEditor implements ICustomElementViewModel {
   private _updateInput(record: Record): void {
     const input = this.textAreaRef as HTMLTextAreaElement;
 
-    if (!input) return;
+    if (!input) {
+      return;
+    }
 
     // Update values and selection state
     // On change la value
